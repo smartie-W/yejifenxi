@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>销售业绩进程管理</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img src="assets/logo.png" alt="ONES" class="logo" />
+        <div>
+          <h1>销售业绩进程管理</h1>
+          <p class="sub">新签与回款实时分析 · 2026</p>
+        </div>
+      </div>
+      <nav class="tabs">
+        <button class="tab active" data-tab="contracts">新签合同登记</button>
+        <button class="tab" data-tab="payments">销售回款登记</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="contracts" class="panel active">
+        <div class="card form-card">
+          <h2>登记新签合同金额</h2>
+          <form id="contract-form" class="grid-form">
+            <label>
+              日期
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              客户名称
+              <input type="text" name="customer" placeholder="选填" />
+            </label>
+            <label>
+              销售人员
+              <select name="sales" required></select>
+            </label>
+            <label>
+              合同金额
+              <input type="text" name="amount" inputmode="decimal" value="0" required />
+            </label>
+            <label>
+              合同类型
+              <select name="type">
+                <option value="" selected>请选择合同类型</option>
+                <option value="SAAS">SAAS</option>
+                <option value="私有部署订阅">私有部署订阅</option>
+                <option value="私有部署买断">私有部署买断</option>
+              </select>
+            </label>
+            <div class="actions">
+              <button type="submit">登记</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>数据分析（按销售人员）</h2>
+            <p>季度与年度新签合同金额</p>
+          </div>
+          <div id="contract-charts" class="charts"></div>
+        </div>
+
+        <div class="card mini">
+          <div class="log-head">
+            <h3>数据添加日志</h3>
+            <button type="button" class="ghost small" data-bin="contracts">回收站</button>
+          </div>
+          <div id="contract-recent" class="recent"></div>
+        </div>
+      </section>
+
+      <section id="payments" class="panel">
+        <div class="card form-card">
+          <h2>登记销售回款</h2>
+          <form id="payment-form" class="grid-form">
+            <label>
+              日期
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              客户名称
+              <input type="text" name="customer" placeholder="选填" />
+            </label>
+            <label>
+              销售人员
+              <select name="sales" required></select>
+            </label>
+            <label>
+              客户类型
+              <select name="customerType">
+                <option value="" selected>请选择客户类型</option>
+                <option value="新客户">新客户</option>
+                <option value="老客户">老客户</option>
+              </select>
+            </label>
+            <label>
+              款项归属指标类型
+              <select name="indicatorType">
+                <option value="" selected>请选择指标类型</option>
+                <option value="新客户指标">新客户指标</option>
+                <option value="老客户指标">老客户指标</option>
+              </select>
+            </label>
+            <label>
+              回款类型
+              <select name="contractType">
+                <option value="" selected>请选择回款类型</option>
+                <option value="新签">新签</option>
+                <option value="增购">增购</option>
+                <option value="续约">续约</option>
+                <option value="维保">维保</option>
+              </select>
+            </label>
+            <div class="actions">
+              <button type="submit">登记</button>
+            </div>
+            <div class="grid-break"></div>
+            <label>
+              本次到款金额
+              <input type="text" name="amount" inputmode="decimal" value="0" required />
+            </label>
+            <label>
+              本次到款-二开利润
+              <input type="text" name="secondDevProfit" inputmode="decimal" value="0" />
+            </label>
+            <label>
+              本次到款-实施费用
+              <input type="text" name="implementationFee" inputmode="decimal" value="0" />
+            </label>
+            <label>
+              本次到款-二开成本
+              <input type="text" name="secondDevCost" inputmode="decimal" value="0" />
+            </label>
+            <label>
+              本次到款-委外成本
+              <input type="text" name="outsourcingCost" inputmode="decimal" value="0" />
+            </label>
+            <label>
+              本次到款-计划外成本
+              <input type="text" name="unplannedCost" inputmode="decimal" value="0" />
+            </label>
+            <label>
+              本次到款-合计成本
+              <input type="text" name="totalCost" inputmode="decimal" value="0" readonly />
+            </label>
+            <label>
+              实际计提金额
+              <input type="text" name="actualAccrual" inputmode="decimal" value="0" readonly />
+            </label>
+          </form>
+        </div>
+
+        <div class="sub-tabs">
+          <button class="sub-tab active" data-subtab="payment-all">所有回款分析</button>
+          <button class="sub-tab" data-subtab="payment-type">回款类型分析</button>
+        </div>
+
+        <section id="payment-all" class="sub-panel active">
+          <div class="card">
+            <div class="card-head">
+              <h2>回款分析 · 新客户指标</h2>
+              <p>按销售人员，包含 KPI 目标</p>
+            </div>
+            <div id="payment-charts-new" class="charts"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>回款分析 · 老客户指标</h2>
+              <p>按销售人员，包含 KPI 目标</p>
+            </div>
+            <div id="payment-charts-old" class="charts"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>回款分析 · 新老客户指标合计</h2>
+              <p>按销售人员，包含 KPI 目标</p>
+            </div>
+            <div id="payment-charts-total" class="charts"></div>
+          </div>
+        </section>
+
+        <section id="payment-type" class="sub-panel">
+          <div class="card">
+            <div class="card-head">
+              <h2>回款类型分析</h2>
+              <p>按回款类型与季度统计</p>
+              <div class="filter-row inline">
+                <label>
+                  销售人员
+                  <select id="payment-type-sales">
+                    <option value="all" selected>所有人</option>
+                    <option value="唐龙军">唐龙军</option>
+                    <option value="王雪靖">王雪靖</option>
+                    <option value="周思">周思</option>
+                    <option value="郭淼">郭淼</option>
+                    <option value="张柳云">张柳云</option>
+                    <option value="李彤">李彤</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div id="payment-type-charts" class="charts"></div>
+          </div>
+        </section>
+
+        <div class="card mini">
+          <div class="log-head">
+            <h3>数据添加日志</h3>
+            <button type="button" class="ghost small" data-bin="payments">回收站</button>
+          </div>
+          <div id="payment-recent" class="recent"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+      <div class="modal">
+        <div class="modal-head">
+          <h3 id="modal-title">详情</h3>
+          <div class="modal-actions">
+            <button id="modal-prev" class="ghost small">上一条</button>
+            <button id="modal-next" class="ghost small">下一条</button>
+            <button id="modal-action" class="danger small">删除</button>
+          </div>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+      </div>
+    </div>
+
+    <div id="auth-overlay" class="modal-overlay hidden">
+      <div class="modal auth-modal">
+        <div class="modal-head">
+          <h3>账号密码验证</h3>
+        </div>
+        <form id="auth-form" class="auth-form">
+          <label>
+            账号
+            <input type="text" name="username" placeholder="请输入账号" required />
+          </label>
+          <label>
+            密码
+            <input type="password" name="password" placeholder="请输入密码" required />
+          </label>
+          <div class="actions">
+            <button type="submit">提交</button>
+            <button type="button" id="auth-cancel" class="ghost">取消</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <span>数据来源：线下台账 + KPI 指标</span>
+      <span>本地新增仅保存在浏览器</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
