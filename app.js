@@ -3,6 +3,8 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  setPersistence,
+  browserLocalPersistence,
 } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
 import {
   getFirestore,
@@ -17,6 +19,7 @@ import {
   writeBatch,
   query,
   orderBy,
+  onSnapshot,
 } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
 
 const firebaseConfig = {
@@ -238,19 +241,31 @@ let activeType = 'contracts';
 let activeMode = 'main';
 let pendingAction = null;
 
+let unsubscribeContracts = null;
+let unsubscribePayments = null;
+
 const fetchCollection = async (name) => {
   const q = query(collection(db, name), orderBy('createdAt', 'asc'));
   const snap = await getDocs(q);
   return snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
 };
 
-const fetchAllData = async () => {
-  const [contracts, payments] = await Promise.all([
-    fetchCollection(collections.contracts),
-    fetchCollection(collections.payments),
-  ]);
-  contractData = contracts;
-  paymentData = payments;
+const startRealtime = () => {
+  if (unsubscribeContracts) unsubscribeContracts();
+  if (unsubscribePayments) unsubscribePayments();
+
+  const contractQuery = query(collection(db, collections.contracts), orderBy('createdAt', 'asc'));
+  const paymentQuery = query(collection(db, collections.payments), orderBy('createdAt', 'asc'));
+
+  unsubscribeContracts = onSnapshot(contractQuery, (snap) => {
+    contractData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+    refresh();
+  });
+
+  unsubscribePayments = onSnapshot(paymentQuery, (snap) => {
+    paymentData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+    refresh();
+  });
 };
 
 const groupTotals = (items, periodKey) => {
@@ -814,11 +829,9 @@ contractForm.addEventListener('submit', (event) => {
     source: 'manual',
   };
 
-  addDoc(collection(db, collections.contracts), entry).then(async () => {
-    await fetchAllData();
+  addDoc(collection(db, collections.contracts), entry).then(() => {
     contractForm.reset();
     setDefaultDates();
-    refresh();
   });
 });
 
@@ -849,13 +862,11 @@ paymentForm.addEventListener('submit', (event) => {
     source: 'manual',
   };
 
-  addDoc(collection(db, collections.payments), entry).then(async () => {
-    await fetchAllData();
+  addDoc(collection(db, collections.payments), entry).then(() => {
     paymentForm.reset();
     setDefaultDates();
     updateTotalCost();
     updateActualAccrual();
-    refresh();
   });
 });
 
@@ -928,8 +939,6 @@ authForm.addEventListener('submit', async (event) => {
 
   closeAuth();
   closeModal();
-  await fetchAllData();
-  refresh();
 });
 
 const init = async () => {
@@ -982,6 +991,7 @@ const init = async () => {
     const formData = new FormData(loginForm);
     const email = formData.get('email');
     const password = formData.get('password');
+    localStorage.setItem('login_email', email);
     loginStatus.textContent = '登录中...';
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -990,6 +1000,13 @@ const init = async () => {
     }
   });
 
+  const savedEmail = localStorage.getItem('login_email') || 'wqmsybyq163@gmail.com';
+  if (loginForm?.elements?.email) {
+    loginForm.elements.email.value = savedEmail;
+  }
+
+  await setPersistence(auth, browserLocalPersistence);
+
   onAuthStateChanged(auth, async (user) => {
     if (!user) {
       showLogin('请登录以使用云端数据');
@@ -997,8 +1014,7 @@ const init = async () => {
     }
     hideLogin();
     await ensureSeeded();
-    await fetchAllData();
-    refresh();
+    startRealtime();
   });
 };
 
