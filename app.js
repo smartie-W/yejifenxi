@@ -1,8 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
 import {
   getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
+  signInAnonymously,
   setPersistence,
   browserLocalPersistence,
 } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
@@ -61,9 +60,6 @@ const modalAction = document.getElementById('modal-action');
 const authOverlay = document.getElementById('auth-overlay');
 const authForm = document.getElementById('auth-form');
 const authCancel = document.getElementById('auth-cancel');
-const loginOverlay = document.getElementById('login-overlay');
-const loginForm = document.getElementById('login-form');
-const loginStatus = document.getElementById('login-status');
 const eyeButtons = document.querySelectorAll('[data-eye]');
 const binButtons = document.querySelectorAll('[data-bin]');
 
@@ -206,15 +202,6 @@ const setDefaultDates = () => {
 const loadJson = async (path) => {
   const res = await fetch(path);
   return res.json();
-};
-
-const showLogin = (message = '') => {
-  if (loginStatus) loginStatus.textContent = message;
-  loginOverlay.classList.remove('hidden');
-};
-
-const hideLogin = () => {
-  loginOverlay.classList.add('hidden');
 };
 
 const collections = {
@@ -985,22 +972,6 @@ const init = async () => {
   basePaymentData = buildPaymentEntries(paymentsRaw);
   kpiData = kpiRaw;
 
-  showLogin('请使用你的 Firebase 账号登录');
-
-  loginForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const formData = new FormData(loginForm);
-    const email = formData.get('email');
-    const password = formData.get('password');
-    localStorage.setItem('login_email', email);
-    loginStatus.textContent = '登录中...';
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (err) {
-      loginStatus.textContent = '登录失败，请检查邮箱和密码';
-    }
-  });
-
   eyeButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const field = btn.closest('.password-field')?.querySelector('input');
@@ -1009,22 +980,15 @@ const init = async () => {
     });
   });
 
-  const savedEmail = localStorage.getItem('login_email') || 'wqmsybyq163@gmail.com';
-  if (loginForm?.elements?.email) {
-    loginForm.elements.email.value = savedEmail;
-  }
-
-  await setPersistence(auth, browserLocalPersistence);
-
-  onAuthStateChanged(auth, async (user) => {
-    if (!user) {
-      showLogin('请登录以使用云端数据');
-      return;
-    }
-    hideLogin();
+  try {
+    await setPersistence(auth, browserLocalPersistence);
+    await signInAnonymously(auth);
     await ensureSeeded();
     startRealtime();
-  });
+  } catch (err) {
+    console.error(err);
+    alert('云端连接失败，请在 Firebase Authentication 的登录方法中启用匿名登录。');
+  }
 };
 
 init();
