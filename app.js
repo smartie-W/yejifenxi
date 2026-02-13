@@ -1,3 +1,38 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  doc,
+  setDoc,
+  getDoc,
+  deleteDoc,
+  serverTimestamp,
+  writeBatch,
+  query,
+  orderBy,
+} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyBXgjqxXu1icjHxrIhal1ncQ6ZwqDr5E64',
+  authDomain: 'xiaoshouyejifenxi.firebaseapp.com',
+  projectId: 'xiaoshouyejifenxi',
+  storageBucket: 'xiaoshouyejifenxi.firebasestorage.app',
+  messagingSenderId: '951263111259',
+  appId: '1:951263111259:web:0877b8556416dbb90ff77e',
+  measurementId: 'G-YSQJYXYSNX',
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
 const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '张柳云', '李彤'];
 const quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
 const periods = [...quarters, '年度'];
@@ -23,6 +58,9 @@ const modalAction = document.getElementById('modal-action');
 const authOverlay = document.getElementById('auth-overlay');
 const authForm = document.getElementById('auth-form');
 const authCancel = document.getElementById('auth-cancel');
+const loginOverlay = document.getElementById('login-overlay');
+const loginForm = document.getElementById('login-form');
+const loginStatus = document.getElementById('login-status');
 const binButtons = document.querySelectorAll('[data-bin]');
 
 const tabButtons = document.querySelectorAll('.tab');
@@ -166,23 +204,21 @@ const loadJson = async (path) => {
   return res.json();
 };
 
-const localKey = {
-  contracts: 'sales_contracts_extra',
-  payments: 'sales_payments_extra',
-  contractsBin: 'sales_contracts_bin',
-  paymentsBin: 'sales_payments_bin',
+const showLogin = (message = '') => {
+  if (loginStatus) loginStatus.textContent = message;
+  loginOverlay.classList.remove('hidden');
 };
 
-const loadLocal = (key) => {
-  try {
-    return JSON.parse(localStorage.getItem(key) || '[]');
-  } catch (err) {
-    return [];
-  }
+const hideLogin = () => {
+  loginOverlay.classList.add('hidden');
 };
 
-const saveLocal = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
+const collections = {
+  contracts: 'contracts',
+  payments: 'payments',
+  contractsBin: 'contracts_bin',
+  paymentsBin: 'payments_bin',
+  meta: 'meta',
 };
 
 let baseContractData = [];
@@ -191,17 +227,30 @@ let contractData = [];
 let paymentData = [];
 let kpiData = [];
 
+let contractLogList = [];
+let paymentLogList = [];
+let contractLogViewList = [];
+let paymentLogViewList = [];
+
 let activeList = [];
 let activeIndex = 0;
 let activeType = 'contracts';
 let activeMode = 'main';
 let pendingAction = null;
 
-const mergeData = () => {
-  const contractExtra = loadLocal(localKey.contracts);
-  const paymentExtra = loadLocal(localKey.payments);
-  contractData = baseContractData.concat(contractExtra);
-  paymentData = basePaymentData.concat(paymentExtra);
+const fetchCollection = async (name) => {
+  const q = query(collection(db, name), orderBy('createdAt', 'asc'));
+  const snap = await getDocs(q);
+  return snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+};
+
+const fetchAllData = async () => {
+  const [contracts, payments] = await Promise.all([
+    fetchCollection(collections.contracts),
+    fetchCollection(collections.payments),
+  ]);
+  contractData = contracts;
+  paymentData = payments;
 };
 
 const groupTotals = (items, periodKey) => {
@@ -256,6 +305,40 @@ const buildPaymentEntries = (rows) => {
     day: row['日期'],
     month: row['回款月份'],
   }));
+};
+
+const seedCollection = async (name, items) => {
+  const chunkSize = 400;
+  for (let i = 0; i < items.length; i += chunkSize) {
+    const batch = writeBatch(db);
+    const slice = items.slice(i, i + chunkSize);
+    slice.forEach((item) => {
+      const ref = doc(collection(db, name));
+      batch.set(ref, item);
+    });
+    await batch.commit();
+  }
+};
+
+const ensureSeeded = async () => {
+  const metaRef = doc(db, collections.meta, 'seeded');
+  const metaSnap = await getDoc(metaRef);
+  if (metaSnap.exists()) return;
+
+  const contractSeed = baseContractData.map((item) => ({
+    ...item,
+    createdAt: serverTimestamp(),
+    source: 'seed',
+  }));
+  const paymentSeed = basePaymentData.map((item) => ({
+    ...item,
+    createdAt: serverTimestamp(),
+    source: 'seed',
+  }));
+
+  await seedCollection(collections.contracts, contractSeed);
+  await seedCollection(collections.payments, paymentSeed);
+  await setDoc(metaRef, { seeded: true, createdAt: serverTimestamp() });
 };
 
 const buildKpiMap = (rows) => {
@@ -555,7 +638,7 @@ const formatEntryDate = (item) => {
 };
 
 const renderRecent = (container, entries, formatter, type) => {
-  const recent = entries.slice().reverse();
+  const recent = entries;
   container.innerHTML = '';
   if (!recent.length) {
     container.textContent = '暂无新增记录';
@@ -679,13 +762,14 @@ const refresh = () => {
   );
   renderTypeCharts(paymentTypeChartsEl, paymentTypeTotals);
 
-  const contractLog = contractData.filter((item) => parseNumber(item.amount) > 0);
-  renderRecent(contractRecentEl, contractLog, (item) => {
+  contractLogList = contractData.filter((item) => parseNumber(item.amount) > 0);
+  contractLogViewList = contractLogList.slice().reverse();
+  renderRecent(contractRecentEl, contractLogViewList, (item) => {
     const date = formatEntryDate(item);
     return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 合同类型：${item.type || ''}</span><span>${formatMoney(item.amount)}</span>`;
   }, 'contracts');
 
-  const paymentLog = paymentData.filter((item) => {
+  paymentLogList = paymentData.filter((item) => {
     const amount = parseNumber(item.amount);
     const actual = parseNumber(item.actualAccrual);
     const extra =
@@ -697,9 +781,10 @@ const refresh = () => {
       parseNumber(item.totalCost);
     return amount > 0 || actual > 0 || extra > 0;
   });
-  renderRecent(paymentRecentEl, paymentLog, (item) => {
+  paymentLogViewList = paymentLogList.slice().reverse();
+  renderRecent(paymentRecentEl, paymentLogViewList, (item) => {
     const date = formatEntryDate(item);
-    return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 客户类型：${item.customerType || ''} | 指标类型：${item.indicator || ''} | 合同类型：${item.contractType || ''} | 二开利润：${formatMoney(
+    return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 客户类型：${item.customerType || ''} | 指标类型：${item.indicator || ''} | 回款类型：${item.contractType || ''} | 二开利润：${formatMoney(
       item.secondDevProfit || 0
     )} | 实施费用：${formatMoney(item.implementationFee || 0)} | 二开成本：${formatMoney(
       item.secondDevCost || 0
@@ -725,16 +810,16 @@ contractForm.addEventListener('submit', (event) => {
     customer: formData.get('customer'),
     date,
     month: String(new Date(date).getMonth() + 1),
+    createdAt: serverTimestamp(),
+    source: 'manual',
   };
 
-  const extra = loadLocal(localKey.contracts);
-  extra.push(entry);
-  saveLocal(localKey.contracts, extra);
-
-  contractData.push(entry);
-  contractForm.reset();
-  setDefaultDates();
-  refresh();
+  addDoc(collection(db, collections.contracts), entry).then(async () => {
+    await fetchAllData();
+    contractForm.reset();
+    setDefaultDates();
+    refresh();
+  });
 });
 
 paymentForm.addEventListener('submit', (event) => {
@@ -760,18 +845,18 @@ paymentForm.addEventListener('submit', (event) => {
     actualAccrual: parseNumber(formData.get('actualAccrual')),
     date,
     month: String(new Date(date).getMonth() + 1),
+    createdAt: serverTimestamp(),
+    source: 'manual',
   };
 
-  const extra = loadLocal(localKey.payments);
-  extra.push(entry);
-  saveLocal(localKey.payments, extra);
-
-  paymentData.push(entry);
-  paymentForm.reset();
-  setDefaultDates();
-  updateTotalCost();
-  updateActualAccrual();
-  refresh();
+  addDoc(collection(db, collections.payments), entry).then(async () => {
+    await fetchAllData();
+    paymentForm.reset();
+    setDefaultDates();
+    updateTotalCost();
+    updateActualAccrual();
+    refresh();
+  });
 });
 
 modalOverlay.addEventListener('click', (event) => {
@@ -800,7 +885,7 @@ modalAction.addEventListener('click', () => {
 
 authCancel.addEventListener('click', closeAuth);
 
-authForm.addEventListener('submit', (event) => {
+authForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const formData = new FormData(authForm);
   const username = formData.get('username');
@@ -810,32 +895,40 @@ authForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const binKey = activeType === 'contracts' ? localKey.contractsBin : localKey.paymentsBin;
-  const mainList = activeType === 'contracts' ? contractData : paymentData;
-  const binList = loadLocal(binKey);
+  const item = activeList[activeIndex];
+  if (!item) return;
+
+  const mainName = activeType === 'contracts' ? collections.contracts : collections.payments;
+  const binName = activeType === 'contracts' ? collections.contractsBin : collections.paymentsBin;
 
   if (pendingAction === 'delete') {
-    const item = activeList[activeIndex];
-    if (item) {
-      binList.push(item);
-      saveLocal(binKey, binList);
-      const idx = mainList.indexOf(item);
-      if (idx >= 0) mainList.splice(idx, 1);
+    await addDoc(collection(db, binName), {
+      ...item,
+      sourceId: item.id || '',
+      deletedAt: serverTimestamp(),
+    });
+    if (item.id) {
+      await deleteDoc(doc(db, mainName, item.id));
     }
   }
 
   if (pendingAction === 'restore') {
-    const item = activeList[activeIndex];
-    if (item) {
-      mainList.push(item);
-      const idx = binList.indexOf(item);
-      if (idx >= 0) binList.splice(idx, 1);
-      saveLocal(binKey, binList);
+    const data = { ...item };
+    delete data.id;
+    delete data.sourceId;
+    delete data.deletedAt;
+    await addDoc(collection(db, mainName), {
+      ...data,
+      restoredAt: serverTimestamp(),
+    });
+    if (item.id) {
+      await deleteDoc(doc(db, binName, item.id));
     }
   }
 
   closeAuth();
   closeModal();
+  await fetchAllData();
   refresh();
 });
 
@@ -851,55 +944,62 @@ const init = async () => {
   contractRecentEl.addEventListener('click', (event) => {
     const row = event.target.closest('div[data-index]');
     if (!row) return;
-    const list = contractData.filter((item) => parseNumber(item.amount) > 0).slice().reverse();
     const idx = Number(row.dataset.index);
-    openModal(list, idx, 'contracts', 'main');
+    openModal(contractLogViewList, idx, 'contracts', 'main');
   });
   paymentRecentEl.addEventListener('click', (event) => {
     const row = event.target.closest('div[data-index]');
     if (!row) return;
-    const list = paymentData
-      .filter((item) => {
-        const amount = parseNumber(item.amount);
-        const actual = parseNumber(item.actualAccrual);
-        const extra =
-          parseNumber(item.secondDevProfit) +
-          parseNumber(item.implementationFee) +
-          parseNumber(item.secondDevCost) +
-          parseNumber(item.outsourcingCost) +
-          parseNumber(item.unplannedCost) +
-          parseNumber(item.totalCost);
-        return amount > 0 || actual > 0 || extra > 0;
-      })
-      .slice()
-      .reverse();
     const idx = Number(row.dataset.index);
-    openModal(list, idx, 'payments', 'main');
+    openModal(paymentLogViewList, idx, 'payments', 'main');
   });
   binButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const type = btn.dataset.bin;
-      const binKey = type === 'contracts' ? localKey.contractsBin : localKey.paymentsBin;
-      const list = loadLocal(binKey).slice().reverse();
+      const binName = type === 'contracts' ? collections.contractsBin : collections.paymentsBin;
+      const list = await fetchCollection(binName);
       if (!list.length) {
         alert('回收站暂无数据');
         return;
       }
-      openModal(list, 0, type, 'bin');
+      openModal(list.slice().reverse(), 0, type, 'bin');
     });
   });
+
   const [contractsRaw, paymentsRaw, kpiRaw] = await Promise.all([
     loadJson('data/合同管理-新签.json'),
     loadJson('data/回款明细账.json'),
     loadJson('data/目标数据.json'),
   ]);
-
   baseContractData = buildContractEntries(contractsRaw);
   basePaymentData = buildPaymentEntries(paymentsRaw);
   kpiData = kpiRaw;
 
-  mergeData();
-  refresh();
+  showLogin('请使用你的 Firebase 账号登录');
+
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(loginForm);
+    const email = formData.get('email');
+    const password = formData.get('password');
+    loginStatus.textContent = '登录中...';
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+      loginStatus.textContent = '登录失败，请检查邮箱和密码';
+    }
+  });
+
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) {
+      showLogin('请登录以使用云端数据');
+      return;
+    }
+    hideLogin();
+    await ensureSeeded();
+    await fetchAllData();
+    refresh();
+  });
 };
 
 init();
