@@ -450,6 +450,24 @@ footer {
   border: 1px solid var(--line);
 }
 
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.password-field input {
+  flex: 1;
+}
+
+.eye-btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
 .login-status {
   font-size: 12px;
   color: var(--muted);

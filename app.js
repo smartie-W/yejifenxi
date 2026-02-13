@@ -64,6 +64,7 @@ const authCancel = document.getElementById('auth-cancel');
 const loginOverlay = document.getElementById('login-overlay');
 const loginForm = document.getElementById('login-form');
 const loginStatus = document.getElementById('login-status');
+const eyeButtons = document.querySelectorAll('[data-eye]');
 const binButtons = document.querySelectorAll('[data-bin]');
 
 const tabButtons = document.querySelectorAll('.tab');
@@ -998,6 +999,14 @@ const init = async () => {
     } catch (err) {
       loginStatus.textContent = '登录失败，请检查邮箱和密码';
     }
+  });
+
+  eyeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const field = btn.closest('.password-field')?.querySelector('input');
+      if (!field) return;
+      field.type = field.type === 'password' ? 'text' : 'password';
+    });
   });
 
   const savedEmail = localStorage.getItem('login_email') || 'wqmsybyq163@gmail.com';
