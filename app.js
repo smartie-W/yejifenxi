@@ -125,9 +125,10 @@ const bindAmountFormatting = () => {
 };
 
 const updateTotalCost = () => {
-  const get = (name) => parseNumber(document.querySelector(`input[name="${name}"]`)?.value);
+  const scope = paymentForm || document;
+  const get = (name) => parseNumber(scope.querySelector(`input[name="${name}"]`)?.value);
   const total = get('secondDevCost') + get('outsourcingCost') + get('unplannedCost');
-  const totalInput = document.querySelector('input[name="totalCost"]');
+  const totalInput = scope.querySelector('input[name="totalCost"]');
   if (totalInput) {
     totalInput.value = formatInputNumber(total);
   }
@@ -135,10 +136,11 @@ const updateTotalCost = () => {
 };
 
 const updateActualAccrual = () => {
-  const amount = parseNumber(document.querySelector('input[name="amount"]')?.value);
+  const scope = paymentForm || document;
+  const amount = parseNumber(scope.querySelector('input[name="amount"]')?.value);
   const totalCost = updateTotalCost();
   const actual = amount - totalCost;
-  const actualInput = document.querySelector('input[name="actualAccrual"]');
+  const actualInput = scope.querySelector('input[name="actualAccrual"]');
   if (actualInput) {
     actualInput.value = formatInputNumber(actual);
   }
@@ -164,14 +166,14 @@ const normalizePaymentEntry = (entry) => {
 
 const bindTotalCostCalc = () => {
   ['implementationFee', 'secondDevCost', 'outsourcingCost', 'unplannedCost'].forEach((name) => {
-    const input = document.querySelector(`input[name="${name}"]`);
+    const input = paymentForm?.querySelector(`input[name="${name}"]`);
     if (!input) return;
     input.addEventListener('input', () => {
       updateTotalCost();
       updateActualAccrual();
     });
   });
-  const amountInput = document.querySelector('input[name="amount"]');
+  const amountInput = paymentForm?.querySelector('input[name="amount"]');
   if (amountInput) {
     amountInput.addEventListener('input', updateActualAccrual);
   }
