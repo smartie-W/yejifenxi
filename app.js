@@ -333,7 +333,13 @@ const bindCustomerAutoComplete = () => {
     const list = customerSuggestLists[index];
     if (!list) return;
     const render = (query) => {
-      const suggestions = getCustomerSuggestions(query);
+      const keyword = normalizeText(query);
+      if (!keyword) {
+        list.classList.remove('show');
+        list.innerHTML = '';
+        return;
+      }
+      const suggestions = getCustomerSuggestions(keyword);
       list.innerHTML = suggestions
         .map((name) => `<div class="suggest-item" data-name="${name}">${name}</div>`)
         .join('');
