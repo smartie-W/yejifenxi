@@ -63,6 +63,8 @@ const authForm = document.getElementById('auth-form');
 const authCancel = document.getElementById('auth-cancel');
 const eyeButtons = document.querySelectorAll('[data-eye]');
 const binButtons = document.querySelectorAll('[data-bin]');
+const customerListEl = document.getElementById('customer-list');
+const customerInputs = document.querySelectorAll('input[name="customer"]');
 
 const tabButtons = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.panel');
@@ -95,6 +97,8 @@ const formatMoney = (value) => {
     maximumFractionDigits: 2,
   });
 };
+
+const normalizeText = (value) => String(value || '').trim();
 
 const parseNumber = (value) => {
   if (value === null || value === undefined) return 0;
@@ -294,6 +298,63 @@ const writeCache = (key, data) => {
   }
 };
 
+const getCustomerPool = () => {
+  const pool = new Set();
+  baseContractData.forEach((item) => {
+    const name = normalizeText(item.customer);
+    if (name) pool.add(name);
+  });
+  basePaymentData.forEach((item) => {
+    const name = normalizeText(item.customer);
+    if (name) pool.add(name);
+  });
+  contractData.forEach((item) => {
+    const name = normalizeText(item.customer);
+    if (name) pool.add(name);
+  });
+  paymentData.forEach((item) => {
+    const name = normalizeText(item.customer);
+    if (name) pool.add(name);
+  });
+  return Array.from(pool);
+};
+
+const getCustomerSuggestions = (query) => {
+  const keyword = normalizeText(query);
+  const pool = getCustomerPool();
+  if (!keyword) return pool.slice(0, 30);
+  const hits = pool.filter((name) => name.includes(keyword));
+  return hits.slice(0, 30);
+};
+
+const updateCustomerDatalist = (query) => {
+  if (!customerListEl) return;
+  const suggestions = getCustomerSuggestions(query);
+  customerListEl.innerHTML = suggestions
+    .map((name) => `<option value="${name}">${name}</option>`)
+    .join('');
+};
+
+const bindCustomerAutoComplete = () => {
+  if (!customerInputs.length) return;
+  customerInputs.forEach((input) => {
+    input.addEventListener('input', (event) => {
+      updateCustomerDatalist(event.target.value);
+    });
+    input.addEventListener('focus', (event) => {
+      updateCustomerDatalist(event.target.value);
+    });
+    input.addEventListener('blur', (event) => {
+      const value = normalizeText(event.target.value);
+      if (!value) return;
+      const matches = getCustomerSuggestions(value);
+      if (matches.length === 1) {
+        event.target.value = matches[0];
+      }
+    });
+  });
+};
+
 const fetchCollection = async (name) => {
   const q = query(collection(db, name), orderBy('createdAt', 'asc'));
   const snap = await getDocs(q);
@@ -310,6 +371,7 @@ const startRealtime = () => {
   unsubscribeContracts = onSnapshot(contractQuery, (snap) => {
     contractData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
     writeCache(cacheKeys.contracts, contractData);
+    updateCustomerDatalist('');
     refresh();
   });
 
@@ -318,6 +380,7 @@ const startRealtime = () => {
       normalizePaymentEntry({ id: docSnap.id, ...docSnap.data() })
     );
     writeCache(cacheKeys.payments, paymentData);
+    updateCustomerDatalist('');
     refresh();
   });
 };
@@ -1008,6 +1071,7 @@ const init = async () => {
   setDefaultDates();
   bindAmountFormatting();
   bindTotalCostCalc();
+  bindCustomerAutoComplete();
   if (paymentTypeSalesEl) {
     paymentTypeSalesEl.addEventListener('change', refresh);
   }
@@ -1044,6 +1108,7 @@ const init = async () => {
   baseContractData = buildContractEntries(contractsRaw);
   basePaymentData = buildPaymentEntries(paymentsRaw);
   kpiData = kpiRaw;
+  updateCustomerDatalist('');
 
   const cachedContracts = readCache(cacheKeys.contracts);
   const cachedPayments = readCache(cacheKeys.payments);
@@ -1054,6 +1119,7 @@ const init = async () => {
     paymentData = cachedPayments;
   }
   if (cachedContracts || cachedPayments) {
+    updateCustomerDatalist('');
     refresh();
   }
 
