@@ -136,12 +136,30 @@ const updateTotalCost = () => {
 
 const updateActualAccrual = () => {
   const amount = parseNumber(document.querySelector('input[name="amount"]')?.value);
-  const totalCost = parseNumber(document.querySelector('input[name="totalCost"]')?.value);
+  const totalCost = updateTotalCost();
   const actual = amount - totalCost;
   const actualInput = document.querySelector('input[name="actualAccrual"]');
   if (actualInput) {
     actualInput.value = formatInputNumber(actual);
   }
+};
+
+const normalizePaymentEntry = (entry) => {
+  const amount = parseNumber(entry.amount);
+  const secondDevCost = parseNumber(entry.secondDevCost);
+  const outsourcingCost = parseNumber(entry.outsourcingCost);
+  const unplannedCost = parseNumber(entry.unplannedCost);
+  const totalCost = secondDevCost + outsourcingCost + unplannedCost;
+  const actualAccrual = amount - totalCost;
+  return {
+    ...entry,
+    amount,
+    secondDevCost,
+    outsourcingCost,
+    unplannedCost,
+    totalCost,
+    actualAccrual,
+  };
 };
 
 const bindTotalCostCalc = () => {
@@ -278,7 +296,9 @@ const startRealtime = () => {
   });
 
   unsubscribePayments = onSnapshot(paymentQuery, (snap) => {
-    paymentData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+    paymentData = snap.docs.map((docSnap) =>
+      normalizePaymentEntry({ id: docSnap.id, ...docSnap.data() })
+    );
     writeCache(cacheKeys.payments, paymentData);
     refresh();
   });
@@ -330,12 +350,12 @@ const buildPaymentEntries = (rows) => {
     secondDevCost: parseNumber(row['本次到款-二开成本']),
     outsourcingCost: parseNumber(row['本次到款-委外成本']),
     unplannedCost: parseNumber(row['本次到款-计划外成本']),
-    totalCost: parseNumber(row['本次到款-合计成本']),
-    actualAccrual: parseNumber(row['实际计提金额']),
+    totalCost: 0,
+    actualAccrual: 0,
     date: row['日期'],
     day: row['日期'],
     month: row['回款月份'],
-  }));
+  })).map((entry) => normalizePaymentEntry(entry));
 };
 
 const seedCollection = async (name, items) => {
@@ -861,6 +881,8 @@ paymentForm.addEventListener('submit', (event) => {
   const formData = new FormData(paymentForm);
   const date = formData.get('date');
   const amount = parseNumber(formData.get('amount'));
+  const totalCost = updateTotalCost();
+  const actualAccrual = amount - totalCost;
   const entry = {
     year: date.slice(0, 4),
     quarter: quarterFromDate(date),
@@ -875,8 +897,8 @@ paymentForm.addEventListener('submit', (event) => {
     secondDevCost: parseNumber(formData.get('secondDevCost')),
     outsourcingCost: parseNumber(formData.get('outsourcingCost')),
     unplannedCost: parseNumber(formData.get('unplannedCost')),
-    totalCost: parseNumber(formData.get('totalCost')),
-    actualAccrual: parseNumber(formData.get('actualAccrual')),
+    totalCost,
+    actualAccrual,
     date,
     month: String(new Date(date).getMonth() + 1),
     createdAt: serverTimestamp(),
