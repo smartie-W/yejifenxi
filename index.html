@@ -186,11 +186,22 @@
         </div>
 
         <div class="sub-tabs">
-          <button class="sub-tab active" data-subtab="payment-all">计提回款分析</button>
+          <button class="sub-tab active" data-subtab="payment-progress">到款进度分析</button>
+          <button class="sub-tab" data-subtab="payment-all">计提回款分析</button>
           <button class="sub-tab" data-subtab="payment-type">回款类型分析</button>
         </div>
 
-        <section id="payment-all" class="sub-panel active">
+        <section id="payment-progress" class="sub-panel active">
+          <div class="card">
+            <div class="card-head">
+              <h2>到款进度分析</h2>
+              <p>东区一组 · 到款金额 / 合计成本 / 实际计提金额</p>
+            </div>
+            <div id="payment-progress-chart" class="progress-chart"></div>
+          </div>
+        </section>
+
+        <section id="payment-all" class="sub-panel">
           <div class="card">
             <div class="card-head">
               <h2>回款分析 · 新客户指标</h2>

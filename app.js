@@ -46,6 +46,7 @@ const paymentChartsOldEl = document.getElementById('payment-charts-old');
 const paymentChartsTotalEl = document.getElementById('payment-charts-total');
 const paymentTypeChartsEl = document.getElementById('payment-type-charts');
 const paymentTypeSalesEl = document.getElementById('payment-type-sales');
+const paymentProgressEl = document.getElementById('payment-progress-chart');
 
 const contractForm = document.getElementById('contract-form');
 const paymentForm = document.getElementById('payment-form');
@@ -618,6 +619,28 @@ const renderCharts = (
   });
 };
 
+const renderProgressChart = (container, totals) => {
+  if (!container) return;
+  const values = [
+    { label: '到款金额', value: parseNumber(totals.amount) },
+    { label: '合计成本', value: parseNumber(totals.totalCost) },
+    { label: '实际计提金额', value: parseNumber(totals.actualAccrual) },
+  ];
+  const max = Math.max(...values.map((v) => v.value), 1);
+  container.innerHTML = values
+    .map((item) => {
+      const height = Math.max(4, Math.round((item.value / max) * 100));
+      return `
+        <div class="vbar">
+          <div class="value">${formatMoney(item.value)}</div>
+          <div class="track"><div class="fill" style="height:${height}%;"></div></div>
+          <div class="label">${item.label}</div>
+        </div>
+      `;
+    })
+    .join('');
+};
+
 const computeContractTotals = (entries) => {
   const totals = {};
   periods.forEach((p) => (totals[p] = {}));
@@ -943,6 +966,17 @@ const refresh = () => {
     (p) => paymentRatesTotal[p]
   );
   renderTypeCharts(paymentTypeChartsEl, paymentTypeTotals);
+
+  const progressTotals = paymentData.reduce(
+    (acc, item) => {
+      acc.amount += parseNumber(item.amount);
+      acc.totalCost += parseNumber(item.totalCost);
+      acc.actualAccrual += parseNumber(item.actualAccrual);
+      return acc;
+    },
+    { amount: 0, totalCost: 0, actualAccrual: 0 }
+  );
+  renderProgressChart(paymentProgressEl, progressTotals);
 
   contractLogList = contractData.filter((item) => parseNumber(item.amount) > 0);
   contractLogViewList = contractLogList
