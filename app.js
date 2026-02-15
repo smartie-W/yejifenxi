@@ -103,6 +103,15 @@ const normalizeText = (value) => String(value || '').trim();
 const toDateKey = (value) => {
   if (!value) return 0;
   const str = String(value).trim();
+  const digits = str.replace(/\D/g, '');
+  if (digits.length >= 8) {
+    const y = Number(digits.slice(0, 4));
+    const m = Number(digits.slice(4, 6));
+    const d = Number(digits.slice(6, 8));
+    if (Number.isFinite(y) && Number.isFinite(m) && Number.isFinite(d)) {
+      return y * 10000 + m * 100 + d;
+    }
+  }
   const match = str.match(/^(\d{4})[\/.-](\d{1,2})[\/.-](\d{1,2})/);
   if (match) {
     const year = Number(match[1]);
@@ -120,7 +129,7 @@ const toDateKey = (value) => {
 };
 
 const getEntryDateKey = (item) => {
-  const direct = toDateKey(item.date);
+  const direct = toDateKey(item.date || item.day || item.createdAt);
   if (direct) return direct;
   const year = Number(item.year);
   const month = Number(item.month);
