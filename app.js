@@ -902,7 +902,9 @@ const refresh = () => {
   renderTypeCharts(paymentTypeChartsEl, paymentTypeTotals);
 
   contractLogList = contractData.filter((item) => parseNumber(item.amount) > 0);
-  contractLogViewList = contractLogList.slice().reverse();
+  contractLogViewList = contractLogList
+    .slice()
+    .sort((a, b) => new Date(b.date || b.day || 0) - new Date(a.date || a.day || 0));
   renderRecent(contractRecentEl, contractLogViewList, (item) => {
     const date = formatEntryDate(item);
     return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 合同类型：${item.type || ''}</span><span>${formatMoney(item.amount)}</span>`;
@@ -920,7 +922,9 @@ const refresh = () => {
       parseNumber(item.totalCost);
     return amount > 0 || actual > 0 || extra > 0;
   });
-  paymentLogViewList = paymentLogList.slice().reverse();
+  paymentLogViewList = paymentLogList
+    .slice()
+    .sort((a, b) => new Date(b.date || b.day || 0) - new Date(a.date || a.day || 0));
   renderRecent(paymentRecentEl, paymentLogViewList, (item) => {
     const date = formatEntryDate(item);
     return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 客户类型：${item.customerType || ''} | 指标类型：${item.indicator || ''} | 回款类型：${item.contractType || ''} | 二开利润：${formatMoney(
