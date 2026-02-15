@@ -119,6 +119,14 @@ const bindAmountFormatting = () => {
     input.addEventListener('input', (event) => {
       const { value } = event.target;
       event.target.value = formatInputNumber(value);
+      const name = event.target.name;
+      if (
+        paymentForm &&
+        paymentForm.contains(event.target) &&
+        ['amount', 'secondDevCost', 'outsourcingCost', 'unplannedCost'].includes(name)
+      ) {
+        updateActualAccrual();
+      }
     });
     input.value = formatInputNumber(input.value);
   });
