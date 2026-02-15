@@ -128,7 +128,6 @@ const bindSubTabs = () => {
   });
 };
 
-bindSubTabs();
 
 const formatMoney = (value) => {
   if (!value || isNaN(value)) return '0';
