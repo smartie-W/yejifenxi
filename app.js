@@ -13,7 +13,6 @@ import {
   doc,
   setDoc,
   getDoc,
-  deleteDoc,
   serverTimestamp,
   writeBatch,
   query,
@@ -138,6 +137,20 @@ const formatMoney = (value) => {
 };
 
 const normalizeText = (value) => String(value || '').trim();
+
+const hashString = (value) => {
+  let hash = 5381;
+  const str = String(value || '');
+  for (let i = 0; i < str.length; i += 1) {
+    hash = (hash * 33) ^ str.charCodeAt(i);
+  }
+  return (hash >>> 0).toString(16);
+};
+
+const makeSeedId = (prefix, parts) => {
+  const key = parts.map((p) => String(p || '').trim()).join('|');
+  return `${prefix}_${hashString(key)}`;
+};
 
 const toDateKey = (value) => {
   if (!value) return 0;
@@ -330,8 +343,6 @@ const loadJson = async (path) => {
 const collections = {
   contracts: 'contracts',
   payments: 'payments',
-  contractsBin: 'contracts_bin',
-  paymentsBin: 'payments_bin',
   meta: 'meta',
 };
 
@@ -444,10 +455,15 @@ const bindCustomerAutoComplete = () => {
   });
 };
 
-const fetchCollection = async (name) => {
+const fetchCollection = async (name, options = {}) => {
+  const { deletedOnly = false } = options;
   const q = query(collection(db, name), orderBy('createdAt', 'asc'));
   const snap = await getDocs(q);
-  return snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+  const rows = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+  if (deletedOnly) {
+    return rows.filter((row) => row.deletedAt);
+  }
+  return rows.filter((row) => !row.deletedAt);
 };
 
 const startRealtime = () => {
@@ -458,16 +474,18 @@ const startRealtime = () => {
   const paymentQuery = query(collection(db, collections.payments), orderBy('createdAt', 'asc'));
 
   unsubscribeContracts = onSnapshot(contractQuery, (snap) => {
-    contractData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+    contractData = snap.docs
+      .map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }))
+      .filter((row) => !row.deletedAt);
     writeCache(cacheKeys.contracts, contractData);
     // refresh suggestions source
     refresh();
   });
 
   unsubscribePayments = onSnapshot(paymentQuery, (snap) => {
-    paymentData = snap.docs.map((docSnap) =>
-      normalizePaymentEntry({ id: docSnap.id, ...docSnap.data() })
-    );
+    paymentData = snap.docs
+      .map((docSnap) => normalizePaymentEntry({ id: docSnap.id, ...docSnap.data() }))
+      .filter((row) => !row.deletedAt);
     writeCache(cacheKeys.payments, paymentData);
     // refresh suggestions source
     refresh();
@@ -528,14 +546,15 @@ const buildPaymentEntries = (rows) => {
   })).map((entry) => normalizePaymentEntry(entry));
 };
 
-const seedCollection = async (name, items) => {
+const seedCollection = async (name, items, getId) => {
   const chunkSize = 400;
   for (let i = 0; i < items.length; i += chunkSize) {
     const batch = writeBatch(db);
     const slice = items.slice(i, i + chunkSize);
     slice.forEach((item) => {
-      const ref = doc(collection(db, name));
-      batch.set(ref, item);
+      const id = getId(item);
+      const ref = doc(db, name, id);
+      batch.set(ref, item, { merge: true });
     });
     await batch.commit();
   }
@@ -557,8 +576,20 @@ const ensureSeeded = async () => {
     source: 'seed',
   }));
 
-  await seedCollection(collections.contracts, contractSeed);
-  await seedCollection(collections.payments, paymentSeed);
+  await seedCollection(collections.contracts, contractSeed, (item) =>
+    makeSeedId('contract', [item.date, item.customer, item.sales, item.type, item.amount])
+  );
+  await seedCollection(collections.payments, paymentSeed, (item) =>
+    makeSeedId('payment', [
+      item.date,
+      item.customer,
+      item.sales,
+      item.contractType,
+      item.indicator,
+      item.amount,
+      item.actualAccrual,
+    ])
+  );
   await setDoc(metaRef, { seeded: true, createdAt: serverTimestamp() });
 };
 
@@ -1160,30 +1191,20 @@ authForm.addEventListener('submit', async (event) => {
   if (!item) return;
 
   const mainName = activeType === 'contracts' ? collections.contracts : collections.payments;
-  const binName = activeType === 'contracts' ? collections.contractsBin : collections.paymentsBin;
 
   if (pendingAction === 'delete') {
-    await addDoc(collection(db, binName), {
-      ...item,
-      sourceId: item.id || '',
-      deletedAt: serverTimestamp(),
-    });
     if (item.id) {
-      await deleteDoc(doc(db, mainName, item.id));
+      await setDoc(doc(db, mainName, item.id), { deletedAt: serverTimestamp() }, { merge: true });
     }
   }
 
   if (pendingAction === 'restore') {
-    const data = { ...item };
-    delete data.id;
-    delete data.sourceId;
-    delete data.deletedAt;
-    await addDoc(collection(db, mainName), {
-      ...data,
-      restoredAt: serverTimestamp(),
-    });
     if (item.id) {
-      await deleteDoc(doc(db, binName, item.id));
+      await setDoc(
+        doc(db, mainName, item.id),
+        { deletedAt: null, restoredAt: serverTimestamp() },
+        { merge: true }
+      );
     }
   }
 
@@ -1218,13 +1239,14 @@ const init = async () => {
   binButtons.forEach((btn) => {
     btn.addEventListener('click', async () => {
       const type = btn.dataset.bin;
-      const binName = type === 'contracts' ? collections.contractsBin : collections.paymentsBin;
-      const list = await fetchCollection(binName);
+      const mainName = type === 'contracts' ? collections.contracts : collections.payments;
+      const list = await fetchCollection(mainName, { deletedOnly: true });
       if (!list.length) {
         alert('回收站暂无数据');
         return;
       }
-      openModal(list.slice().reverse(), 0, type, 'bin');
+      const sorted = list.slice().sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
+      openModal(sorted, 0, type, 'bin');
     });
   });
 
