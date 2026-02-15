@@ -100,6 +100,25 @@ const formatMoney = (value) => {
 
 const normalizeText = (value) => String(value || '').trim();
 
+const toDateKey = (value) => {
+  if (!value) return 0;
+  const str = String(value).trim();
+  const match = str.match(/^(\d{4})[\/.-](\d{1,2})[\/.-](\d{1,2})/);
+  if (match) {
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    if (Number.isFinite(year) && Number.isFinite(month) && Number.isFinite(day)) {
+      return year * 10000 + month * 100 + day;
+    }
+  }
+  const parsed = new Date(str);
+  if (!Number.isNaN(parsed.valueOf())) {
+    return parsed.getFullYear() * 10000 + (parsed.getMonth() + 1) * 100 + parsed.getDate();
+  }
+  return 0;
+};
+
 const parseNumber = (value) => {
   if (value === null || value === undefined) return 0;
   const num = Number(String(value).replace(/,/g, ''));
@@ -904,7 +923,7 @@ const refresh = () => {
   contractLogList = contractData.filter((item) => parseNumber(item.amount) > 0);
   contractLogViewList = contractLogList
     .slice()
-    .sort((a, b) => new Date(b.date || b.day || 0) - new Date(a.date || a.day || 0));
+    .sort((a, b) => toDateKey(b.date || b.day) - toDateKey(a.date || a.day));
   renderRecent(contractRecentEl, contractLogViewList, (item) => {
     const date = formatEntryDate(item);
     return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 合同类型：${item.type || ''}</span><span>${formatMoney(item.amount)}</span>`;
@@ -924,7 +943,7 @@ const refresh = () => {
   });
   paymentLogViewList = paymentLogList
     .slice()
-    .sort((a, b) => new Date(b.date || b.day || 0) - new Date(a.date || a.day || 0));
+    .sort((a, b) => toDateKey(b.date || b.day) - toDateKey(a.date || a.day));
   renderRecent(paymentRecentEl, paymentLogViewList, (item) => {
     const date = formatEntryDate(item);
     return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 客户类型：${item.customerType || ''} | 指标类型：${item.indicator || ''} | 回款类型：${item.contractType || ''} | 二开利润：${formatMoney(
