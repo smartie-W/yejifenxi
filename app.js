@@ -119,6 +119,19 @@ const toDateKey = (value) => {
   return 0;
 };
 
+const getEntryDateKey = (item) => {
+  const direct = toDateKey(item.date);
+  if (direct) return direct;
+  const year = Number(item.year);
+  const month = Number(item.month);
+  const day = Number(item.day);
+  if (Number.isFinite(year) && Number.isFinite(month) && Number.isFinite(day)) {
+    return year * 10000 + month * 100 + day;
+  }
+  const fallback = toDateKey(item.day);
+  return fallback;
+};
+
 const parseNumber = (value) => {
   if (value === null || value === undefined) return 0;
   const num = Number(String(value).replace(/,/g, ''));
@@ -923,7 +936,7 @@ const refresh = () => {
   contractLogList = contractData.filter((item) => parseNumber(item.amount) > 0);
   contractLogViewList = contractLogList
     .slice()
-    .sort((a, b) => toDateKey(b.date || b.day) - toDateKey(a.date || a.day));
+    .sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
   renderRecent(contractRecentEl, contractLogViewList, (item) => {
     const date = formatEntryDate(item);
     return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 合同类型：${item.type || ''}</span><span>${formatMoney(item.amount)}</span>`;
@@ -943,7 +956,7 @@ const refresh = () => {
   });
   paymentLogViewList = paymentLogList
     .slice()
-    .sort((a, b) => toDateKey(b.date || b.day) - toDateKey(a.date || a.day));
+    .sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
   renderRecent(paymentRecentEl, paymentLogViewList, (item) => {
     const date = formatEntryDate(item);
     return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 客户类型：${item.customerType || ''} | 指标类型：${item.indicator || ''} | 回款类型：${item.contractType || ''} | 二开利润：${formatMoney(
