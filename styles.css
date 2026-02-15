@@ -21,6 +21,52 @@ body {
   color: var(--ink);
 }
 
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.skeleton-card {
+  height: 140px;
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 111, 133, 0.08),
+    rgba(12, 111, 133, 0.18),
+    rgba(12, 111, 133, 0.08)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-lines {
+  display: grid;
+  gap: 12px;
+}
+
+.skeleton-line {
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 111, 133, 0.08),
+    rgba(12, 111, 133, 0.18),
+    rgba(12, 111, 133, 0.08)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .site-header {
   padding: 28px 6vw 18px;
   display: flex;

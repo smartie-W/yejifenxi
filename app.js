@@ -229,6 +229,7 @@ let activeIndex = 0;
 let activeType = 'contracts';
 let activeMode = 'main';
 let pendingAction = null;
+let hasRendered = false;
 
 let unsubscribeContracts = null;
 let unsubscribePayments = null;
@@ -824,6 +825,11 @@ const refresh = () => {
       item.actualAccrual || 0
     )}</span><span>${formatMoney(item.amount)}</span>`;
   }, 'payments');
+
+  if (!hasRendered) {
+    document.body.classList.remove('is-loading');
+    hasRendered = true;
+  }
 };
 
 contractForm.addEventListener('submit', (event) => {
