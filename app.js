@@ -63,8 +63,8 @@ const authForm = document.getElementById('auth-form');
 const authCancel = document.getElementById('auth-cancel');
 const eyeButtons = document.querySelectorAll('[data-eye]');
 const binButtons = document.querySelectorAll('[data-bin]');
-const customerListEl = document.getElementById('customer-list');
 const customerInputs = document.querySelectorAll('input[name="customer"]');
+const customerSuggestLists = document.querySelectorAll('.suggest-list[data-suggest="customer"]');
 
 const tabButtons = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.panel');
@@ -327,30 +327,31 @@ const getCustomerSuggestions = (query) => {
   return hits.slice(0, 30);
 };
 
-const updateCustomerDatalist = (query) => {
-  if (!customerListEl) return;
-  const suggestions = getCustomerSuggestions(query);
-  customerListEl.innerHTML = suggestions
-    .map((name) => `<option value="${name}">${name}</option>`)
-    .join('');
-};
-
 const bindCustomerAutoComplete = () => {
-  if (!customerInputs.length) return;
-  customerInputs.forEach((input) => {
+  if (!customerInputs.length || !customerSuggestLists.length) return;
+  customerInputs.forEach((input, index) => {
+    const list = customerSuggestLists[index];
+    if (!list) return;
+    const render = (query) => {
+      const suggestions = getCustomerSuggestions(query);
+      list.innerHTML = suggestions
+        .map((name) => `<div class="suggest-item" data-name="${name}">${name}</div>`)
+        .join('');
+      list.classList.toggle('show', suggestions.length > 0);
+    };
     input.addEventListener('input', (event) => {
-      updateCustomerDatalist(event.target.value);
+      render(event.target.value);
     });
     input.addEventListener('focus', (event) => {
-      updateCustomerDatalist(event.target.value);
+      render(event.target.value);
     });
-    input.addEventListener('blur', (event) => {
-      const value = normalizeText(event.target.value);
-      if (!value) return;
-      const matches = getCustomerSuggestions(value);
-      if (matches.length === 1) {
-        event.target.value = matches[0];
-      }
+    input.addEventListener('blur', () => {
+      setTimeout(() => list.classList.remove('show'), 120);
+    });
+    list.addEventListener('mousedown', (event) => {
+      const item = event.target.closest('.suggest-item');
+      if (!item) return;
+      input.value = item.dataset.name || item.textContent || '';
     });
   });
 };
@@ -371,7 +372,7 @@ const startRealtime = () => {
   unsubscribeContracts = onSnapshot(contractQuery, (snap) => {
     contractData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
     writeCache(cacheKeys.contracts, contractData);
-    updateCustomerDatalist('');
+    // refresh suggestions source
     refresh();
   });
 
@@ -380,7 +381,7 @@ const startRealtime = () => {
       normalizePaymentEntry({ id: docSnap.id, ...docSnap.data() })
     );
     writeCache(cacheKeys.payments, paymentData);
-    updateCustomerDatalist('');
+    // refresh suggestions source
     refresh();
   });
 };
@@ -1108,7 +1109,6 @@ const init = async () => {
   baseContractData = buildContractEntries(contractsRaw);
   basePaymentData = buildPaymentEntries(paymentsRaw);
   kpiData = kpiRaw;
-  updateCustomerDatalist('');
 
   const cachedContracts = readCache(cacheKeys.contracts);
   const cachedPayments = readCache(cacheKeys.payments);
@@ -1119,7 +1119,6 @@ const init = async () => {
     paymentData = cachedPayments;
   }
   if (cachedContracts || cachedPayments) {
-    updateCustomerDatalist('');
     refresh();
   }
 

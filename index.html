@@ -33,15 +33,15 @@
               日期
               <input type="date" name="date" required />
             </label>
-            <label>
+            <label class="suggest">
               客户名称
               <input
                 type="text"
                 name="customer"
                 placeholder="请输入客户名称"
-                list="customer-list"
                 required
               />
+              <div class="suggest-list" data-suggest="customer"></div>
             </label>
             <label>
               销售人员
@@ -106,15 +106,15 @@
               日期
               <input type="date" name="date" required />
             </label>
-            <label>
+            <label class="suggest">
               客户名称
               <input
                 type="text"
                 name="customer"
                 placeholder="请输入客户名称"
-                list="customer-list"
                 required
               />
+              <div class="suggest-list" data-suggest="customer"></div>
             </label>
             <label>
               销售人员
@@ -327,8 +327,6 @@
         </form>
       </div>
     </div>
-
-    <datalist id="customer-list"></datalist>
 
     <footer>
       <span>数据来源：线下台账 + KPI 指标</span>
