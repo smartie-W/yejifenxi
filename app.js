@@ -129,6 +129,9 @@ const toDateKey = (value) => {
 };
 
 const getEntryDateKey = (item) => {
+  const displayed = formatEntryDate(item);
+  const displayKey = toDateKey(displayed);
+  if (displayKey) return displayKey;
   const direct = toDateKey(item.date || item.day || item.createdAt);
   if (direct) return direct;
   const year = Number(item.year);
@@ -137,8 +140,7 @@ const getEntryDateKey = (item) => {
   if (Number.isFinite(year) && Number.isFinite(month) && Number.isFinite(day)) {
     return year * 10000 + month * 100 + day;
   }
-  const fallback = toDateKey(item.day);
-  return fallback;
+  return 0;
 };
 
 const parseNumber = (value) => {
