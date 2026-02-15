@@ -185,6 +185,14 @@ const bindTotalCostCalc = () => {
   if (amountInput) {
     amountInput.addEventListener('input', updateActualAccrual);
   }
+  if (paymentForm) {
+    paymentForm.addEventListener('input', (event) => {
+      const name = event.target?.name;
+      if (['amount', 'secondDevCost', 'outsourcingCost', 'unplannedCost'].includes(name)) {
+        updateActualAccrual();
+      }
+    });
+  }
   updateTotalCost();
   updateActualAccrual();
 };

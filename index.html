@@ -32,7 +32,13 @@
             </label>
             <label>
               客户名称
-              <input type="text" name="customer" placeholder="选填" />
+              <input
+                type="text"
+                name="customer"
+                placeholder="请输入客户名称"
+                list="customer-list"
+                required
+              />
             </label>
             <label>
               销售人员
@@ -99,7 +105,13 @@
             </label>
             <label>
               客户名称
-              <input type="text" name="customer" placeholder="选填" />
+              <input
+                type="text"
+                name="customer"
+                placeholder="请输入客户名称"
+                list="customer-list"
+                required
+              />
             </label>
             <label>
               销售人员
@@ -313,11 +325,13 @@
       </div>
     </div>
 
+    <datalist id="customer-list"></datalist>
+
     <footer>
       <span>数据来源：线下台账 + KPI 指标</span>
       <span>本地新增仅保存在浏览器</span>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js?v=20260215d"></script>
   </body>
 </html>
