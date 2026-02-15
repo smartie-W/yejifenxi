@@ -19,6 +19,7 @@ import {
   query,
   orderBy,
   onSnapshot,
+  enableIndexedDbPersistence,
 } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
 
 const firebaseConfig = {
@@ -232,6 +233,30 @@ let pendingAction = null;
 let unsubscribeContracts = null;
 let unsubscribePayments = null;
 
+const cacheKeys = {
+  contracts: 'yejifenxi_cache_contracts',
+  payments: 'yejifenxi_cache_payments',
+};
+
+const readCache = (key) => {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : null;
+  } catch (err) {
+    return null;
+  }
+};
+
+const writeCache = (key, data) => {
+  try {
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch (err) {
+    // Ignore cache write failures (e.g., quota).
+  }
+};
+
 const fetchCollection = async (name) => {
   const q = query(collection(db, name), orderBy('createdAt', 'asc'));
   const snap = await getDocs(q);
@@ -247,11 +272,13 @@ const startRealtime = () => {
 
   unsubscribeContracts = onSnapshot(contractQuery, (snap) => {
     contractData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+    writeCache(cacheKeys.contracts, contractData);
     refresh();
   });
 
   unsubscribePayments = onSnapshot(paymentQuery, (snap) => {
     paymentData = snap.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+    writeCache(cacheKeys.payments, paymentData);
     refresh();
   });
 };
@@ -972,15 +999,24 @@ const init = async () => {
   basePaymentData = buildPaymentEntries(paymentsRaw);
   kpiData = kpiRaw;
 
-  eyeButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const field = btn.closest('.password-field')?.querySelector('input');
-      if (!field) return;
-      field.type = field.type === 'password' ? 'text' : 'password';
-    });
-  });
+  const cachedContracts = readCache(cacheKeys.contracts);
+  const cachedPayments = readCache(cacheKeys.payments);
+  if (cachedContracts) {
+    contractData = cachedContracts;
+  }
+  if (cachedPayments) {
+    paymentData = cachedPayments;
+  }
+  if (cachedContracts || cachedPayments) {
+    refresh();
+  }
 
   try {
+    try {
+      await enableIndexedDbPersistence(db);
+    } catch (err) {
+      // Ignore persistence errors (multi-tab or unsupported).
+    }
     await setPersistence(auth, browserLocalPersistence);
     await signInAnonymously(auth);
     await ensureSeeded();
