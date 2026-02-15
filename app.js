@@ -46,7 +46,7 @@ const paymentChartsOldEl = document.getElementById('payment-charts-old');
 const paymentChartsTotalEl = document.getElementById('payment-charts-total');
 const paymentTypeChartsEl = document.getElementById('payment-type-charts');
 const paymentTypeSalesEl = document.getElementById('payment-type-sales');
-const paymentProgressEl = document.getElementById('payment-progress-chart');
+let paymentProgressEl = document.getElementById('payment-progress-chart');
 
 const contractForm = document.getElementById('contract-form');
 const paymentForm = document.getElementById('payment-form');
@@ -69,8 +69,41 @@ const customerSuggestLists = document.querySelectorAll('.suggest-list[data-sugge
 
 const tabButtons = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.panel');
-const subTabButtons = document.querySelectorAll('.sub-tab');
-const subPanels = document.querySelectorAll('.sub-panel');
+let subTabButtons = document.querySelectorAll('.sub-tab');
+let subPanels = document.querySelectorAll('.sub-panel');
+
+const ensureProgressTab = () => {
+  const tabsContainer = document.querySelector('.sub-tabs');
+  if (!tabsContainer) return;
+  const existingTab = tabsContainer.querySelector('[data-subtab="payment-progress"]');
+  const existingPanel = document.getElementById('payment-progress');
+  if (!existingTab) {
+    const btn = document.createElement('button');
+    btn.className = 'sub-tab';
+    btn.dataset.subtab = 'payment-progress';
+    btn.textContent = '到款进度分析';
+    tabsContainer.insertBefore(btn, tabsContainer.firstChild);
+  }
+  if (!existingPanel) {
+    const panel = document.createElement('section');
+    panel.id = 'payment-progress';
+    panel.className = 'sub-panel';
+    panel.innerHTML = `
+      <div class="card">
+        <div class="card-head">
+          <h2>到款进度分析</h2>
+          <p>东区一组 · 到款金额 / 合计成本 / 实际计提金额</p>
+        </div>
+        <div id="payment-progress-chart" class="progress-chart"></div>
+      </div>
+    `;
+    const paymentAll = document.getElementById('payment-all');
+    if (paymentAll && paymentAll.parentNode) {
+      paymentAll.parentNode.insertBefore(panel, paymentAll);
+    }
+  }
+  paymentProgressEl = document.getElementById('payment-progress-chart');
+};
 
 tabButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -81,15 +114,21 @@ tabButtons.forEach((btn) => {
   });
 });
 
-subTabButtons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    subTabButtons.forEach((b) => b.classList.remove('active'));
-    subPanels.forEach((p) => p.classList.remove('active'));
-    btn.classList.add('active');
-    const target = document.getElementById(btn.dataset.subtab);
-    if (target) target.classList.add('active');
+const bindSubTabs = () => {
+  subTabButtons = document.querySelectorAll('.sub-tab');
+  subPanels = document.querySelectorAll('.sub-panel');
+  subTabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      subTabButtons.forEach((b) => b.classList.remove('active'));
+      subPanels.forEach((p) => p.classList.remove('active'));
+      btn.classList.add('active');
+      const target = document.getElementById(btn.dataset.subtab);
+      if (target) target.classList.add('active');
+    });
   });
-});
+};
+
+bindSubTabs();
 
 const formatMoney = (value) => {
   if (!value || isNaN(value)) return '0';
@@ -1154,6 +1193,8 @@ authForm.addEventListener('submit', async (event) => {
 });
 
 const init = async () => {
+  ensureProgressTab();
+  bindSubTabs();
   buildSelectOptions();
   resetForms();
   setDefaultDates();
