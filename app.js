@@ -213,6 +213,27 @@ const getEntryDateKey = (item) => {
   return 0;
 };
 
+const sortByDateDesc = (items) =>
+  items.slice().sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
+
+const entriesByPeriod = (items, period) => {
+  if (period === '年度') return items;
+  return items.filter((item) => item.quarter === period);
+};
+
+const dedupeByCustomerLatest = (items) => {
+  const map = new Map();
+  items.forEach((item) => {
+    const key = normalizeText(item.customer);
+    if (!key) return;
+    const prev = map.get(key);
+    if (!prev || getEntryDateKey(item) > getEntryDateKey(prev)) {
+      map.set(key, item);
+    }
+  });
+  return Array.from(map.values());
+};
+
 const parseNumber = (value) => {
   if (value === null || value === undefined) return 0;
   const num = Number(String(value).replace(/,/g, ''));
@@ -383,6 +404,7 @@ let activeType = 'contracts';
 let activeMode = 'main';
 let pendingAction = null;
 let hasRendered = false;
+let activeModalTitle = '';
 
 let unsubscribeContracts = null;
 let unsubscribePayments = null;
@@ -697,7 +719,8 @@ const renderCharts = (
   totalsByPeriod,
   targetsByPeriod = null,
   showPercent = false,
-  headerRate = null
+  headerRate = null,
+  drilldownResolver = null
 ) => {
   container.innerHTML = '';
   periods.forEach((period) => {
@@ -761,6 +784,24 @@ const renderCharts = (
       row.appendChild(label);
       row.appendChild(bar);
       row.appendChild(valueEl);
+      if (drilldownResolver) {
+        row.style.cursor = 'pointer';
+        row.addEventListener('click', () => {
+          const detail = drilldownResolver(period, name) || {};
+          const list = sortByDateDesc(detail.items || []);
+          if (!list.length) {
+            alert('该条形暂无明细数据');
+            return;
+          }
+          openModal(
+            list,
+            0,
+            detail.type || 'payments',
+            'drilldown',
+            detail.title || `${titlePrefix} · ${period} · ${name}`
+          );
+        });
+      }
       list.appendChild(row);
     });
 
@@ -769,7 +810,7 @@ const renderCharts = (
   });
 };
 
-const renderProgressChart = (container, totals) => {
+const renderProgressChart = (container, totals, drilldownResolver = null) => {
   if (!container) return;
   const values = [
     { label: '到款金额', value: parseNumber(totals.amount) },
@@ -777,18 +818,36 @@ const renderProgressChart = (container, totals) => {
     { label: '实际计提金额', value: parseNumber(totals.actualAccrual) },
   ];
   const max = Math.max(...values.map((v) => v.value), 1);
-  container.innerHTML = values
-    .map((item) => {
-      const height = Math.max(4, Math.round((item.value / max) * 100));
-      return `
-        <div class="vbar">
-          <div class="value">${formatMoney(item.value)}</div>
-          <div class="track"><div class="fill" style="height:${height}%;"></div></div>
-          <div class="label">${item.label}</div>
-        </div>
-      `;
-    })
-    .join('');
+  container.innerHTML = '';
+  values.forEach((item) => {
+    const height = Math.max(4, Math.round((item.value / max) * 100));
+    const wrapper = document.createElement('div');
+    wrapper.className = 'vbar';
+    wrapper.innerHTML = `
+      <div class="value">${formatMoney(item.value)}</div>
+      <div class="track"><div class="fill" style="height:${height}%;"></div></div>
+      <div class="label">${item.label}</div>
+    `;
+    if (drilldownResolver) {
+      wrapper.style.cursor = 'pointer';
+      wrapper.addEventListener('click', () => {
+        const detail = drilldownResolver(item.label) || {};
+        const list = sortByDateDesc(detail.items || []);
+        if (!list.length) {
+          alert('该条形暂无明细数据');
+          return;
+        }
+        openModal(
+          list,
+          0,
+          detail.type || 'payments',
+          'drilldown',
+          detail.title || `到款进度分析 · ${item.label}`
+        );
+      });
+    }
+    container.appendChild(wrapper);
+  });
 };
 
 const computeContractTotals = (entries) => {
@@ -861,7 +920,14 @@ const computeContractTypeCustomerTotals = (entries) => {
   return totals;
 };
 
-const renderCategoryCharts = (container, titlePrefix, totalsByPeriod, categories, isCount = false) => {
+const renderCategoryCharts = (
+  container,
+  titlePrefix,
+  totalsByPeriod,
+  categories,
+  isCount = false,
+  drilldownResolver = null
+) => {
   if (!container) return;
   container.innerHTML = '';
   periods.forEach((period) => {
@@ -899,6 +965,24 @@ const renderCategoryCharts = (container, titlePrefix, totalsByPeriod, categories
       row.appendChild(label);
       row.appendChild(bar);
       row.appendChild(valueEl);
+      if (drilldownResolver) {
+        row.style.cursor = 'pointer';
+        row.addEventListener('click', () => {
+          const detail = drilldownResolver(period, name) || {};
+          const list = sortByDateDesc(detail.items || []);
+          if (!list.length) {
+            alert('该条形暂无明细数据');
+            return;
+          }
+          openModal(
+            list,
+            0,
+            detail.type || 'contracts',
+            'drilldown',
+            detail.title || `${titlePrefix} · ${period} · ${name}`
+          );
+        });
+      }
       list.appendChild(row);
     });
 
@@ -1070,6 +1154,27 @@ const renderTypeCharts = (container, totalsByPeriod) => {
       row.appendChild(label);
       row.appendChild(bar);
       row.appendChild(valueEl);
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', () => {
+        const salesFilter = paymentTypeSalesEl?.value || 'all';
+        const items = entriesByPeriod(paymentData, period).filter((item) => {
+          if (salesFilter !== 'all' && item.sales !== salesFilter) return false;
+          return item.contractType === type;
+        });
+        const list = sortByDateDesc(items);
+        if (!list.length) {
+          alert('该条形暂无明细数据');
+          return;
+        }
+        const owner = salesFilter === 'all' ? '所有销售' : salesFilter;
+        openModal(
+          list,
+          0,
+          'payments',
+          'drilldown',
+          `回款类型分析 · ${period} · ${type}（${owner}）`
+        );
+      });
       list.appendChild(row);
     });
 
@@ -1138,17 +1243,23 @@ const getPaymentDetails = (item) => [
   { label: '实际计提金额', value: formatMoney(item.actualAccrual || 0) },
 ];
 
-const openModal = (list, index, type, mode) => {
+const openModal = (list, index, type, mode, customTitle = '') => {
   activeList = list;
   activeIndex = index;
   activeType = type;
   activeMode = mode;
+  activeModalTitle = customTitle;
   const item = activeList[activeIndex];
   if (!item) return;
-  modalTitle.textContent = mode === 'bin' ? '回收站详情' : '数据详情';
+  if (customTitle) {
+    modalTitle.textContent = customTitle;
+  } else {
+    modalTitle.textContent = mode === 'bin' ? '回收站详情' : '数据详情';
+  }
   const rows = type === 'contracts' ? getContractDetails(item) : getPaymentDetails(item);
   modalBody.innerHTML = buildDetailRows(rows);
   modalAction.textContent = mode === 'bin' ? '恢复' : '删除';
+  modalAction.style.display = mode === 'drilldown' ? 'none' : 'inline-flex';
   modalOverlay.classList.remove('hidden');
 };
 
@@ -1169,7 +1280,19 @@ const closeAuth = () => {
 
 const refresh = () => {
   const contractTotals = computeContractTotals(contractData);
-  renderCharts(contractChartsEl, '新签合同', contractTotals);
+  renderCharts(
+    contractChartsEl,
+    '新签合同',
+    contractTotals,
+    null,
+    false,
+    null,
+    (period, sales) => ({
+      type: 'contracts',
+      title: `新签合同 · ${period} · ${sales}`,
+      items: entriesByPeriod(contractData, period).filter((item) => item.sales === sales),
+    })
+  );
   const contractTypeAmountTotals = computeContractTypeAmountTotals(contractData);
   const contractTypeCustomerTotals = computeContractTypeCustomerTotals(contractData);
   renderCategoryCharts(
@@ -1177,14 +1300,26 @@ const refresh = () => {
     '合同类型金额',
     contractTypeAmountTotals,
     contractTypes,
-    false
+    false,
+    (period, type) => ({
+      type: 'contracts',
+      title: `合同类型金额 · ${period} · ${type}`,
+      items: entriesByPeriod(contractData, period).filter((item) => item.type === type),
+    })
   );
   renderCategoryCharts(
     contractTypeCustomerChartsEl,
     '合同类型客户数',
     contractTypeCustomerTotals,
     contractTypes,
-    true
+    true,
+    (period, type) => ({
+      type: 'contracts',
+      title: `合同类型客户数 · ${period} · ${type}`,
+      items: dedupeByCustomerLatest(
+        entriesByPeriod(contractData, period).filter((item) => item.type === type)
+      ),
+    })
   );
 
   const kpiMap = buildKpiMap(kpiData);
@@ -1208,7 +1343,14 @@ const refresh = () => {
     paymentTotalsNew,
     paymentTargetsNew,
     true,
-    (p) => paymentRatesNew[p]
+    (p) => paymentRatesNew[p],
+    (period, sales) => ({
+      type: 'payments',
+      title: `新客户指标 · ${period} · ${sales}`,
+      items: entriesByPeriod(paymentData, period).filter(
+        (item) => item.sales === sales && item.indicator === '新客户指标'
+      ),
+    })
   );
   renderCharts(
     paymentChartsOldEl,
@@ -1216,7 +1358,14 @@ const refresh = () => {
     paymentTotalsOld,
     paymentTargetsOld,
     true,
-    (p) => paymentRatesOld[p]
+    (p) => paymentRatesOld[p],
+    (period, sales) => ({
+      type: 'payments',
+      title: `老客户指标 · ${period} · ${sales}`,
+      items: entriesByPeriod(paymentData, period).filter(
+        (item) => item.sales === sales && item.indicator === '老客户指标'
+      ),
+    })
   );
   renderCharts(
     paymentChartsTotalEl,
@@ -1224,7 +1373,12 @@ const refresh = () => {
     paymentTotalsTotal,
     paymentTargetsTotal,
     true,
-    (p) => paymentRatesTotal[p]
+    (p) => paymentRatesTotal[p],
+    (period, sales) => ({
+      type: 'payments',
+      title: `新老客户指标合计 · ${period} · ${sales}`,
+      items: entriesByPeriod(paymentData, period).filter((item) => item.sales === sales),
+    })
   );
   renderTypeCharts(paymentTypeChartsEl, paymentTypeTotals);
 
@@ -1237,7 +1391,27 @@ const refresh = () => {
     },
     { amount: 0, totalCost: 0, actualAccrual: 0 }
   );
-  renderProgressChart(paymentProgressEl, progressTotals);
+  renderProgressChart(paymentProgressEl, progressTotals, (label) => {
+    if (label === '到款金额') {
+      return {
+        type: 'payments',
+        title: '到款进度分析 · 到款金额',
+        items: paymentData.filter((item) => parseNumber(item.amount) > 0),
+      };
+    }
+    if (label === '合计成本') {
+      return {
+        type: 'payments',
+        title: '到款进度分析 · 合计成本',
+        items: paymentData.filter((item) => parseNumber(item.totalCost) > 0),
+      };
+    }
+    return {
+      type: 'payments',
+      title: '到款进度分析 · 实际计提金额',
+      items: paymentData.filter((item) => parseNumber(item.actualAccrual) !== 0),
+    };
+  });
 
   contractLogList = contractData.filter((item) => parseNumber(item.amount) > 0);
   contractLogViewList = contractLogList
@@ -1390,13 +1564,13 @@ authOverlay.addEventListener('click', (event) => {
 modalPrev.addEventListener('click', () => {
   if (!activeList.length) return;
   activeIndex = (activeIndex - 1 + activeList.length) % activeList.length;
-  openModal(activeList, activeIndex, activeType, activeMode);
+  openModal(activeList, activeIndex, activeType, activeMode, activeModalTitle);
 });
 
 modalNext.addEventListener('click', () => {
   if (!activeList.length) return;
   activeIndex = (activeIndex + 1) % activeList.length;
-  openModal(activeList, activeIndex, activeType, activeMode);
+  openModal(activeList, activeIndex, activeType, activeMode, activeModalTitle);
 });
 
 modalAction.addEventListener('click', () => {
