@@ -21,6 +21,11 @@ import {
   enableIndexedDbPersistence,
 } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
 
+const allowedHosts = new Set(['localhost', '127.0.0.1']);
+if (!allowedHosts.has(window.location.hostname)) {
+  throw new Error('Access denied: local host only');
+}
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBXgjqxXu1icjHxrIhal1ncQ6ZwqDr5E64',
   authDomain: 'xiaoshouyejifenxi.firebaseapp.com',
