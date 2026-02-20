@@ -41,10 +41,13 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '张柳云', '李彤'];
+const contractTypes = ['SAAS', '私有部署订阅', '私有部署买断'];
 const quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
 const periods = [...quarters, '年度'];
 
 const contractChartsEl = document.getElementById('contract-charts');
+const contractTypeAmountChartsEl = document.getElementById('contract-type-amount-charts');
+const contractTypeCustomerChartsEl = document.getElementById('contract-type-customer-charts');
 const paymentChartsNewEl = document.getElementById('payment-charts-new');
 const paymentChartsOldEl = document.getElementById('payment-charts-old');
 const paymentChartsTotalEl = document.getElementById('payment-charts-total');
@@ -793,6 +796,101 @@ const computeContractTotals = (entries) => {
   return totals;
 };
 
+const computeContractTypeAmountTotals = (entries) => {
+  const totals = {};
+  periods.forEach((p) => (totals[p] = {}));
+  contractTypes.forEach((type) => {
+    periods.forEach((p) => (totals[p][type] = 0));
+  });
+
+  entries.forEach((item) => {
+    const type = item.type;
+    if (!contractTypes.includes(type)) return;
+    const amount = parseNumber(item.amount);
+    const q = item.quarter;
+    if (quarters.includes(q)) {
+      totals[q][type] += amount;
+    }
+    totals['年度'][type] += amount;
+  });
+
+  return totals;
+};
+
+const computeContractTypeCustomerTotals = (entries) => {
+  const sets = {};
+  periods.forEach((p) => (sets[p] = {}));
+  contractTypes.forEach((type) => {
+    periods.forEach((p) => (sets[p][type] = new Set()));
+  });
+
+  entries.forEach((item) => {
+    const type = item.type;
+    const customer = normalizeText(item.customer);
+    if (!contractTypes.includes(type) || !customer) return;
+    const q = item.quarter;
+    if (quarters.includes(q)) {
+      sets[q][type].add(customer);
+    }
+    sets['年度'][type].add(customer);
+  });
+
+  const totals = {};
+  periods.forEach((p) => (totals[p] = {}));
+  contractTypes.forEach((type) => {
+    periods.forEach((p) => {
+      totals[p][type] = sets[p][type].size;
+    });
+  });
+  return totals;
+};
+
+const renderCategoryCharts = (container, titlePrefix, totalsByPeriod, categories, isCount = false) => {
+  if (!container) return;
+  container.innerHTML = '';
+  periods.forEach((period) => {
+    const chart = document.createElement('div');
+    chart.className = 'chart';
+    const periodTotal = Object.values(totalsByPeriod[period] || {}).reduce(
+      (sum, val) => sum + parseNumber(val),
+      0
+    );
+    const periodTotalText = isCount ? `${Math.round(periodTotal)}` : formatMoney(periodTotal);
+    chart.innerHTML = `<h4>${titlePrefix} · ${period}（合计 ${periodTotalText}）</h4>`;
+
+    const list = document.createElement('div');
+    list.className = 'bar-list';
+    const values = totalsByPeriod[period] || {};
+    const max = Math.max(...Object.values(values), 1);
+
+    categories.forEach((name) => {
+      const value = parseNumber(values[name] || 0);
+      const row = document.createElement('div');
+      row.className = 'bar-row';
+
+      const label = document.createElement('div');
+      label.textContent = name;
+
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      const fill = document.createElement('span');
+      fill.style.width = `${(value / max) * 100}%`;
+      bar.appendChild(fill);
+
+      const valueEl = document.createElement('div');
+      valueEl.textContent = isCount ? `${Math.round(value)}` : formatMoney(value);
+
+      row.appendChild(label);
+      row.appendChild(bar);
+      row.appendChild(valueEl);
+      list.appendChild(row);
+    });
+
+    chart.appendChild(list);
+    container.appendChild(chart);
+  });
+};
+
 const computePaymentTotals = (entries, indicatorType) => {
   const totals = {};
   periods.forEach((p) => (totals[p] = {}));
@@ -1056,6 +1154,22 @@ const closeAuth = () => {
 const refresh = () => {
   const contractTotals = computeContractTotals(contractData);
   renderCharts(contractChartsEl, '新签合同', contractTotals);
+  const contractTypeAmountTotals = computeContractTypeAmountTotals(contractData);
+  const contractTypeCustomerTotals = computeContractTypeCustomerTotals(contractData);
+  renderCategoryCharts(
+    contractTypeAmountChartsEl,
+    '合同类型金额',
+    contractTypeAmountTotals,
+    contractTypes,
+    false
+  );
+  renderCategoryCharts(
+    contractTypeCustomerChartsEl,
+    '合同类型客户数',
+    contractTypeCustomerTotals,
+    contractTypes,
+    true
+  );
 
   const kpiMap = buildKpiMap(kpiData);
   const paymentTotalsNew = computePaymentTotals(paymentData, '新客户指标');
