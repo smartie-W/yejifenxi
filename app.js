@@ -146,6 +146,13 @@ const formatMoney = (value) => {
 };
 
 const normalizeText = (value) => String(value || '').trim();
+const escapeHtml = (value) =>
+  String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 
 const hashString = (value) => {
   let hash = 5381;
@@ -486,9 +493,14 @@ const bindCustomerAutoComplete = () => {
         return;
       }
       const suggestions = getCustomerSuggestions(keyword);
-      list.innerHTML = suggestions
-        .map((name) => `<div class="suggest-item" data-name="${name}">${name}</div>`)
-        .join('');
+      list.innerHTML = '';
+      suggestions.forEach((name) => {
+        const row = document.createElement('div');
+        row.className = 'suggest-item';
+        row.dataset.name = name;
+        row.textContent = name;
+        list.appendChild(row);
+      });
       list.classList.toggle('show', suggestions.length > 0);
     };
     input.addEventListener('input', (event) => {
@@ -1092,7 +1104,7 @@ const buildDetailRows = (items) => {
   return items
     .map(
       ({ label, value }) =>
-        `<div class="row"><div class="label">${label}</div><div>${value}</div></div>`
+        `<div class="row"><div class="label">${escapeHtml(label)}</div><div>${escapeHtml(value)}</div></div>`
     )
     .join('');
 };
@@ -1229,7 +1241,11 @@ const refresh = () => {
     .sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
   renderRecent(contractRecentEl, contractLogViewList, (item) => {
     const date = formatEntryDate(item);
-    return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 合同类型：${item.type || ''}</span><span>${formatMoney(item.amount)}</span>`;
+    return `<span>${escapeHtml(date)} | 客户：${escapeHtml(
+      item.customer || ''
+    )} | 销售：${escapeHtml(item.sales || '')} | 合同类型：${escapeHtml(
+      item.type || ''
+    )}</span><span>${formatMoney(item.amount)}</span>`;
   }, 'contracts');
 
   paymentLogList = paymentData.filter((item) => {
@@ -1249,7 +1265,13 @@ const refresh = () => {
     .sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
   renderRecent(paymentRecentEl, paymentLogViewList, (item) => {
     const date = formatEntryDate(item);
-    return `<span>${date} | 客户：${item.customer || ''} | 销售：${item.sales || ''} | 客户类型：${item.customerType || ''} | 指标类型：${item.indicator || ''} | 回款类型：${item.contractType || ''} | 二开利润：${formatMoney(
+    return `<span>${escapeHtml(date)} | 客户：${escapeHtml(
+      item.customer || ''
+    )} | 销售：${escapeHtml(item.sales || '')} | 客户类型：${escapeHtml(
+      item.customerType || ''
+    )} | 指标类型：${escapeHtml(item.indicator || '')} | 回款类型：${escapeHtml(
+      item.contractType || ''
+    )} | 二开利润：${formatMoney(
       item.secondDevProfit || 0
     )} | 实施费用：${formatMoney(item.implementationFee || 0)} | 二开成本：${formatMoney(
       item.secondDevCost || 0
@@ -1284,10 +1306,17 @@ contractForm.addEventListener('submit', (event) => {
     source: 'manual',
   };
 
-  addDoc(collection(db, collections.contracts), entry).then(() => {
-    contractForm.reset();
-    setDefaultDates();
-  });
+  addDoc(collection(db, collections.contracts), entry)
+    .then(() => {
+      contractForm.reset();
+      setDefaultDates();
+    })
+    .catch((err) => {
+      console.error(err);
+      syncErrorMessage = err?.code || '写入失败';
+      refreshSyncStatus();
+      alert('新签合同登记失败，请检查网络后重试。');
+    });
 });
 
 paymentForm.addEventListener('submit', (event) => {
@@ -1319,12 +1348,19 @@ paymentForm.addEventListener('submit', (event) => {
     source: 'manual',
   };
 
-  addDoc(collection(db, collections.payments), entry).then(() => {
-    paymentForm.reset();
-    setDefaultDates();
-    updateTotalCost();
-    updateActualAccrual();
-  });
+  addDoc(collection(db, collections.payments), entry)
+    .then(() => {
+      paymentForm.reset();
+      setDefaultDates();
+      updateTotalCost();
+      updateActualAccrual();
+    })
+    .catch((err) => {
+      console.error(err);
+      syncErrorMessage = err?.code || '写入失败';
+      refreshSyncStatus();
+      alert('销售回款登记失败，请检查网络后重试。');
+    });
 });
 
 modalOverlay.addEventListener('click', (event) => {
