@@ -500,6 +500,38 @@ footer {
   flex-wrap: wrap;
 }
 
+.sync-status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.sync-connecting,
+.sync-syncing {
+  color: #0c6f85;
+  background: rgba(12, 111, 133, 0.12);
+  border-color: rgba(12, 111, 133, 0.25);
+}
+
+.sync-ok {
+  color: #12683c;
+  background: rgba(18, 104, 60, 0.12);
+  border-color: rgba(18, 104, 60, 0.25);
+}
+
+.sync-offline {
+  color: #9a6a07;
+  background: rgba(154, 106, 7, 0.12);
+  border-color: rgba(154, 106, 7, 0.25);
+}
+
+.sync-error {
+  color: #8f1d1d;
+  background: rgba(143, 29, 29, 0.12);
+  border-color: rgba(143, 29, 29, 0.25);
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;

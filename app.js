@@ -57,6 +57,7 @@ const paymentForm = document.getElementById('payment-form');
 
 const contractRecentEl = document.getElementById('contract-recent');
 const paymentRecentEl = document.getElementById('payment-recent');
+const syncStatusEl = document.getElementById('sync-status');
 const modalOverlay = document.getElementById('modal-overlay');
 const modalTitle = document.getElementById('modal-title');
 const modalBody = document.getElementById('modal-body');
@@ -371,6 +372,12 @@ let hasRendered = false;
 
 let unsubscribeContracts = null;
 let unsubscribePayments = null;
+let contractSnapshotReady = false;
+let paymentSnapshotReady = false;
+let contractHasPendingWrites = false;
+let paymentHasPendingWrites = false;
+let lastSyncedAt = null;
+let syncErrorMessage = '';
 
 const cacheKeys = {
   contracts: 'yejifenxi_cache_contracts',
@@ -394,6 +401,44 @@ const writeCache = (key, data) => {
   } catch (err) {
     // Ignore cache write failures (e.g., quota).
   }
+};
+
+const formatTime = (date) => {
+  if (!date) return '';
+  const h = String(date.getHours()).padStart(2, '0');
+  const m = String(date.getMinutes()).padStart(2, '0');
+  const s = String(date.getSeconds()).padStart(2, '0');
+  return `${h}:${m}:${s}`;
+};
+
+const setSyncStatus = (text, cls) => {
+  if (!syncStatusEl) return;
+  syncStatusEl.textContent = `云端状态：${text}`;
+  syncStatusEl.className = `sync-status ${cls}`;
+};
+
+const refreshSyncStatus = () => {
+  if (!navigator.onLine) {
+    setSyncStatus('离线，待联网后自动同步', 'sync-offline');
+    return;
+  }
+  if (syncErrorMessage) {
+    setSyncStatus(`同步失败（${syncErrorMessage}）`, 'sync-error');
+    return;
+  }
+  if (!contractSnapshotReady || !paymentSnapshotReady) {
+    setSyncStatus('连接中', 'sync-connecting');
+    return;
+  }
+  if (contractHasPendingWrites || paymentHasPendingWrites) {
+    setSyncStatus('同步中', 'sync-syncing');
+    return;
+  }
+  if (lastSyncedAt) {
+    setSyncStatus(`已同步 ${formatTime(lastSyncedAt)}`, 'sync-ok');
+    return;
+  }
+  setSyncStatus('连接中', 'sync-connecting');
 };
 
 const getCustomerPool = () => {
@@ -478,21 +523,33 @@ const startRealtime = () => {
   const contractQuery = query(collection(db, collections.contracts), orderBy('createdAt', 'asc'));
   const paymentQuery = query(collection(db, collections.payments), orderBy('createdAt', 'asc'));
 
-  unsubscribeContracts = onSnapshot(contractQuery, (snap) => {
+  unsubscribeContracts = onSnapshot(contractQuery, { includeMetadataChanges: true }, (snap) => {
+    contractSnapshotReady = true;
+    contractHasPendingWrites = snap.metadata.hasPendingWrites;
+    if (!snap.metadata.hasPendingWrites && navigator.onLine) {
+      lastSyncedAt = new Date();
+      syncErrorMessage = '';
+    }
     contractData = snap.docs
       .map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }))
       .filter((row) => !row.deletedAt);
     writeCache(cacheKeys.contracts, contractData);
-    // refresh suggestions source
+    refreshSyncStatus();
     refresh();
   });
 
-  unsubscribePayments = onSnapshot(paymentQuery, (snap) => {
+  unsubscribePayments = onSnapshot(paymentQuery, { includeMetadataChanges: true }, (snap) => {
+    paymentSnapshotReady = true;
+    paymentHasPendingWrites = snap.metadata.hasPendingWrites;
+    if (!snap.metadata.hasPendingWrites && navigator.onLine) {
+      lastSyncedAt = new Date();
+      syncErrorMessage = '';
+    }
     paymentData = snap.docs
       .map((docSnap) => normalizePaymentEntry({ id: docSnap.id, ...docSnap.data() }))
       .filter((row) => !row.deletedAt);
     writeCache(cacheKeys.payments, paymentData);
-    // refresh suggestions source
+    refreshSyncStatus();
     refresh();
   });
 };
@@ -1226,6 +1283,9 @@ const init = async () => {
   bindAmountFormatting();
   bindTotalCostCalc();
   bindCustomerAutoComplete();
+  window.addEventListener('online', refreshSyncStatus);
+  window.addEventListener('offline', refreshSyncStatus);
+  refreshSyncStatus();
   if (paymentTypeSalesEl) {
     paymentTypeSalesEl.addEventListener('change', refresh);
   }
@@ -1297,8 +1357,11 @@ const init = async () => {
     await signInAnonymously(auth);
     await ensureSeeded();
     startRealtime();
+    refreshSyncStatus();
   } catch (err) {
     console.error(err);
+    syncErrorMessage = err?.code || '连接异常';
+    refreshSyncStatus();
     alert('云端连接失败，请在 Firebase Authentication 的登录方法中启用匿名登录。');
   }
 };
