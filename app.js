@@ -1218,6 +1218,45 @@ const buildDetailRows = (items) => {
     .join('');
 };
 
+const buildContractLogText = (item) => {
+  const date = formatEntryDate(item);
+  return `${escapeHtml(date)} | 客户：${escapeHtml(item.customer || '')} | 销售：${escapeHtml(
+    item.sales || ''
+  )} | 合同类型：${escapeHtml(item.type || '')}`;
+};
+
+const buildPaymentLogText = (item) => {
+  const date = formatEntryDate(item);
+  return `${escapeHtml(date)} | 客户：${escapeHtml(item.customer || '')} | 销售：${escapeHtml(
+    item.sales || ''
+  )} | 客户类型：${escapeHtml(item.customerType || '')} | 指标类型：${escapeHtml(
+    item.indicator || ''
+  )} | 回款类型：${escapeHtml(item.contractType || '')} | 二开利润：${formatMoney(
+    item.secondDevProfit || 0
+  )} | 实施费用：${formatMoney(item.implementationFee || 0)} | 二开成本：${formatMoney(
+    item.secondDevCost || 0
+  )} | 委外成本：${formatMoney(item.outsourcingCost || 0)} | 计划外成本：${formatMoney(
+    item.unplannedCost || 0
+  )} | 合计成本：${formatMoney(item.totalCost || 0)} | 实际计提：${formatMoney(
+    item.actualAccrual || 0
+  )}`;
+};
+
+const buildDrilldownList = (items, type) => {
+  const rows = sortByDateDesc(items);
+  if (!rows.length) return '<div class="row"><div>暂无明细</div></div>';
+  return rows
+    .map((item) => {
+      const left = type === 'contracts' ? buildContractLogText(item) : buildPaymentLogText(item);
+      const right =
+        type === 'contracts'
+          ? formatMoney(item.amount || 0)
+          : formatMoney(item.actualAccrual ?? item.amount ?? 0);
+      return `<div class="recent-row"><span>${left}</span><span>${right}</span></div>`;
+    })
+    .join('');
+};
+
 const getContractDetails = (item) => [
   { label: '日期', value: formatEntryDate(item) },
   { label: '客户名称', value: item.customer || '' },
@@ -1250,16 +1289,25 @@ const openModal = (list, index, type, mode, customTitle = '') => {
   activeMode = mode;
   activeModalTitle = customTitle;
   const item = activeList[activeIndex];
-  if (!item) return;
+  if (!item && mode !== 'drilldown') return;
   if (customTitle) {
     modalTitle.textContent = customTitle;
   } else {
     modalTitle.textContent = mode === 'bin' ? '回收站详情' : '数据详情';
   }
-  const rows = type === 'contracts' ? getContractDetails(item) : getPaymentDetails(item);
-  modalBody.innerHTML = buildDetailRows(rows);
-  modalAction.textContent = mode === 'bin' ? '恢复' : '删除';
-  modalAction.style.display = mode === 'drilldown' ? 'none' : 'inline-flex';
+  if (mode === 'drilldown') {
+    modalBody.innerHTML = buildDrilldownList(activeList, type);
+    modalPrev.style.display = 'none';
+    modalNext.style.display = 'none';
+    modalAction.style.display = 'none';
+  } else {
+    const rows = type === 'contracts' ? getContractDetails(item) : getPaymentDetails(item);
+    modalBody.innerHTML = buildDetailRows(rows);
+    modalAction.textContent = mode === 'bin' ? '恢复' : '删除';
+    modalPrev.style.display = 'inline-flex';
+    modalNext.style.display = 'inline-flex';
+    modalAction.style.display = 'inline-flex';
+  }
   modalOverlay.classList.remove('hidden');
 };
 

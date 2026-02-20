@@ -612,6 +612,20 @@ footer {
   color: var(--muted);
 }
 
+.modal-body .recent-row {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 12px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: var(--muted);
+}
+
+.modal-body .recent-row:hover {
+  background: #eef4f8;
+  color: var(--ink);
+}
+
 .auth-form {
   padding: 16px 20px 20px;
   display: grid;
