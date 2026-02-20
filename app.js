@@ -60,6 +60,8 @@ const paymentForm = document.getElementById('payment-form');
 
 const contractRecentEl = document.getElementById('contract-recent');
 const paymentRecentEl = document.getElementById('payment-recent');
+const contractLogSearchEl = document.getElementById('contract-log-search');
+const paymentLogSearchEl = document.getElementById('payment-log-search');
 const syncStatusEl = document.getElementById('sync-status');
 const modalOverlay = document.getElementById('modal-overlay');
 const modalTitle = document.getElementById('modal-title');
@@ -372,6 +374,8 @@ let contractLogList = [];
 let paymentLogList = [];
 let contractLogViewList = [];
 let paymentLogViewList = [];
+let contractLogFiltered = [];
+let paymentLogFiltered = [];
 
 let activeList = [];
 let activeIndex = 0;
@@ -1239,7 +1243,13 @@ const refresh = () => {
   contractLogViewList = contractLogList
     .slice()
     .sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
-  renderRecent(contractRecentEl, contractLogViewList, (item) => {
+  const contractKeyword = normalizeText(contractLogSearchEl?.value).toLowerCase();
+  contractLogFiltered = contractKeyword
+    ? contractLogViewList.filter((item) =>
+        normalizeText(item.customer).toLowerCase().includes(contractKeyword)
+      )
+    : contractLogViewList;
+  renderRecent(contractRecentEl, contractLogFiltered, (item) => {
     const date = formatEntryDate(item);
     return `<span>${escapeHtml(date)} | 客户：${escapeHtml(
       item.customer || ''
@@ -1263,7 +1273,13 @@ const refresh = () => {
   paymentLogViewList = paymentLogList
     .slice()
     .sort((a, b) => getEntryDateKey(b) - getEntryDateKey(a));
-  renderRecent(paymentRecentEl, paymentLogViewList, (item) => {
+  const paymentKeyword = normalizeText(paymentLogSearchEl?.value).toLowerCase();
+  paymentLogFiltered = paymentKeyword
+    ? paymentLogViewList.filter((item) =>
+        normalizeText(item.customer).toLowerCase().includes(paymentKeyword)
+      )
+    : paymentLogViewList;
+  renderRecent(paymentRecentEl, paymentLogFiltered, (item) => {
     const date = formatEntryDate(item);
     return `<span>${escapeHtml(date)} | 客户：${escapeHtml(
       item.customer || ''
@@ -1443,14 +1459,20 @@ const init = async () => {
     const row = event.target.closest('div[data-index]');
     if (!row) return;
     const idx = Number(row.dataset.index);
-    openModal(contractLogViewList, idx, 'contracts', 'main');
+    openModal(contractLogFiltered, idx, 'contracts', 'main');
   });
   paymentRecentEl.addEventListener('click', (event) => {
     const row = event.target.closest('div[data-index]');
     if (!row) return;
     const idx = Number(row.dataset.index);
-    openModal(paymentLogViewList, idx, 'payments', 'main');
+    openModal(paymentLogFiltered, idx, 'payments', 'main');
   });
+  if (contractLogSearchEl) {
+    contractLogSearchEl.addEventListener('input', refresh);
+  }
+  if (paymentLogSearchEl) {
+    paymentLogSearchEl.addEventListener('input', refresh);
+  }
   binButtons.forEach((btn) => {
     btn.addEventListener('click', async () => {
       const type = btn.dataset.bin;

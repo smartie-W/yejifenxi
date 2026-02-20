@@ -222,6 +222,30 @@ main {
   margin-bottom: 8px;
 }
 
+.log-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.log-search-input {
+  width: min(300px, 58vw);
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 0 12px;
+  font-size: 13px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.log-search-input:focus {
+  outline: none;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 2px rgba(31, 155, 182, 0.12);
+}
+
 .card-head {
   display: flex;
   align-items: baseline;
