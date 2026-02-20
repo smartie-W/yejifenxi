@@ -1255,14 +1255,11 @@ const init = async () => {
     });
   });
 
-  const [contractsRaw, paymentsRaw, kpiRaw] = await Promise.all([
+  const seedDataPromise = Promise.all([
     loadJson('data/合同管理-新签.json'),
     loadJson('data/回款明细账.json'),
     loadJson('data/目标数据.json'),
   ]);
-  baseContractData = buildContractEntries(contractsRaw);
-  basePaymentData = buildPaymentEntries(paymentsRaw);
-  kpiData = kpiRaw;
 
   const cachedContracts = readCache(cacheKeys.contracts);
   const cachedPayments = readCache(cacheKeys.payments);
@@ -1274,10 +1271,19 @@ const init = async () => {
   }
   if (cachedContracts || cachedPayments) {
     refresh();
-  } else {
-    // First load: render bundled baseline data immediately, cloud sync will update later.
+  }
+
+  const [contractsRaw, paymentsRaw, kpiRaw] = await seedDataPromise;
+  baseContractData = buildContractEntries(contractsRaw);
+  basePaymentData = buildPaymentEntries(paymentsRaw);
+  kpiData = kpiRaw;
+  if (!cachedContracts && !cachedPayments) {
+    // First load without cache: render bundled baseline data before cloud sync.
     contractData = baseContractData.slice();
     paymentData = basePaymentData.slice();
+    refresh();
+  } else {
+    // Cached render may have used empty KPI temporarily.
     refresh();
   }
 
