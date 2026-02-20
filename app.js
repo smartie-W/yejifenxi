@@ -1274,6 +1274,11 @@ const init = async () => {
   }
   if (cachedContracts || cachedPayments) {
     refresh();
+  } else {
+    // First load: render bundled baseline data immediately, cloud sync will update later.
+    contractData = baseContractData.slice();
+    paymentData = basePaymentData.slice();
+    refresh();
   }
 
   try {
