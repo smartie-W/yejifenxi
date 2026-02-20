@@ -1253,7 +1253,7 @@ const buildDrilldownList = (items, type) => {
       const right =
         type === 'contracts'
           ? formatMoney(item.amount || 0)
-          : formatMoney(item.actualAccrual ?? item.amount ?? 0);
+          : formatMoney(item.amount || 0);
       return `<div class="recent-row"><span>${left}</span><span>${right}</span></div>`;
     })
     .join('');
