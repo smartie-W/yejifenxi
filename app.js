@@ -69,9 +69,11 @@ const modalBody = document.getElementById('modal-body');
 const modalPrev = document.getElementById('modal-prev');
 const modalNext = document.getElementById('modal-next');
 const modalAction = document.getElementById('modal-action');
+const modalClose = document.getElementById('modal-close');
 const authOverlay = document.getElementById('auth-overlay');
 const authForm = document.getElementById('auth-form');
 const authCancel = document.getElementById('auth-cancel');
+const authClose = document.getElementById('auth-close');
 const eyeButtons = document.querySelectorAll('[data-eye]');
 const binButtons = document.querySelectorAll('[data-bin]');
 const customerInputs = document.querySelectorAll('input[name="customer"]');
@@ -1309,21 +1311,31 @@ const openModal = (list, index, type, mode, customTitle = '') => {
     modalAction.style.display = 'inline-flex';
   }
   modalOverlay.classList.remove('hidden');
+  updateBodyScrollLock();
 };
 
 const closeModal = () => {
   modalOverlay.classList.add('hidden');
+  updateBodyScrollLock();
 };
 
 const openAuth = (action) => {
   pendingAction = action;
   authForm.reset();
   authOverlay.classList.remove('hidden');
+  updateBodyScrollLock();
 };
 
 const closeAuth = () => {
   authOverlay.classList.add('hidden');
   pendingAction = null;
+  updateBodyScrollLock();
+};
+
+const updateBodyScrollLock = () => {
+  const hasOpenOverlay =
+    !modalOverlay.classList.contains('hidden') || !authOverlay.classList.contains('hidden');
+  document.body.style.overflow = hasOpenOverlay ? 'hidden' : '';
 };
 
 const refresh = () => {
@@ -1626,6 +1638,12 @@ modalAction.addEventListener('click', () => {
 });
 
 authCancel.addEventListener('click', closeAuth);
+if (modalClose) {
+  modalClose.addEventListener('click', closeModal);
+}
+if (authClose) {
+  authClose.addEventListener('click', closeAuth);
+}
 
 authForm.addEventListener('submit', async (event) => {
   event.preventDefault();

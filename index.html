@@ -336,10 +336,13 @@
       <div class="modal">
         <div class="modal-head">
           <h3 id="modal-title">详情</h3>
-          <div class="modal-actions">
-            <button id="modal-prev" class="ghost small">上一条</button>
-            <button id="modal-next" class="ghost small">下一条</button>
-            <button id="modal-action" class="danger small">删除</button>
+          <div class="modal-head-right">
+            <div class="modal-actions">
+              <button id="modal-prev" class="ghost small">上一条</button>
+              <button id="modal-next" class="ghost small">下一条</button>
+              <button id="modal-action" class="danger small">删除</button>
+            </div>
+            <button type="button" id="modal-close" class="ghost small">关闭</button>
           </div>
         </div>
         <div id="modal-body" class="modal-body"></div>
@@ -350,6 +353,7 @@
       <div class="modal auth-modal">
         <div class="modal-head">
           <h3>账号密码验证</h3>
+          <button type="button" id="auth-close" class="ghost small">关闭</button>
         </div>
         <form id="auth-form" class="auth-form">
           <label>
