@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "total": 500,
+    "ok": 500,
+    "failed": 0,
+    "unknown": 0,
+    "no_comp": 0,
+    "no_top5": 0,
+    "no_sup": 1
+  },
+  "unknown": [],
+  "no_comp": [],
+  "no_top5": [],
+  "no_sup": [
+    {
+      "name": "中国生物制药有限公司",
+      "ok": 1,
+      "l1": "医疗健康",
+      "l2": "生物医药",
+      "comp": 6,
+      "top5": 5,
+      "sup": 0,
+      "cus": 1
+    }
+  ]
+}

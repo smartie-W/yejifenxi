@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: listed-supply-chain-mvp
+    env: docker
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0

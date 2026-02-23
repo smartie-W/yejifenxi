@@ -1,0 +1,16 @@
+{
+  "fixed_sample": 119,
+  "paired_ok": 119,
+  "on_supplier_nonempty": 119,
+  "off_supplier_nonempty": 119,
+  "on_customer_nonempty": 119,
+  "off_customer_nonempty": 119,
+  "on_both_nonempty": 119,
+  "off_both_nonempty": 119,
+  "on_avg_sec": 6.418,
+  "off_avg_sec": 7.245,
+  "delta_supplier_pct": 0.0,
+  "delta_customer_pct": 0.0,
+  "delta_both_pct": 0.0,
+  "delta_avg_sec": -0.827
+}

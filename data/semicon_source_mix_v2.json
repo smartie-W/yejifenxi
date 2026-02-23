@@ -1,0 +1,23 @@
+{
+  "semicon_count": 119,
+  "supplier_source_top": [
+    [
+      "semiconductor_linkage_review",
+      577
+    ],
+    [
+      "industry_hint_fallback",
+      6
+    ]
+  ],
+  "customer_source_top": [
+    [
+      "semiconductor_linkage_review",
+      580
+    ],
+    [
+      "industry_hint_fallback",
+      6
+    ]
+  ]
+}

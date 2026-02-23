@@ -1,0 +1,39 @@
+{
+  "sample": 150,
+  "ok": 137,
+  "semicon": 136,
+  "supplier_nonempty": 136,
+  "customer_nonempty": 136,
+  "supplier_sourceType_top": [
+    [
+      "semiconductor_linkage_review",
+      597
+    ],
+    [
+      "search_suggest_weak",
+      11
+    ],
+    [
+      "industry_hint_fallback",
+      6
+    ],
+    [
+      "public_search_snippet",
+      2
+    ]
+  ],
+  "customer_sourceType_top": [
+    [
+      "semiconductor_linkage_review",
+      665
+    ],
+    [
+      "industry_hint_fallback",
+      6
+    ]
+  ],
+  "semicon_supplier_rows": 597,
+  "semicon_customer_rows": 665,
+  "generic_hint_supplier_rows": 6,
+  "generic_hint_customer_rows": 6
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>企业供应链洞察</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260220-4" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar panel">
+        <div class="brand">
+          <img src="./assets/logo.png" alt="ONES Logo" />
+          <h1>企业供应链洞察</h1>
+        </div>
+        <div class="top-actions">
+          <a class="ghost-btn" href="./selftest.html">自测页</a>
+        </div>
+      </header>
+
+      <section class="panel search-panel">
+        <h2>企业检索</h2>
+        <label for="companySearch">企业名称/简称</label>
+        <div class="search-wrap">
+          <input id="companySearch" type="text" placeholder="例如：复临科技" autocomplete="off" />
+        </div>
+        <div id="suggestions" class="suggestions"></div>
+        <p class="hint">支持简称识别：去地域词 + 去公司后缀 + 别名与模糊匹配</p>
+      </section>
+
+      <section id="companyOverview" class="panel hidden"></section>
+
+      <section class="quad-grid">
+        <section id="competitorCard" class="panel">
+          <h3 class="card-title">竞争对手</h3>
+          <div id="competitorBody"><p class="hint">请输入企业名称后展示</p></div>
+        </section>
+        <section id="top5Card" class="panel">
+          <h3 class="card-title">行业 Top5</h3>
+          <div id="top5Body"><p class="hint">请输入企业名称后展示</p></div>
+        </section>
+        <section id="supplierCard" class="panel">
+          <h3 class="card-title">下游供应商</h3>
+          <div id="supplierBody"><p class="hint">请输入企业名称后展示</p></div>
+        </section>
+        <section id="customerCard" class="panel">
+          <h3 class="card-title">客户</h3>
+          <div id="customerBody"><p class="hint">请输入企业名称后展示</p></div>
+        </section>
+      </section>
+
+      <section class="panel note">
+        <h2>数据说明（MVP）</h2>
+        <ul>
+          <li>企业匹配与基础信息来自公开在线接口（东方财富）。</li>
+          <li>营业收入来自公开在线财报下载接口（新浪财务报表）。</li>
+          <li>客户与供应商采用严格模式：仅在可验证证据可得时展示；你上传的清单仅用于企业检索本地库。</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./app.js?v=20260220-11"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "summary": {
+    "total": 500,
+    "ok": 500,
+    "failed": 0,
+    "unknown": 0,
+    "no_comp": 0,
+    "no_top5": 0,
+    "no_sup": 0,
+    "no_cus": 0
+  }
+}

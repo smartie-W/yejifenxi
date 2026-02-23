@@ -1,0 +1,15 @@
+{
+  "ab_semicon_both_nonempty_on_pct": 100.0,
+  "ab_semicon_both_nonempty_off_pct": 100.0,
+  "ab_semicon_both_nonempty_delta_pct_point": 0.0,
+  "ab_avg_sec_on": 12.699,
+  "ab_avg_sec_off": 7.952,
+  "ab_avg_sec_delta_on_minus_off": 4.747,
+  "source_semiconductor_linkage_supplier_share_pct": 98.97,
+  "source_semiconductor_linkage_customer_share_pct": 98.98,
+  "auto_chain_supplier_nonempty_pct": 100.0,
+  "auto_chain_customer_nonempty_pct": 100.0,
+  "auto_chain_avg_suppliers": 3.848,
+  "auto_chain_avg_customers": 3.859,
+  "conclusion": "半导体链路兜底在“来源占比”和“绝对覆盖”上明显发挥作用，但在当前 A/B 文件下未体现出相对命中率提升，且有额外耗时。"
+}

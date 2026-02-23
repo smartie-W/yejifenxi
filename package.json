@@ -1,0 +1,14 @@
+{
+  "name": "listed-supply-chain-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "PORT=8090 HOST=127.0.0.1 node server.mjs",
+    "health": "curl -s http://127.0.0.1:${PORT:-8090}/api/health"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

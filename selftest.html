@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>企业供应链洞察 - 自测</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260220-5" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar panel">
+        <div class="brand">
+          <img src="./assets/logo.png" alt="ONES Logo" />
+          <h1>自测回归</h1>
+        </div>
+        <div class="top-actions">
+          <a class="ghost-btn" href="./index.html">返回主页</a>
+        </div>
+      </header>
+
+      <section class="panel">
+        <h2>自动回归测试</h2>
+        <p class="hint">覆盖简称映射、跨行业错配、脏建议过滤、行业Top5有效性。</p>
+        <div class="search-wrap">
+          <button id="runBtn" type="button">开始自测</button>
+        </div>
+        <div id="summary" class="test-summary"></div>
+        <ul id="testList" class="test-list"></ul>
+      </section>
+    </main>
+    <script src="./selftest.js?v=20260220-1"></script>
+  </body>
+</html>

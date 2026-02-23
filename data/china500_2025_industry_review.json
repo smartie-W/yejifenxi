@@ -1,0 +1,4502 @@
+[
+  {
+    "rank": 1,
+    "companyName": "国家电网有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "548,414.4",
+    "sourceLink": "../../gongsi/china500/2025/1475.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 2,
+    "companyName": "中国石油天然气集团有限公司",
+    "sourceIndustry": "炼油",
+    "revenue": "412,645.3",
+    "sourceLink": "../../gongsi/china500/2025/1476.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "油气化工"
+  },
+  {
+    "rank": 3,
+    "companyName": "中国石油化工集团有限公司",
+    "sourceIndustry": "炼油",
+    "revenue": "407,490.1",
+    "sourceLink": "../../gongsi/china500/2025/1477.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "油气化工"
+  },
+  {
+    "rank": 4,
+    "companyName": "中国建筑集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "304,121.3",
+    "sourceLink": "../../gongsi/china500/2025/1478.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 5,
+    "companyName": "中国工商银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "221,461.3",
+    "sourceLink": "../../gongsi/china500/2025/7.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 6,
+    "companyName": "鸿海精密工业股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "213,699.1",
+    "sourceLink": "../../gongsi/china500/2025/1479.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 7,
+    "companyName": "中国农业银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "197,466.4",
+    "sourceLink": "../../gongsi/china500/2025/501.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 8,
+    "companyName": "中国建设银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "196,738.3",
+    "sourceLink": "../../gongsi/china500/2025/8.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 9,
+    "companyName": "中国银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "176,142.5",
+    "sourceLink": "../../gongsi/china500/2025/10.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 10,
+    "companyName": "中国铁路工程集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "161,336.5",
+    "sourceLink": "../../gongsi/china500/2025/1481.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 11,
+    "companyName": "京东集团股份有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "161,055.4",
+    "sourceLink": "../../gongsi/china500/2025/657.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 12,
+    "companyName": "中国人寿保险（集团）公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "160,276.8",
+    "sourceLink": "../../gongsi/china500/2025/1485.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 13,
+    "companyName": "中国平安保险（集团）股份有限公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "158,627",
+    "sourceLink": "../../gongsi/china500/2025/16.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 14,
+    "companyName": "中国铁道建筑集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "148,467.4",
+    "sourceLink": "../../gongsi/china500/2025/1483.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 15,
+    "companyName": "中国移动通信集团有限公司",
+    "sourceIndustry": "电信",
+    "revenue": "145,239.9",
+    "sourceLink": "../../gongsi/china500/2025/1486.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "运营商/通信"
+  },
+  {
+    "rank": 16,
+    "companyName": "中国交通建设集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "139,229",
+    "sourceLink": "../../gongsi/china500/2025/1487.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 17,
+    "companyName": "中国中信集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "138,940.6",
+    "sourceLink": "../../gongsi/china500/2025/1497.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 18,
+    "companyName": "阿里巴巴集团控股有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "138,065",
+    "sourceLink": "../../gongsi/china500/2025/1193.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 19,
+    "companyName": "中国海洋石油集团有限公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "130,832",
+    "sourceLink": "../../gongsi/china500/2025/1482.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 20,
+    "companyName": "中国华润有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "129,623.5",
+    "sourceLink": "../../gongsi/china500/2025/1491.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 21,
+    "companyName": "中国宝武钢铁集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "125,112.5",
+    "sourceLink": "../../gongsi/china500/2025/1484.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 22,
+    "companyName": "恒力集团有限公司",
+    "sourceIndustry": "纺织",
+    "revenue": "121,126",
+    "sourceLink": "../../gongsi/china500/2025/1502.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "服装纺织"
+  },
+  {
+    "rank": 23,
+    "companyName": "山东能源集团有限公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "120,426",
+    "sourceLink": "../../gongsi/china500/2025/1490.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 24,
+    "companyName": "华为投资控股有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "119,812.8",
+    "sourceLink": "../../gongsi/china500/2025/1499.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 25,
+    "companyName": "中国南方电网有限责任公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "118,607.5",
+    "sourceLink": "../../gongsi/china500/2025/1493.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 26,
+    "companyName": "中国五矿集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "115,805.6",
+    "sourceLink": "../../gongsi/china500/2025/1488.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 27,
+    "companyName": "比亚迪股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "108,003.5",
+    "sourceLink": "../../gongsi/china500/2025/65.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 28,
+    "companyName": "国家能源投资集团有限责任公司",
+    "sourceIndustry": "能源",
+    "revenue": "107,690.2",
+    "sourceLink": "../../gongsi/china500/2025/1492.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 29,
+    "companyName": "厦门建发集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "100,600.1",
+    "sourceLink": "../../gongsi/china500/2025/1489.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 30,
+    "companyName": "中国电力建设集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "99,829.5",
+    "sourceLink": "../../gongsi/china500/2025/1498.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 31,
+    "companyName": "中国邮政集团有限公司",
+    "sourceIndustry": "邮件、包裹及货物包装运输",
+    "revenue": "97,544.4",
+    "sourceLink": "../../gongsi/china500/2025/1494.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "快递物流"
+  },
+  {
+    "rank": 32,
+    "companyName": "腾讯控股有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "91,764.1",
+    "sourceLink": "../../gongsi/china500/2025/188.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 33,
+    "companyName": "浙江荣盛控股集团有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "91,534",
+    "sourceLink": "../../gongsi/china500/2025/1506.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 34,
+    "companyName": "中国医药集团有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "91,485.7",
+    "sourceLink": "../../gongsi/china500/2025/1500.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 35,
+    "companyName": "台积公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "90,167",
+    "sourceLink": "../../gongsi/china500/2025/1514.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片制造"
+  },
+  {
+    "rank": 36,
+    "companyName": "中粮集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "88,260",
+    "sourceLink": "../../gongsi/china500/2025/1495.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 37,
+    "companyName": "中国电信集团有限公司",
+    "sourceIndustry": "电信",
+    "revenue": "87,996.5",
+    "sourceLink": "../../gongsi/china500/2025/1505.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "运营商/通信"
+  },
+  {
+    "rank": 38,
+    "companyName": "上海汽车集团股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "87,223.9",
+    "sourceLink": "../../gongsi/china500/2025/17.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 39,
+    "companyName": "中国人民保险集团股份有限公司",
+    "sourceIndustry": "财产与意外保险（股份）",
+    "revenue": "86,477.6",
+    "sourceLink": "../../gongsi/china500/2025/631.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 40,
+    "companyName": "物产中大集团股份有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "83,322.6",
+    "sourceLink": "../../gongsi/china500/2025/107.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 41,
+    "companyName": "浙江吉利控股集团有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "79,890.6",
+    "sourceLink": "../../gongsi/china500/2025/1524.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 42,
+    "companyName": "盛虹控股集团有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "78,611.7",
+    "sourceLink": "../../gongsi/china500/2025/1523.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 43,
+    "companyName": "中国第一汽车集团有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "77,736.8",
+    "sourceLink": "../../gongsi/china500/2025/1504.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 44,
+    "companyName": "江西铜业集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "77,667.6",
+    "sourceLink": "../../gongsi/china500/2025/1516.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 45,
+    "companyName": "山东魏桥创业集团有限公司",
+    "sourceIndustry": "纺织",
+    "revenue": "77,626.2",
+    "sourceLink": "../../gongsi/china500/2025/1517.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "服装纺织"
+  },
+  {
+    "rank": 46,
+    "companyName": "交通银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "75,834.2",
+    "sourceLink": "../../gongsi/china500/2025/26.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 47,
+    "companyName": "太平洋建设集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "75,359.8",
+    "sourceLink": "../../gongsi/china500/2025/1510.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 48,
+    "companyName": "陕西煤业化工集团有限责任公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "73,683.6",
+    "sourceLink": "../../gongsi/china500/2025/1515.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 49,
+    "companyName": "招商银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "70,384.7",
+    "sourceLink": "../../gongsi/china500/2025/42.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 50,
+    "companyName": "联想集团有限公司",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "69,077",
+    "sourceLink": "../../gongsi/china500/2025/20.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 51,
+    "companyName": "中国保利集团有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "67,617.7",
+    "sourceLink": "../../gongsi/china500/2025/1520.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 52,
+    "companyName": "北京汽车集团有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "67,199.7",
+    "sourceLink": "../../gongsi/china500/2025/1521.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 53,
+    "companyName": "中国铝业集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "66,811.1",
+    "sourceLink": "../../gongsi/china500/2025/1513.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 54,
+    "companyName": "厦门国贸控股集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "66,225.7",
+    "sourceLink": "../../gongsi/china500/2025/1496.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 55,
+    "companyName": "中国远洋海运集团有限公司",
+    "sourceIndustry": "船务",
+    "revenue": "64,863.1",
+    "sourceLink": "../../gongsi/china500/2025/1501.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 56,
+    "companyName": "浙江恒逸集团有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "62,792.3",
+    "sourceLink": "../../gongsi/china500/2025/1526.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 57,
+    "companyName": "中国兵器工业集团有限公司",
+    "sourceIndustry": "航天与防务",
+    "revenue": "61,519.5",
+    "sourceLink": "../../gongsi/china500/2025/1508.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 58,
+    "companyName": "中国能源建设集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "61,099.5",
+    "sourceLink": "../../gongsi/china500/2025/1529.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 59,
+    "companyName": "奇瑞控股集团有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "59,693.9",
+    "sourceLink": "../../gongsi/china500/2025/1589.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 60,
+    "companyName": "金川集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "58,886",
+    "sourceLink": "../../gongsi/china500/2025/1536.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 61,
+    "companyName": "厦门象屿集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "57,874.3",
+    "sourceLink": "../../gongsi/china500/2025/1507.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 62,
+    "companyName": "兴业银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "57,476.8",
+    "sourceLink": "../../gongsi/china500/2025/80.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 63,
+    "companyName": "美的集团股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "56,855.5",
+    "sourceLink": "../../gongsi/china500/2025/656.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 64,
+    "companyName": "青山控股集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "56,515.8",
+    "sourceLink": "../../gongsi/china500/2025/1530.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 65,
+    "companyName": "中国太平洋保险（集团）股份有限公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "56,161.2",
+    "sourceLink": "../../gongsi/china500/2025/22.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 66,
+    "companyName": "广州汽车工业集团有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "56,059.1",
+    "sourceLink": "../../gongsi/china500/2025/1512.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 67,
+    "companyName": "河钢集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "55,879.7",
+    "sourceLink": "../../gongsi/china500/2025/1525.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 68,
+    "companyName": "中国华能集团有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "55,760.2",
+    "sourceLink": "../../gongsi/china500/2025/1522.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 69,
+    "companyName": "国家电力投资集团有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "54,963.1",
+    "sourceLink": "../../gongsi/china500/2025/1531.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 70,
+    "companyName": "拼多多控股公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "54,736.3",
+    "sourceLink": "../../gongsi/china500/2025/1402.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 71,
+    "companyName": "中国联合网络通信股份有限公司",
+    "sourceIndustry": "电信",
+    "revenue": "54,146",
+    "sourceLink": "../../gongsi/china500/2025/14.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "运营商/通信"
+  },
+  {
+    "rank": 72,
+    "companyName": "晋能控股集团有限公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "51,443.4",
+    "sourceLink": "../../gongsi/china500/2025/1511.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 73,
+    "companyName": "东风汽车集团有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "51,309.3",
+    "sourceLink": "../../gongsi/china500/2025/1519.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 74,
+    "companyName": "敬业集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "51,224.6",
+    "sourceLink": "../../gongsi/china500/2025/1539.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 75,
+    "companyName": "陕西延长石油（集团）有限责任公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "51,062.7",
+    "sourceLink": "../../gongsi/china500/2025/1532.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 76,
+    "companyName": "小米集团",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "50,854.5",
+    "sourceLink": "../../gongsi/china500/2025/1365.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 77,
+    "companyName": "宁德时代新能源科技股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "50,313.4",
+    "sourceLink": "../../gongsi/china500/2025/1373.htm",
+    "industryLevel1": "新能源",
+    "industryLevel2": "动力电池"
+  },
+  {
+    "rank": 78,
+    "companyName": "上海浦东发展银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "48,944",
+    "sourceLink": "../../gongsi/china500/2025/69.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 79,
+    "companyName": "万科企业股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "47,695.5",
+    "sourceLink": "../../gongsi/china500/2025/45.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 80,
+    "companyName": "美团公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "46,919.3",
+    "sourceLink": "../../gongsi/china500/2025/1367.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 81,
+    "companyName": "浙江省交通投资集团有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "45,971.6",
+    "sourceLink": "../../gongsi/china500/2025/1537.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 82,
+    "companyName": "中国兵器装备集团公司",
+    "sourceIndustry": "航天与防务",
+    "revenue": "45,481.8",
+    "sourceLink": "../../gongsi/china500/2025/1542.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 83,
+    "companyName": "泰康保险集团股份有限公司",
+    "sourceIndustry": "人寿与健康保险（互助）",
+    "revenue": "45,456",
+    "sourceLink": "../../gongsi/china500/2025/1565.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 84,
+    "companyName": "苏商建设集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "45,003.8",
+    "sourceLink": "../../gongsi/china500/2025/1538.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 85,
+    "companyName": "中国华电集团有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "45,003.1",
+    "sourceLink": "../../gongsi/china500/2025/1540.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 86,
+    "companyName": "广达电脑股份有限公司",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "43,949.6",
+    "sourceLink": "../../gongsi/china500/2025/1543.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 87,
+    "companyName": "中国建材集团有限公司",
+    "sourceIndustry": "建材、玻璃",
+    "revenue": "43,504.9",
+    "sourceLink": "../../gongsi/china500/2025/1527.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 88,
+    "companyName": "中国机械工业集团有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "43,269.2",
+    "sourceLink": "../../gongsi/china500/2025/1534.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 89,
+    "companyName": "紫金矿业集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "42,200.6",
+    "sourceLink": "../../gongsi/china500/2025/125.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 90,
+    "companyName": "上海建工集团股份有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "41,724.8",
+    "sourceLink": "../../gongsi/china500/2025/62.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 91,
+    "companyName": "中国民生银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "40,217",
+    "sourceLink": "../../gongsi/china500/2025/55.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 92,
+    "companyName": "海尔智家股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "39,746.3",
+    "sourceLink": "../../gongsi/china500/2025/78.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 93,
+    "companyName": "顺丰控股股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "39,529.4",
+    "sourceLink": "../../gongsi/china500/2025/1283.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 94,
+    "companyName": "杭州市实业投资集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "39,495.9",
+    "sourceLink": "../../gongsi/china500/2025/1656.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 95,
+    "companyName": "山东高速集团有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "38,819.6",
+    "sourceLink": "../../gongsi/china500/2025/1569.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 96,
+    "companyName": "杭州钢铁集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "38,430.7",
+    "sourceLink": "../../gongsi/china500/2025/1559.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 97,
+    "companyName": "广州工业投资控股集团有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "38,344.6",
+    "sourceLink": "../../gongsi/china500/2025/1561.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 98,
+    "companyName": "上海医药集团股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "38,255",
+    "sourceLink": "../../gongsi/china500/2025/136.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 99,
+    "companyName": "深圳市投资控股有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "37,717.2",
+    "sourceLink": "../../gongsi/china500/2025/1554.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 100,
+    "companyName": "江苏沙钢集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "37,615.5",
+    "sourceLink": "../../gongsi/china500/2025/1544.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 101,
+    "companyName": "友邦保险控股有限公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "37,612",
+    "sourceLink": "../../gongsi/china500/2025/1655.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 102,
+    "companyName": "广东省广新控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "37,542.8",
+    "sourceLink": "../../gongsi/china500/2025/1564.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 103,
+    "companyName": "立讯精密工业股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "37,357.7",
+    "sourceLink": "../../gongsi/china500/2025/1268.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 104,
+    "companyName": "新希望控股集团有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "37,283.9",
+    "sourceLink": "../../gongsi/china500/2025/1547.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 105,
+    "companyName": "中国电子信息产业集团有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "37,030",
+    "sourceLink": "../../gongsi/china500/2025/1548.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 106,
+    "companyName": "鞍钢集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "36,270.6",
+    "sourceLink": "../../gongsi/china500/2025/1535.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 107,
+    "companyName": "海亮集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "36,166.5",
+    "sourceLink": "../../gongsi/china500/2025/1582.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 108,
+    "companyName": "长江和记实业有限公司",
+    "sourceIndustry": "专业零售",
+    "revenue": "36,057.3",
+    "sourceLink": "../../gongsi/china500/2025/1571.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "连锁零售"
+  },
+  {
+    "rank": 109,
+    "companyName": "中国大唐集团有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "35,901.4",
+    "sourceLink": "../../gongsi/china500/2025/1556.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 110,
+    "companyName": "中国中车集团有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "35,876.1",
+    "sourceLink": "../../gongsi/china500/2025/1567.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 111,
+    "companyName": "怡和集团",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "35,779",
+    "sourceLink": "../../gongsi/china500/2025/1555.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "零部件"
+  },
+  {
+    "rank": 112,
+    "companyName": "铜陵有色金属集团控股有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "35,773.5",
+    "sourceLink": "../../gongsi/china500/2025/1568.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 113,
+    "companyName": "蜀道投资集团有限责任公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "35,732.8",
+    "sourceLink": "../../gongsi/china500/2025/1553.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 114,
+    "companyName": "广州市建筑集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "35,676",
+    "sourceLink": "../../gongsi/china500/2025/1550.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 115,
+    "companyName": "广州医药集团有限公司",
+    "sourceIndustry": "制药",
+    "revenue": "35,164.1",
+    "sourceLink": "../../gongsi/china500/2025/1563.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "生物医药"
+  },
+  {
+    "rank": 116,
+    "companyName": "碧桂园控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "35,128.6",
+    "sourceLink": "../../gongsi/china500/2025/150.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 117,
+    "companyName": "和硕联合科技股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "35,058.2",
+    "sourceLink": "../../gongsi/china500/2025/1541.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 118,
+    "companyName": "山东黄金集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "34,762.6",
+    "sourceLink": "../../gongsi/china500/2025/1701.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 119,
+    "companyName": "上海德龙钢铁集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "34,513.9",
+    "sourceLink": "../../gongsi/china500/2025/1570.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 120,
+    "companyName": "北京建龙重工集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "34,238.5",
+    "sourceLink": "../../gongsi/china500/2025/1574.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 121,
+    "companyName": "中国中煤能源集团有限公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "34,057.9",
+    "sourceLink": "../../gongsi/china500/2025/1545.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 122,
+    "companyName": "通威集团有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "33,547.6",
+    "sourceLink": "../../gongsi/china500/2025/1577.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 123,
+    "companyName": "绿地控股集团股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "33,482",
+    "sourceLink": "../../gongsi/china500/2025/1279.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 124,
+    "companyName": "中国航空油料集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "33,447.8",
+    "sourceLink": "../../gongsi/china500/2025/1578.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 125,
+    "companyName": "湖南钢铁集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "33,366.8",
+    "sourceLink": "../../gongsi/china500/2025/1575.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 126,
+    "companyName": "广西投资集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "32,974.6",
+    "sourceLink": "../../gongsi/china500/2025/1580.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 127,
+    "companyName": "台湾中油股份有限公司",
+    "sourceIndustry": "炼油",
+    "revenue": "32,768.9",
+    "sourceLink": "../../gongsi/china500/2025/1549.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "油气化工"
+  },
+  {
+    "rank": 128,
+    "companyName": "纬创集团",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "32,687.7",
+    "sourceLink": "../../gongsi/china500/2025/1572.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 129,
+    "companyName": "新华人寿保险股份有限公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "32,293.1",
+    "sourceLink": "../../gongsi/china500/2025/548.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 130,
+    "companyName": "中国通用技术（集团）控股有限责任公司",
+    "sourceIndustry": "贸易",
+    "revenue": "32,282.4",
+    "sourceLink": "../../gongsi/china500/2025/1702.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 131,
+    "companyName": "国泰金融控股股份有限公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "31,854.2",
+    "sourceLink": "../../gongsi/china500/2025/1599.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 132,
+    "companyName": "首钢集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "31,405.6",
+    "sourceLink": "../../gongsi/china500/2025/1558.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 133,
+    "companyName": "富邦金融控股股份有限公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "30,151.8",
+    "sourceLink": "../../gongsi/china500/2025/1650.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 134,
+    "companyName": "潍柴动力股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "29,977",
+    "sourceLink": "../../gongsi/china500/2025/73.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "智能零部件"
+  },
+  {
+    "rank": 135,
+    "companyName": "海信集团控股股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "29,926.4",
+    "sourceLink": "../../gongsi/china500/2025/1584.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 136,
+    "companyName": "文晔科技股份有限公司",
+    "sourceIndustry": "批发：电子、办公设备",
+    "revenue": "29,889.4",
+    "sourceLink": "../../gongsi/china500/2025/1654.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 137,
+    "companyName": "万向集团公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "29,717.8",
+    "sourceLink": "../../gongsi/china500/2025/1703.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "零部件"
+  },
+  {
+    "rank": 138,
+    "companyName": "洛阳栾川钼业集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "29,607.1",
+    "sourceLink": "../../gongsi/china500/2025/1334.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 139,
+    "companyName": "仁宝电脑工业股份有限公司",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "28,357.3",
+    "sourceLink": "../../gongsi/china500/2025/1562.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 140,
+    "companyName": "长城汽车股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "28,101.4",
+    "sourceLink": "../../gongsi/china500/2025/189.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 141,
+    "companyName": "京东方科技集团股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "27,571.2",
+    "sourceLink": "../../gongsi/china500/2025/307.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 142,
+    "companyName": "陕西建工控股集团有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "27,562.1",
+    "sourceLink": "../../gongsi/china500/2025/1566.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 143,
+    "companyName": "大联大投资控股股份有限公司",
+    "sourceIndustry": "批发：电子、办公设备",
+    "revenue": "27,432",
+    "sourceLink": "../../gongsi/china500/2025/1651.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 144,
+    "companyName": "山西焦煤集团有限责任公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "27,285.8",
+    "sourceLink": "../../gongsi/china500/2025/1546.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 145,
+    "companyName": "亨通集团有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "27,187.8",
+    "sourceLink": "../../gongsi/china500/2025/1586.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 146,
+    "companyName": "四川省宜宾五粮液集团有限公司",
+    "sourceIndustry": "饮料",
+    "revenue": "27,142.6",
+    "sourceLink": "../../gongsi/china500/2025/1587.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 147,
+    "companyName": "复星国际有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "26,704.2",
+    "sourceLink": "../../gongsi/china500/2025/546.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 148,
+    "companyName": "珠海格力电器股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "26,411.8",
+    "sourceLink": "../../gongsi/china500/2025/54.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 149,
+    "companyName": "云南省投资控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "26,384.2",
+    "sourceLink": "../../gongsi/china500/2025/1583.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 150,
+    "companyName": "华夏银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "26,029.7",
+    "sourceLink": "../../gongsi/china500/2025/152.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 151,
+    "companyName": "万洲国际有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "25,941",
+    "sourceLink": "../../gongsi/china500/2025/1191.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 152,
+    "companyName": "中国化学工程股份有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "25,935.8",
+    "sourceLink": "../../gongsi/china500/2025/90.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 153,
+    "companyName": "万华化学集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "25,304.2",
+    "sourceLink": "../../gongsi/china500/2025/296.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 154,
+    "companyName": "中国国际海运集装箱（集团）股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "24,692",
+    "sourceLink": "../../gongsi/china500/2025/128.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 155,
+    "companyName": "中国南方航空股份有限公司",
+    "sourceIndustry": "航空",
+    "revenue": "24,213.9",
+    "sourceLink": "../../gongsi/china500/2025/35.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 156,
+    "companyName": "贵州茅台酒股份有限公司",
+    "sourceIndustry": "饮料",
+    "revenue": "24,202.8",
+    "sourceLink": "../../gongsi/china500/2025/235.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 157,
+    "companyName": "中升集团控股有限公司",
+    "sourceIndustry": "汽车零售和服务",
+    "revenue": "23,366.2",
+    "sourceLink": "../../gongsi/china500/2025/643.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "销售服务"
+  },
+  {
+    "rank": 158,
+    "companyName": "中国国际航空股份有限公司",
+    "sourceIndustry": "航空",
+    "revenue": "23,168.1",
+    "sourceLink": "../../gongsi/china500/2025/43.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 159,
+    "companyName": "TCL科技集团股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "22,926.8",
+    "sourceLink": "../../gongsi/china500/2025/52.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 160,
+    "companyName": "卓尔智联集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "22,564.9",
+    "sourceLink": "../../gongsi/china500/2025/1337.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 161,
+    "companyName": "绿城中国控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "22,035",
+    "sourceLink": "../../gongsi/china500/2025/252.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 162,
+    "companyName": "江苏银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "21,879.3",
+    "sourceLink": "../../gongsi/china500/2025/1293.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 163,
+    "companyName": "中国宏桥集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "21,704.6",
+    "sourceLink": "../../gongsi/china500/2025/1232.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 164,
+    "companyName": "湖北联投集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "21,100.6",
+    "sourceLink": "../../gongsi/china500/2025/1704.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 165,
+    "companyName": "九州通医药集团股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "21,098.8",
+    "sourceLink": "../../gongsi/china500/2025/505.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 166,
+    "companyName": "TCL实业控股股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "20,852",
+    "sourceLink": "../../gongsi/china500/2025/1657.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 167,
+    "companyName": "台塑石化股份有限公司",
+    "sourceIndustry": "炼油",
+    "revenue": "20,680.2",
+    "sourceLink": "../../gongsi/china500/2025/1649.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "油气化工"
+  },
+  {
+    "rank": 168,
+    "companyName": "统一企业股份有限公司",
+    "sourceIndustry": "食品：消费产品",
+    "revenue": "20,487.5",
+    "sourceLink": "../../gongsi/china500/2025/1594.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 169,
+    "companyName": "赛力斯集团股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "20,176.8",
+    "sourceLink": "../../gongsi/china500/2025/1622.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 170,
+    "companyName": "英业达股份有限公司",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "20,133.1",
+    "sourceLink": "../../gongsi/china500/2025/1592.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 171,
+    "companyName": "理想汽车",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "20,077.3",
+    "sourceLink": "../../gongsi/china500/2025/1458.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 172,
+    "companyName": "北京银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "19,801.4",
+    "sourceLink": "../../gongsi/china500/2025/197.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 173,
+    "companyName": "潞安化工集团有限公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "19,472",
+    "sourceLink": "../../gongsi/china500/2025/1576.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 174,
+    "companyName": "牧原食品股份有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "19,172.1",
+    "sourceLink": "../../gongsi/china500/2025/1411.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 175,
+    "companyName": "新奥天然气股份有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "18,889",
+    "sourceLink": "../../gongsi/china500/2025/1422.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 176,
+    "companyName": "浙商银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "18,723",
+    "sourceLink": "../../gongsi/china500/2025/1237.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 177,
+    "companyName": "日月光投资控股股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "18,548.9",
+    "sourceLink": "../../gongsi/china500/2025/1652.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片封测"
+  },
+  {
+    "rank": 178,
+    "companyName": "百度集团股份有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "18,501.9",
+    "sourceLink": "../../gongsi/china500/2025/415.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 179,
+    "companyName": "中国东方航空股份有限公司",
+    "sourceIndustry": "航空",
+    "revenue": "18,362.2",
+    "sourceLink": "../../gongsi/china500/2025/63.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 180,
+    "companyName": "华硕电脑股份有限公司",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "18,289.6",
+    "sourceLink": "../../gongsi/china500/2025/1659.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 181,
+    "companyName": "江苏省苏豪控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "18,084",
+    "sourceLink": "../../gongsi/china500/2025/1658.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 182,
+    "companyName": "神州数码集团股份有限公司",
+    "sourceIndustry": "批发：电子、办公设备",
+    "revenue": "17,812.8",
+    "sourceLink": "../../gongsi/china500/2025/1289.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 183,
+    "companyName": "龙湖集团控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "17,716.7",
+    "sourceLink": "../../gongsi/china500/2025/203.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 184,
+    "companyName": "北京快手科技有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "17,636.5",
+    "sourceLink": "../../gongsi/china500/2025/1447.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 185,
+    "companyName": "宁波金田铜业(集团)股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "17,256.1",
+    "sourceLink": "../../gongsi/china500/2025/1428.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 186,
+    "companyName": "宁波银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "17,086.7",
+    "sourceLink": "../../gongsi/china500/2025/431.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 187,
+    "companyName": "中兴通讯股份有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "16,858.3",
+    "sourceLink": "../../gongsi/china500/2025/32.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 188,
+    "companyName": "联发科技股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "16,529.5",
+    "sourceLink": "../../gongsi/china500/2025/1591.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 189,
+    "companyName": "中国再保险（集团）股份有限公司",
+    "sourceIndustry": "财产与意外保险（股份）",
+    "revenue": "16,418.3",
+    "sourceLink": "../../gongsi/china500/2025/1227.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 190,
+    "companyName": "内蒙古伊利实业集团股份有限公司",
+    "sourceIndustry": "食品：消费产品",
+    "revenue": "16,091.2",
+    "sourceLink": "../../gongsi/china500/2025/109.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 191,
+    "companyName": "浪潮电子信息产业股份有限公司",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "15,950.5",
+    "sourceLink": "../../gongsi/china500/2025/1269.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 192,
+    "companyName": "广东海大集团股份有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "15,927.4",
+    "sourceLink": "../../gongsi/china500/2025/359.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 193,
+    "companyName": "上海银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "15,591",
+    "sourceLink": "../../gongsi/china500/2025/1292.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 194,
+    "companyName": "北京金隅集团股份有限公司",
+    "sourceIndustry": "建材、玻璃",
+    "revenue": "15,386.9",
+    "sourceLink": "../../gongsi/china500/2025/200.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 195,
+    "companyName": "其亚集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "15,337.8",
+    "sourceLink": "../../gongsi/china500/2025/1668.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 196,
+    "companyName": "华勤技术股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "15,271",
+    "sourceLink": "../../gongsi/china500/2025/1597.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 197,
+    "companyName": "唯品会控股有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "15,068.5",
+    "sourceLink": "../../gongsi/china500/2025/668.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 198,
+    "companyName": "中国外运股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "14,679.3",
+    "sourceLink": "../../gongsi/china500/2025/92.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 199,
+    "companyName": "网易公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "14,634.1",
+    "sourceLink": "../../gongsi/china500/2025/470.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 200,
+    "companyName": "温氏食品集团股份有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "14,582.5",
+    "sourceLink": "../../gongsi/china500/2025/1231.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 201,
+    "companyName": "南京银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "14,552.8",
+    "sourceLink": "../../gongsi/china500/2025/485.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 202,
+    "companyName": "长荣海运股份有限公司",
+    "sourceIndustry": "船务",
+    "revenue": "14,441.6",
+    "sourceLink": "../../gongsi/china500/2025/1653.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 203,
+    "companyName": "四川长虹电器股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "14,411.2",
+    "sourceLink": "../../gongsi/china500/2025/81.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 204,
+    "companyName": "桐昆集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "14,079.8",
+    "sourceLink": "../../gongsi/china500/2025/557.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 205,
+    "companyName": "歌尔股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "14,030.7",
+    "sourceLink": "../../gongsi/china500/2025/607.htm",
+    "industryLevel1": "消费电子",
+    "industryLevel2": "智能终端"
+  },
+  {
+    "rank": 206,
+    "companyName": "特变电工股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "13,601.6",
+    "sourceLink": "../../gongsi/china500/2025/168.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 207,
+    "companyName": "中国铁塔股份有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "13,588.5",
+    "sourceLink": "../../gongsi/china500/2025/1366.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 208,
+    "companyName": "安徽建工集团股份有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "13,412",
+    "sourceLink": "../../gongsi/china500/2025/1224.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 209,
+    "companyName": "中国重汽（香港）有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "13,211.8",
+    "sourceLink": "../../gongsi/china500/2025/94.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 210,
+    "companyName": "贝壳控股有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "12,988.9",
+    "sourceLink": "../../gongsi/china500/2025/1423.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 211,
+    "companyName": "晶科能源股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "12,851.8",
+    "sourceLink": "../../gongsi/china500/2025/1598.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 212,
+    "companyName": "徐工集团工程机械股份有限公司",
+    "sourceIndustry": "建筑和农业机械",
+    "revenue": "12,739",
+    "sourceLink": "../../gongsi/china500/2025/127.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 213,
+    "companyName": "济宁能源发展集团有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "12,593.6",
+    "sourceLink": "../../gongsi/china500/2025/1667.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 214,
+    "companyName": "阳光保险集团股份有限公司",
+    "sourceIndustry": "人寿与健康保险（股份）",
+    "revenue": "12,528.5",
+    "sourceLink": "../../gongsi/china500/2025/1590.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 215,
+    "companyName": "深圳市立业集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "12,454.2",
+    "sourceLink": "../../gongsi/china500/2025/1601.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 216,
+    "companyName": "新城发展控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "12,400.8",
+    "sourceLink": "../../gongsi/china500/2025/609.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 217,
+    "companyName": "中国蒙牛乳业有限公司",
+    "sourceIndustry": "食品：消费产品",
+    "revenue": "12,324.2",
+    "sourceLink": "../../gongsi/china500/2025/100.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 218,
+    "companyName": "远大产业控股股份有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "12,240.6",
+    "sourceLink": "../../gongsi/china500/2025/187.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 219,
+    "companyName": "浙江浙能电力股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "12,230.8",
+    "sourceLink": "../../gongsi/china500/2025/658.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 220,
+    "companyName": "中国广核电力股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "12,064.2",
+    "sourceLink": "../../gongsi/china500/2025/1240.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 221,
+    "companyName": "白银有色集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "12,061.9",
+    "sourceLink": "../../gongsi/china500/2025/1284.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 222,
+    "companyName": "越秀地产股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "12,008.1",
+    "sourceLink": "../../gongsi/china500/2025/351.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 223,
+    "companyName": "中国长江电力股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "11,742.8",
+    "sourceLink": "../../gongsi/china500/2025/208.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 224,
+    "companyName": "北京控股有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "11,683.4",
+    "sourceLink": "../../gongsi/china500/2025/122.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 225,
+    "companyName": "中电控股有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "11,657.7",
+    "sourceLink": "../../gongsi/china500/2025/1666.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 226,
+    "companyName": "周大福珠宝集团有限公司",
+    "sourceIndustry": "专业零售",
+    "revenue": "11,490.1",
+    "sourceLink": "../../gongsi/china500/2025/1663.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "连锁零售"
+  },
+  {
+    "rank": 227,
+    "companyName": "隆基绿能科技股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "11,477.4",
+    "sourceLink": "../../gongsi/china500/2025/1330.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 228,
+    "companyName": "伟仕佳杰控股有限公司",
+    "sourceIndustry": "批发：电子、办公设备",
+    "revenue": "11,417",
+    "sourceLink": "../../gongsi/china500/2025/1370.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 229,
+    "companyName": "上海钢联电子商务股份有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "11,304.1",
+    "sourceLink": "../../gongsi/china500/2025/1241.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 230,
+    "companyName": "创新新材料科技股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "11,249.4",
+    "sourceLink": "../../gongsi/china500/2025/1604.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 231,
+    "companyName": "康师傅控股有限公司",
+    "sourceIndustry": "食品：消费产品",
+    "revenue": "11,209",
+    "sourceLink": "../../gongsi/china500/2025/1665.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 232,
+    "companyName": "浙江省建设投资集团股份有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "11,207.9",
+    "sourceLink": "../../gongsi/china500/2025/1395.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 233,
+    "companyName": "天合光能股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "11,157.7",
+    "sourceLink": "../../gongsi/china500/2025/1436.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 234,
+    "companyName": "广东省广物控股集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "11,029",
+    "sourceLink": "../../gongsi/china500/2025/1661.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 235,
+    "companyName": "心里程控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "10,902.6",
+    "sourceLink": "../../gongsi/china500/2025/1603.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 236,
+    "companyName": "三一重工股份有限公司",
+    "sourceIndustry": "建筑和农业机械",
+    "revenue": "10,893.8",
+    "sourceLink": "../../gongsi/china500/2025/157.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 237,
+    "companyName": "阳光电源股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "10,820.7",
+    "sourceLink": "../../gongsi/china500/2025/1466.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 238,
+    "companyName": "杭州银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "10,747.5",
+    "sourceLink": "../../gongsi/china500/2025/1314.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 239,
+    "companyName": "天能动力国际有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "10,655.5",
+    "sourceLink": "../../gongsi/china500/2025/621.htm",
+    "industryLevel1": "新能源",
+    "industryLevel2": "动力电池"
+  },
+  {
+    "rank": 240,
+    "companyName": "漳州市九龙江集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "10,615.6",
+    "sourceLink": "../../gongsi/china500/2025/1669.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 241,
+    "companyName": "金地（集团）股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "10,471.4",
+    "sourceLink": "../../gongsi/china500/2025/195.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 242,
+    "companyName": "徽商银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "10,453.9",
+    "sourceLink": "../../gongsi/china500/2025/669.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 243,
+    "companyName": "大秦铁路股份有限公司",
+    "sourceIndustry": "铁路运输",
+    "revenue": "10,371.8",
+    "sourceLink": "../../gongsi/china500/2025/113.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 244,
+    "companyName": "融创中国控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "10,287.3",
+    "sourceLink": "../../gongsi/china500/2025/608.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 245,
+    "companyName": "极兔速递环球有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "10,259.1",
+    "sourceLink": "../../gongsi/china500/2025/1672.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 246,
+    "companyName": "闻泰科技股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "10,228.8",
+    "sourceLink": "../../gongsi/china500/2025/1317.htm",
+    "industryLevel1": "消费电子",
+    "industryLevel2": "智能终端"
+  },
+  {
+    "rank": 247,
+    "companyName": "中国信达资产管理股份有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "10,151.2",
+    "sourceLink": "../../gongsi/china500/2025/660.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 248,
+    "companyName": "高鑫零售有限公司",
+    "sourceIndustry": "综合商业",
+    "revenue": "9,944.4",
+    "sourceLink": "../../gongsi/china500/2025/1705.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 249,
+    "companyName": "安踏体育用品集团有限公司",
+    "sourceIndustry": "服装",
+    "revenue": "9,843.5",
+    "sourceLink": "../../gongsi/china500/2025/1609.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "服装纺织"
+  },
+  {
+    "rank": 250,
+    "companyName": "柳州钢铁股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "9,747.1",
+    "sourceLink": "../../gongsi/china500/2025/98.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 251,
+    "companyName": "晶澳太阳能科技股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "9,745.5",
+    "sourceLink": "../../gongsi/china500/2025/1409.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 252,
+    "companyName": "蓝思科技股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "9,714.4",
+    "sourceLink": "../../gongsi/china500/2025/1196.htm",
+    "industryLevel1": "消费电子",
+    "industryLevel2": "智能终端"
+  },
+  {
+    "rank": 253,
+    "companyName": "东方电气股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "9,686.3",
+    "sourceLink": "../../gongsi/china500/2025/76.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 254,
+    "companyName": "杭州滨江房产集团股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "9,610.8",
+    "sourceLink": "../../gongsi/china500/2025/526.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 255,
+    "companyName": "圆通速递股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "9,594.3",
+    "sourceLink": "../../gongsi/china500/2025/1306.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 256,
+    "companyName": "上海隧道工程股份有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "9,564.1",
+    "sourceLink": "../../gongsi/china500/2025/166.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 257,
+    "companyName": "深圳传音控股股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "9,550.2",
+    "sourceLink": "../../gongsi/china500/2025/1406.htm",
+    "industryLevel1": "消费电子",
+    "industryLevel2": "智能终端"
+  },
+  {
+    "rank": 258,
+    "companyName": "广东省建筑工程集团股份有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "9,494.5",
+    "sourceLink": "../../gongsi/china500/2025/1664.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 259,
+    "companyName": "内蒙古包钢钢联股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "9,463.2",
+    "sourceLink": "../../gongsi/china500/2025/74.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 260,
+    "companyName": "永辉超市股份有限公司",
+    "sourceIndustry": "综合商业",
+    "revenue": "9,391.5",
+    "sourceLink": "../../gongsi/china500/2025/513.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 261,
+    "companyName": "深圳前海微众银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "9,388.4",
+    "sourceLink": "../../gongsi/china500/2025/1607.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 262,
+    "companyName": "新凤鸣集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "9,324.3",
+    "sourceLink": "../../gongsi/china500/2025/1336.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 263,
+    "companyName": "永道控股集团股份有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "9,188.1",
+    "sourceLink": "../../gongsi/china500/2025/1706.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 264,
+    "companyName": "广州产业投资控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "9,173",
+    "sourceLink": "../../gongsi/china500/2025/1674.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 265,
+    "companyName": "新鸿基地产发展有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "9,164.1",
+    "sourceLink": "../../gongsi/china500/2025/1671.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 266,
+    "companyName": "淮北矿业控股股份有限公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "9,155.4",
+    "sourceLink": "../../gongsi/china500/2025/1369.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 267,
+    "companyName": "渤海银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "9,150.8",
+    "sourceLink": "../../gongsi/china500/2025/1435.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 268,
+    "companyName": "深圳市爱施德股份有限公司",
+    "sourceIndustry": "批发：电子、办公设备",
+    "revenue": "9,147.9",
+    "sourceLink": "../../gongsi/china500/2025/515.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 269,
+    "companyName": "蔚来集团",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "9,135.5",
+    "sourceLink": "../../gongsi/china500/2025/1453.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 270,
+    "companyName": "中金黄金股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "9,111.1",
+    "sourceLink": "../../gongsi/china500/2025/140.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 271,
+    "companyName": "创维集团有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "9,035.6",
+    "sourceLink": "../../gongsi/china500/2025/179.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 272,
+    "companyName": "浙江正泰电器股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "8,967",
+    "sourceLink": "../../gongsi/china500/2025/391.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 273,
+    "companyName": "中国永达汽车服务控股有限公司",
+    "sourceIndustry": "汽车零售和服务",
+    "revenue": "8,814.2",
+    "sourceLink": "../../gongsi/china500/2025/1368.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "销售服务"
+  },
+  {
+    "rank": 274,
+    "companyName": "中储发展股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "8,775.8",
+    "sourceLink": "../../gongsi/china500/2025/175.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 275,
+    "companyName": "振石控股集团有限公司",
+    "sourceIndustry": "建材、玻璃",
+    "revenue": "8,662.4",
+    "sourceLink": "../../gongsi/china500/2025/1610.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 276,
+    "companyName": "国泰海通证券股份有限公司",
+    "sourceIndustry": "证券",
+    "revenue": "8,583.1",
+    "sourceLink": "../../gongsi/china500/2025/1234.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "证券"
+  },
+  {
+    "rank": 277,
+    "companyName": "云南云天化股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "8,552.5",
+    "sourceLink": "../../gongsi/china500/2025/325.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 278,
+    "companyName": "浙江华友钴业股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "8,470.3",
+    "sourceLink": "../../gongsi/china500/2025/1415.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 279,
+    "companyName": "北京蓝色光标数据科技集团股份有限公司",
+    "sourceIndustry": "广告及市场营销",
+    "revenue": "8,449.6",
+    "sourceLink": "../../gongsi/china500/2025/1323.htm",
+    "industryLevel1": "第三产业",
+    "industryLevel2": "租赁和商务服务业"
+  },
+  {
+    "rank": 280,
+    "companyName": "宏旺控股集团有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "8,421.1",
+    "sourceLink": "../../gongsi/china500/2025/1675.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 281,
+    "companyName": "金发科技股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "8,410.4",
+    "sourceLink": "../../gongsi/china500/2025/283.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 282,
+    "companyName": "中国黄金集团黄金珠宝股份有限公司",
+    "sourceIndustry": "专业零售",
+    "revenue": "8,403.4",
+    "sourceLink": "../../gongsi/china500/2025/1434.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "连锁零售"
+  },
+  {
+    "rank": 283,
+    "companyName": "华峰集团有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "8,358.2",
+    "sourceLink": "../../gongsi/china500/2025/1676.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 284,
+    "companyName": "汇通达网络股份有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "8,347.1",
+    "sourceLink": "../../gongsi/china500/2025/1448.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 285,
+    "companyName": "珠海华发实业股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "8,337.8",
+    "sourceLink": "../../gongsi/china500/2025/451.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 286,
+    "companyName": "世茂集团控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "8,335.4",
+    "sourceLink": "../../gongsi/china500/2025/153.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 287,
+    "companyName": "深圳市中金岭南有色金属股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "8,319.8",
+    "sourceLink": "../../gongsi/china500/2025/268.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 288,
+    "companyName": "玖龙纸业（控股）有限公司",
+    "sourceIndustry": "林产品与纸制品",
+    "revenue": "8,268.9",
+    "sourceLink": "../../gongsi/china500/2025/186.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "食品与轻工制造"
+  },
+  {
+    "rank": 289,
+    "companyName": "中国大冶有色金属矿业有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "8,040.5",
+    "sourceLink": "../../gongsi/china500/2025/633.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 290,
+    "companyName": "国投电力控股股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "8,035.8",
+    "sourceLink": "../../gongsi/china500/2025/196.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 291,
+    "companyName": "中芯国际集成电路制造有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "8,029.9",
+    "sourceLink": "../../gongsi/china500/2025/276.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片制造"
+  },
+  {
+    "rank": 292,
+    "companyName": "物美科技集团有限公司",
+    "sourceIndustry": "综合商业",
+    "revenue": "7,985.8",
+    "sourceLink": "../../gongsi/china500/2025/1605.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 293,
+    "companyName": "广东电力发展股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "7,944.1",
+    "sourceLink": "../../gongsi/china500/2025/194.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 294,
+    "companyName": "老凤祥股份有限公司",
+    "sourceIndustry": "专业零售",
+    "revenue": "7,893.2",
+    "sourceLink": "../../gongsi/china500/2025/216.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "连锁零售"
+  },
+  {
+    "rank": 295,
+    "companyName": "苏宁易购集团股份有限公司",
+    "sourceIndustry": "专业零售",
+    "revenue": "7,893",
+    "sourceLink": "../../gongsi/china500/2025/33.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "连锁零售"
+  },
+  {
+    "rank": 296,
+    "companyName": "金风科技股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "7,880.1",
+    "sourceLink": "../../gongsi/china500/2025/219.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 297,
+    "companyName": "中国旅游集团中免股份有限公司",
+    "sourceIndustry": "综合商业",
+    "revenue": "7,848.8",
+    "sourceLink": "../../gongsi/china500/2025/320.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 298,
+    "companyName": "深圳金雅福控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "7,799.7",
+    "sourceLink": "../../gongsi/china500/2025/1673.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 299,
+    "companyName": "欣旺达电子股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "7,785.8",
+    "sourceLink": "../../gongsi/china500/2025/1362.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 300,
+    "companyName": "宁波均胜电子股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "7,764",
+    "sourceLink": "../../gongsi/china500/2025/1303.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "智能零部件"
+  },
+  {
+    "rank": 301,
+    "companyName": "香港铁路有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "7,690.9",
+    "sourceLink": "../../gongsi/china500/2025/1677.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 302,
+    "companyName": "天津友发钢管集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "7,619.3",
+    "sourceLink": "../../gongsi/china500/2025/1427.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 303,
+    "companyName": "深圳华侨城股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "7,561.6",
+    "sourceLink": "../../gongsi/china500/2025/213.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 304,
+    "companyName": "华泰证券股份有限公司",
+    "sourceIndustry": "证券",
+    "revenue": "7,544.7",
+    "sourceLink": "../../gongsi/china500/2025/237.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "证券"
+  },
+  {
+    "rank": 305,
+    "companyName": "中原银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "7,484.9",
+    "sourceLink": "../../gongsi/china500/2025/1391.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 306,
+    "companyName": "安徽楚江科技新材料股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "7,470.4",
+    "sourceLink": "../../gongsi/china500/2025/1451.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 307,
+    "companyName": "南京医药股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "7,462.8",
+    "sourceLink": "../../gongsi/china500/2025/174.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 308,
+    "companyName": "北京国联视讯信息技术股份有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "7,447.3",
+    "sourceLink": "../../gongsi/china500/2025/1452.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 309,
+    "companyName": "携程集团有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "7,406.9",
+    "sourceLink": "../../gongsi/china500/2025/1262.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 310,
+    "companyName": "重庆农村商业银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "7,392.3",
+    "sourceLink": "../../gongsi/china500/2025/520.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 311,
+    "companyName": "上海农村商业银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "7,155.9",
+    "sourceLink": "../../gongsi/china500/2025/1465.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 312,
+    "companyName": "香港中华煤气有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "7,109.3",
+    "sourceLink": "../../gongsi/china500/2025/1678.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 313,
+    "companyName": "超威动力控股有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "6,996.5",
+    "sourceLink": "../../gongsi/china500/2025/622.htm",
+    "industryLevel1": "新能源",
+    "industryLevel2": "动力电池"
+  },
+  {
+    "rank": 314,
+    "companyName": "西部矿业股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "6,952.6",
+    "sourceLink": "../../gongsi/china500/2025/155.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 315,
+    "companyName": "海南天然橡胶产业集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "6,903.6",
+    "sourceLink": "../../gongsi/china500/2025/569.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 316,
+    "companyName": "洛阳工业控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "6,878.4",
+    "sourceLink": "../../gongsi/china500/2025/1611.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 317,
+    "companyName": "惠州亿纬锂能股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "6,756.5",
+    "sourceLink": "../../gongsi/china500/2025/1618.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 318,
+    "companyName": "韵达控股集团股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "6,746.6",
+    "sourceLink": "../../gongsi/china500/2025/1397.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 319,
+    "companyName": "江苏中天科技股份有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "6,678.7",
+    "sourceLink": "../../gongsi/china500/2025/474.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 320,
+    "companyName": "中国航发动力股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "6,654.4",
+    "sourceLink": "../../gongsi/china500/2025/1194.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 321,
+    "companyName": "旭辉控股（集团）有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "6,641.8",
+    "sourceLink": "../../gongsi/china500/2025/611.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 322,
+    "companyName": "中国旭阳集团有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "6,607.6",
+    "sourceLink": "../../gongsi/china500/2025/1379.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 323,
+    "companyName": "申通快递股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "6,555.7",
+    "sourceLink": "../../gongsi/china500/2025/1387.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 324,
+    "companyName": "成都银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "6,555.4",
+    "sourceLink": "../../gongsi/china500/2025/1681.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 325,
+    "companyName": "长沙银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "6,540.1",
+    "sourceLink": "../../gongsi/china500/2025/1614.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 326,
+    "companyName": "中国银河证券股份有限公司",
+    "sourceIndustry": "证券",
+    "revenue": "6,498.4",
+    "sourceLink": "../../gongsi/china500/2025/1235.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "证券"
+  },
+  {
+    "rank": 327,
+    "companyName": "大明国际控股有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "6,456.2",
+    "sourceLink": "../../gongsi/china500/2025/634.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 328,
+    "companyName": "上海龙旗科技股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "6,446.3",
+    "sourceLink": "../../gongsi/china500/2025/1697.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 329,
+    "companyName": "广东粤海控股集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "6,413.1",
+    "sourceLink": "../../gongsi/china500/2025/1680.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 330,
+    "companyName": "福建三钢闽光股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "6,401.3",
+    "sourceLink": "../../gongsi/china500/2025/180.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 331,
+    "companyName": "中联重科股份有限公司",
+    "sourceIndustry": "建筑和农业机械",
+    "revenue": "6,320.6",
+    "sourceLink": "../../gongsi/china500/2025/126.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 332,
+    "companyName": "上海华谊集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "6,268.5",
+    "sourceLink": "../../gongsi/china500/2025/277.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 333,
+    "companyName": "中通快递（开曼）有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "6,154.2",
+    "sourceLink": "../../gongsi/china500/2025/1384.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 334,
+    "companyName": "广东领益智造股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "6,144.5",
+    "sourceLink": "../../gongsi/china500/2025/1324.htm",
+    "industryLevel1": "消费电子",
+    "industryLevel2": "智能终端"
+  },
+  {
+    "rank": 335,
+    "companyName": "碧桂园服务控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "6,114.2",
+    "sourceLink": "../../gongsi/china500/2025/1683.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 336,
+    "companyName": "雅居乐集团控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "6,024.3",
+    "sourceLink": "../../gongsi/china500/2025/183.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 337,
+    "companyName": "阿特斯阳光电力集团股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "5,993.4",
+    "sourceLink": "../../gongsi/china500/2025/566.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 338,
+    "companyName": "北京国际人力资本集团股份有限公司",
+    "sourceIndustry": "多元化外包服务",
+    "revenue": "5,980.6",
+    "sourceLink": "../../gongsi/china500/2025/1684.htm",
+    "industryLevel1": "第三产业",
+    "industryLevel2": "租赁和商务服务业"
+  },
+  {
+    "rank": 339,
+    "companyName": "深圳市天行云供应链有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "5,970.7",
+    "sourceLink": "../../gongsi/china500/2025/1616.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 340,
+    "companyName": "中国东方集团控股有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "5,970.3",
+    "sourceLink": "../../gongsi/china500/2025/632.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 341,
+    "companyName": "农夫山泉股份有限公司",
+    "sourceIndustry": "饮料",
+    "revenue": "5,961.8",
+    "sourceLink": "../../gongsi/china500/2025/1439.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 342,
+    "companyName": "海底捞国际控股有限公司",
+    "sourceIndustry": "食品：饮食服务业",
+    "revenue": "5,942.1",
+    "sourceLink": "../../gongsi/china500/2025/1389.htm",
+    "industryLevel1": "第三产业",
+    "industryLevel2": "住宿和餐饮业"
+  },
+  {
+    "rank": 343,
+    "companyName": "京沪高速铁路股份有限公司",
+    "sourceIndustry": "铁路运输",
+    "revenue": "5,859.1",
+    "sourceLink": "../../gongsi/china500/2025/1400.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 344,
+    "companyName": "安徽江淮汽车集团股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "5,853.3",
+    "sourceLink": "../../gongsi/china500/2025/132.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 345,
+    "companyName": "长江实业集团有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "5,834.9",
+    "sourceLink": "../../gongsi/china500/2025/1682.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 346,
+    "companyName": "浙农集团股份有限公司",
+    "sourceIndustry": "批发：食品",
+    "revenue": "5,833.9",
+    "sourceLink": "../../gongsi/china500/2025/1437.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 347,
+    "companyName": "云南锡业股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "5,833.4",
+    "sourceLink": "../../gongsi/china500/2025/282.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 348,
+    "companyName": "华东医药股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "5,824.1",
+    "sourceLink": "../../gongsi/china500/2025/265.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 349,
+    "companyName": "甬金科技集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "5,817.9",
+    "sourceLink": "../../gongsi/china500/2025/1442.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 350,
+    "companyName": "深圳能源集团股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "5,727.9",
+    "sourceLink": "../../gongsi/china500/2025/202.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 351,
+    "companyName": "小鹏汽车有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "5,679.7",
+    "sourceLink": "../../gongsi/china500/2025/1629.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 352,
+    "companyName": "中骏集团控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "5,666.3",
+    "sourceLink": "../../gongsi/china500/2025/1265.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 353,
+    "companyName": "山东太阳纸业股份有限公司",
+    "sourceIndustry": "林产品与纸制品",
+    "revenue": "5,660.2",
+    "sourceLink": "../../gongsi/china500/2025/330.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "食品与轻工制造"
+  },
+  {
+    "rank": 354,
+    "companyName": "广州农村商业银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "5,647.7",
+    "sourceLink": "../../gongsi/china500/2025/1377.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 355,
+    "companyName": "中伟新材料股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "5,590.2",
+    "sourceLink": "../../gongsi/china500/2025/1625.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 356,
+    "companyName": "银河娱乐集团有限公司",
+    "sourceIndustry": "酒店、赌场、度假村",
+    "revenue": "5,566.2",
+    "sourceLink": "../../gongsi/china500/2025/1707.htm",
+    "industryLevel1": "服务业",
+    "industryLevel2": "文旅酒店"
+  },
+  {
+    "rank": 357,
+    "companyName": "云南白药集团股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "5,563.9",
+    "sourceLink": "../../gongsi/china500/2025/281.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 358,
+    "companyName": "建滔集团有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "5,522.7",
+    "sourceLink": "../../gongsi/china500/2025/1686.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "半导体与芯片"
+  },
+  {
+    "rank": 359,
+    "companyName": "中梁控股集团有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "5,515",
+    "sourceLink": "../../gongsi/china500/2025/1425.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 360,
+    "companyName": "河南豫光金铅股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "5,468.2",
+    "sourceLink": "../../gongsi/china500/2025/301.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 361,
+    "companyName": "福耀玻璃工业集团股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "5,455.3",
+    "sourceLink": "../../gongsi/china500/2025/318.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "智能零部件"
+  },
+  {
+    "rank": 362,
+    "companyName": "无锡药明康德新药开发股份有限公司",
+    "sourceIndustry": "制药",
+    "revenue": "5,453.8",
+    "sourceLink": "../../gongsi/china500/2025/1471.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "生物医药"
+  },
+  {
+    "rank": 363,
+    "companyName": "江苏国泰国际集团股份有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "5,414.2",
+    "sourceLink": "../../gongsi/china500/2025/1294.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 364,
+    "companyName": "哈尔滨电气股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "5,381.6",
+    "sourceLink": "../../gongsi/china500/2025/556.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 365,
+    "companyName": "浙江正凯集团有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "5,374.3",
+    "sourceLink": "../../gongsi/china500/2025/1693.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 366,
+    "companyName": "渤海租赁股份有限公司",
+    "sourceIndustry": "设备租赁",
+    "revenue": "5,341.2",
+    "sourceLink": "../../gongsi/china500/2025/1275.htm",
+    "industryLevel1": "第三产业",
+    "industryLevel2": "租赁和商务服务业"
+  },
+  {
+    "rank": 367,
+    "companyName": "江铃汽车股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "5,333.3",
+    "sourceLink": "../../gongsi/china500/2025/223.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 368,
+    "companyName": "河南神火煤电股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "5,333.1",
+    "sourceLink": "../../gongsi/china500/2025/217.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 369,
+    "companyName": "舜宇光学科技（集团）有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "5,322.2",
+    "sourceLink": "../../gongsi/china500/2025/1223.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 370,
+    "companyName": "上海国际港务（集团）股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "5,297.6",
+    "sourceLink": "../../gongsi/china500/2025/156.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 371,
+    "companyName": "中国铁路物资股份有限公司",
+    "sourceIndustry": "铁路运输",
+    "revenue": "5,297.1",
+    "sourceLink": "../../gongsi/china500/2025/1431.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 372,
+    "companyName": "荣晖国际集团有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "5,243.4",
+    "sourceLink": "../../gongsi/china500/2025/1679.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 373,
+    "companyName": "广发证券股份有限公司",
+    "sourceIndustry": "证券",
+    "revenue": "5,190.4",
+    "sourceLink": "../../gongsi/china500/2025/516.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "证券"
+  },
+  {
+    "rank": 374,
+    "companyName": "福建省电子信息（集团）有限责任公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "5,179.8",
+    "sourceLink": "../../gongsi/china500/2025/1608.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 375,
+    "companyName": "宇通客车股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "5,172.6",
+    "sourceLink": "../../gongsi/china500/2025/248.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 376,
+    "companyName": "郑州煤矿机械集团股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "5,149.5",
+    "sourceLink": "../../gongsi/china500/2025/523.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 377,
+    "companyName": "深圳市汇川技术股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "5,148",
+    "sourceLink": "../../gongsi/china500/2025/1645.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 378,
+    "companyName": "邯郸正大制管集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "5,133.2",
+    "sourceLink": "../../gongsi/china500/2025/1687.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 379,
+    "companyName": "江苏国信股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "5,132.9",
+    "sourceLink": "../../gongsi/china500/2025/1307.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 380,
+    "companyName": "天津银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "5,129.7",
+    "sourceLink": "../../gongsi/china500/2025/1258.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 381,
+    "companyName": "苏州东山精密制造股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "5,110.4",
+    "sourceLink": "../../gongsi/china500/2025/1354.htm",
+    "industryLevel1": "消费电子",
+    "industryLevel2": "智能终端"
+  },
+  {
+    "rank": 382,
+    "companyName": "深圳迈瑞生物医疗电子股份有限公司",
+    "sourceIndustry": "医疗器材和设备",
+    "revenue": "5,104.2",
+    "sourceLink": "../../gongsi/china500/2025/1441.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 383,
+    "companyName": "成都农村商业银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "5,086.8",
+    "sourceLink": "../../gongsi/china500/2025/1708.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 384,
+    "companyName": "仁恒置地集团有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "5,058.5",
+    "sourceLink": "../../gongsi/china500/2025/574.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 385,
+    "companyName": "新兴铸管股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "5,030.3",
+    "sourceLink": "../../gongsi/china500/2025/104.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 386,
+    "companyName": "易大宗控股有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "5,019.5",
+    "sourceLink": "../../gongsi/china500/2025/1685.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 387,
+    "companyName": "先导科技集团有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "5,019",
+    "sourceLink": "../../gongsi/china500/2025/1695.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 388,
+    "companyName": "山西杏花村汾酒厂股份有限公司",
+    "sourceIndustry": "饮料",
+    "revenue": "5,004.9",
+    "sourceLink": "../../gongsi/china500/2025/1631.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 389,
+    "companyName": "江苏长电科技股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "4,998",
+    "sourceLink": "../../gongsi/china500/2025/1301.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 390,
+    "companyName": "CWT International Limited",
+    "sourceIndustry": "运输及物流",
+    "revenue": "4,983.5",
+    "sourceLink": "../../gongsi/china500/2025/1688.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 391,
+    "companyName": "湖南博深实业集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "4,981.2",
+    "sourceLink": "../../gongsi/china500/2025/1690.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 392,
+    "companyName": "东方国际创业股份有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "4,924",
+    "sourceLink": "../../gongsi/china500/2025/424.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 393,
+    "companyName": "北京京能电力股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "4,923.8",
+    "sourceLink": "../../gongsi/china500/2025/604.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 394,
+    "companyName": "国轩高科股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "4,918.8",
+    "sourceLink": "../../gongsi/china500/2025/1644.htm",
+    "industryLevel1": "新能源",
+    "industryLevel2": "动力电池"
+  },
+  {
+    "rank": 395,
+    "companyName": "厦门钨业股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "4,891.7",
+    "sourceLink": "../../gongsi/china500/2025/303.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 396,
+    "companyName": "无锡市太极实业股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "4,888.3",
+    "sourceLink": "../../gongsi/china500/2025/1464.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 397,
+    "companyName": "鹏鼎控股(深圳)股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "4,883.9",
+    "sourceLink": "../../gongsi/china500/2025/1619.htm",
+    "industryLevel1": "消费电子",
+    "industryLevel2": "智能终端"
+  },
+  {
+    "rank": 398,
+    "companyName": "合生创展集团有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "4,848.8",
+    "sourceLink": "../../gongsi/china500/2025/612.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 399,
+    "companyName": "哈尔滨银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "4,847.9",
+    "sourceLink": "../../gongsi/china500/2025/1257.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 400,
+    "companyName": "甘肃酒钢集团宏兴钢铁股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "4,842.4",
+    "sourceLink": "../../gongsi/china500/2025/71.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 401,
+    "companyName": "申万宏源集团股份有限公司",
+    "sourceIndustry": "证券",
+    "revenue": "4,833.5",
+    "sourceLink": "../../gongsi/china500/2025/1219.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "证券"
+  },
+  {
+    "rank": 402,
+    "companyName": "电讯盈科有限公司",
+    "sourceIndustry": "电信",
+    "revenue": "4,813.2",
+    "sourceLink": "../../gongsi/china500/2025/1689.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "运营商/通信"
+  },
+  {
+    "rank": 403,
+    "companyName": "山东华鲁恒升化工股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "4,756.8",
+    "sourceLink": "../../gongsi/china500/2025/454.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 404,
+    "companyName": "华新水泥股份有限公司",
+    "sourceIndustry": "建材、玻璃",
+    "revenue": "4,755.6",
+    "sourceLink": "../../gongsi/china500/2025/286.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 405,
+    "companyName": "山东南山铝业股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "4,652.7",
+    "sourceLink": "../../gongsi/china500/2025/278.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 406,
+    "companyName": "正荣地产集团有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "4,644.3",
+    "sourceLink": "../../gongsi/china500/2025/1374.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 407,
+    "companyName": "新濠国际发展有限公司",
+    "sourceIndustry": "酒店、赌场、度假村",
+    "revenue": "4,635.8",
+    "sourceLink": "../../gongsi/china500/2025/1700.htm",
+    "industryLevel1": "服务业",
+    "industryLevel2": "文旅酒店"
+  },
+  {
+    "rank": 408,
+    "companyName": "浙江英特集团股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "4,635.3",
+    "sourceLink": "../../gongsi/china500/2025/376.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 409,
+    "companyName": "盈峰集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "4,633",
+    "sourceLink": "../../gongsi/china500/2025/1709.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 410,
+    "companyName": "众安在线财产保险股份有限公司",
+    "sourceIndustry": "财产与意外保险（股份）",
+    "revenue": "4,617.4",
+    "sourceLink": "../../gongsi/china500/2025/1641.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "保险"
+  },
+  {
+    "rank": 411,
+    "companyName": "格林美股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "4,614.2",
+    "sourceLink": "../../gongsi/china500/2025/1627.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 412,
+    "companyName": "中国国际金融股份有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "4,610.2",
+    "sourceLink": "../../gongsi/china500/2025/1356.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 413,
+    "companyName": "新世界发展有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "4,585.8",
+    "sourceLink": "../../gongsi/china500/2025/1662.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 414,
+    "companyName": "宁夏宝丰能源集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "4,584",
+    "sourceLink": "../../gongsi/china500/2025/1468.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 415,
+    "companyName": "中国北方稀土(集团)高科技股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "4,581.7",
+    "sourceLink": "../../gongsi/china500/2025/1418.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 416,
+    "companyName": "上海源耀农业股份有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "4,564.8",
+    "sourceLink": "../../gongsi/china500/2025/1710.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 417,
+    "companyName": "中国铁路通信信号股份有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "4,536.9",
+    "sourceLink": "../../gongsi/china500/2025/1238.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 418,
+    "companyName": "禾丰食品股份有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "4,523.2",
+    "sourceLink": "../../gongsi/china500/2025/1215.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 419,
+    "companyName": "福建万辰生物科技集团股份有限公司",
+    "sourceIndustry": "批发：食品",
+    "revenue": "4,493.1",
+    "sourceLink": "../../gongsi/china500/2025/1711.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 420,
+    "companyName": "河南明泰铝业股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "4,492",
+    "sourceLink": "../../gongsi/china500/2025/597.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 421,
+    "companyName": "中信建投证券股份有限公司",
+    "sourceIndustry": "证券",
+    "revenue": "4,477.5",
+    "sourceLink": "../../gongsi/china500/2025/1304.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "证券"
+  },
+  {
+    "rank": 422,
+    "companyName": "浙江大华技术股份有限公司",
+    "sourceIndustry": "信息技术服务",
+    "revenue": "4,472.6",
+    "sourceLink": "../../gongsi/china500/2025/1270.htm",
+    "industryLevel1": "软件服务",
+    "industryLevel2": "企业软件/SaaS"
+  },
+  {
+    "rank": 423,
+    "companyName": "浙江零跑科技股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "4,470.2",
+    "sourceLink": "../../gongsi/china500/2025/1712.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "整车"
+  },
+  {
+    "rank": 424,
+    "companyName": "青岛啤酒股份有限公司",
+    "sourceIndustry": "饮料",
+    "revenue": "4,466.6",
+    "sourceLink": "../../gongsi/china500/2025/148.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 425,
+    "companyName": "重庆银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "4,448.9",
+    "sourceLink": "../../gongsi/china500/2025/1692.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 426,
+    "companyName": "赛轮集团股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "4,419.9",
+    "sourceLink": "../../gongsi/china500/2025/1713.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "轮胎与橡胶件"
+  },
+  {
+    "rank": 427,
+    "companyName": "佛燃能源集团股份有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "4,390.4",
+    "sourceLink": "../../gongsi/china500/2025/1714.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 428,
+    "companyName": "瑞茂通供应链管理股份有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "4,377.7",
+    "sourceLink": "../../gongsi/china500/2025/1297.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 429,
+    "companyName": "软通动力信息技术（集团）股份有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "4,352.4",
+    "sourceLink": "../../gongsi/china500/2025/1715.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 430,
+    "companyName": "泸州老窖股份有限公司",
+    "sourceIndustry": "饮料",
+    "revenue": "4,335.7",
+    "sourceLink": "../../gongsi/china500/2025/419.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 431,
+    "companyName": "贵阳银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "4,301.1",
+    "sourceLink": "../../gongsi/china500/2025/1691.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 432,
+    "companyName": "东华能源股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "4,299.8",
+    "sourceLink": "../../gongsi/china500/2025/1198.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 433,
+    "companyName": "天地科技股份有限公司",
+    "sourceIndustry": "工业机械",
+    "revenue": "4,242.6",
+    "sourceLink": "../../gongsi/china500/2025/291.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 434,
+    "companyName": "深圳市海王生物工程股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "4,213.5",
+    "sourceLink": "../../gongsi/china500/2025/1209.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 435,
+    "companyName": "平顶山天安煤业股份有限公司",
+    "sourceIndustry": "采矿、原油生产",
+    "revenue": "4,208.5",
+    "sourceLink": "../../gongsi/china500/2025/139.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "采矿业"
+  },
+  {
+    "rank": 436,
+    "companyName": "安徽灵通集团控股有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "4,203",
+    "sourceLink": "../../gongsi/china500/2025/1716.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 437,
+    "companyName": "安徽省皖能股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "4,182.5",
+    "sourceLink": "../../gongsi/china500/2025/606.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 438,
+    "companyName": "广西柳工机械股份有限公司",
+    "sourceIndustry": "建筑和农业机械",
+    "revenue": "4,178.2",
+    "sourceLink": "../../gongsi/china500/2025/226.htm",
+    "industryLevel1": "制造",
+    "industryLevel2": "工业制造"
+  },
+  {
+    "rank": 439,
+    "companyName": "淮河能源(集团)股份有限公司",
+    "sourceIndustry": "贸易",
+    "revenue": "4,172.4",
+    "sourceLink": "../../gongsi/china500/2025/1474.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 440,
+    "companyName": "北方华创科技集团股份有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "4,146.9",
+    "sourceLink": "../../gongsi/china500/2025/1717.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "半导体设备"
+  },
+  {
+    "rank": 441,
+    "companyName": "融信中国控股有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "4,139.1",
+    "sourceLink": "../../gongsi/china500/2025/1331.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 442,
+    "companyName": "中国三峡新能源(集团)股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "4,130.1",
+    "sourceLink": "../../gongsi/china500/2025/1637.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 443,
+    "companyName": "安阳钢铁股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "4,119.4",
+    "sourceLink": "../../gongsi/china500/2025/115.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 444,
+    "companyName": "申能股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "4,116.5",
+    "sourceLink": "../../gongsi/china500/2025/163.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 445,
+    "companyName": "玉锋实业集团有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "4,098.3",
+    "sourceLink": "../../gongsi/china500/2025/1718.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 446,
+    "companyName": "宁波力勤资源科技股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "4,062.8",
+    "sourceLink": "../../gongsi/china500/2025/1719.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 447,
+    "companyName": "山鹰国际控股股份公司",
+    "sourceIndustry": "林产品与纸制品",
+    "revenue": "4,062.3",
+    "sourceLink": "../../gongsi/china500/2025/1272.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "食品与轻工制造"
+  },
+  {
+    "rank": 448,
+    "companyName": "石药集团有限公司",
+    "sourceIndustry": "制药",
+    "revenue": "4,031.8",
+    "sourceLink": "../../gongsi/china500/2025/1220.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "生物医药"
+  },
+  {
+    "rank": 449,
+    "companyName": "福建晟育投资发展集团有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "4,024.4",
+    "sourceLink": "../../gongsi/china500/2025/1720.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 450,
+    "companyName": "江苏洋河酒厂股份有限公司",
+    "sourceIndustry": "饮料",
+    "revenue": "4,013.3",
+    "sourceLink": "../../gongsi/china500/2025/453.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 451,
+    "companyName": "中国生物制药有限公司",
+    "sourceIndustry": "制药",
+    "revenue": "4,011.9",
+    "sourceLink": "../../gongsi/china500/2025/1210.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "生物医药"
+  },
+  {
+    "rank": 452,
+    "companyName": "珠海万达商业管理集团股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "4,002.4",
+    "sourceLink": "../../gongsi/china500/2025/1721.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 453,
+    "companyName": "北京大北农科技集团股份有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "3,998.1",
+    "sourceLink": "../../gongsi/china500/2025/457.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 454,
+    "companyName": "宁波舟山港股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "3,989.1",
+    "sourceLink": "../../gongsi/china500/2025/528.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 455,
+    "companyName": "李宁有限公司",
+    "sourceIndustry": "服装",
+    "revenue": "3,985.4",
+    "sourceLink": "../../gongsi/china500/2025/257.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "服装纺织"
+  },
+  {
+    "rank": 456,
+    "companyName": "申洲国际集团控股有限公司",
+    "sourceIndustry": "服装",
+    "revenue": "3,983.6",
+    "sourceLink": "../../gongsi/china500/2025/615.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "服装纺织"
+  },
+  {
+    "rank": 457,
+    "companyName": "国银金融租赁股份有限公司",
+    "sourceIndustry": "设备租赁",
+    "revenue": "3,969.7",
+    "sourceLink": "../../gongsi/china500/2025/1632.htm",
+    "industryLevel1": "第三产业",
+    "industryLevel2": "租赁和商务服务业"
+  },
+  {
+    "rank": 458,
+    "companyName": "烽火通信科技股份有限公司",
+    "sourceIndustry": "网络、通讯设备",
+    "revenue": "3,967.8",
+    "sourceLink": "../../gongsi/china500/2025/398.htm",
+    "industryLevel1": "ICT",
+    "industryLevel2": "通信技术服务"
+  },
+  {
+    "rank": 459,
+    "companyName": "内蒙古鄂尔多斯资源股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "3,947.6",
+    "sourceLink": "../../gongsi/china500/2025/260.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 460,
+    "companyName": "湖北兴发化工集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "3,946.6",
+    "sourceLink": "../../gongsi/china500/2025/599.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 461,
+    "companyName": "永泰能源集团股份有限公司",
+    "sourceIndustry": "能源",
+    "revenue": "3,941",
+    "sourceLink": "../../gongsi/china500/2025/1620.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 462,
+    "companyName": "深圳市燃气集团股份有限公司",
+    "sourceIndustry": "公用设施",
+    "revenue": "3,939.9",
+    "sourceLink": "../../gongsi/china500/2025/465.htm",
+    "industryLevel1": "能源",
+    "industryLevel2": "电力"
+  },
+  {
+    "rank": 463,
+    "companyName": "双星集团有限责任公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "3,927.6",
+    "sourceLink": "../../gongsi/china500/2025/1722.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "轮胎与橡胶件"
+  },
+  {
+    "rank": 464,
+    "companyName": "雅迪集团控股有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "3,924.3",
+    "sourceLink": "../../gongsi/china500/2025/1459.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "零部件"
+  },
+  {
+    "rank": 465,
+    "companyName": "天山铝业集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "3,903.9",
+    "sourceLink": "../../gongsi/china500/2025/1438.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 466,
+    "companyName": "北京东方雨虹防水技术股份有限公司",
+    "sourceIndustry": "建材、玻璃",
+    "revenue": "3,899.2",
+    "sourceLink": "../../gongsi/china500/2025/1417.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 467,
+    "companyName": "江苏恒瑞医药股份有限公司",
+    "sourceIndustry": "制药",
+    "revenue": "3,889.3",
+    "sourceLink": "../../gongsi/china500/2025/1385.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "生物医药"
+  },
+  {
+    "rank": 468,
+    "companyName": "浙江三花智能控制股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "3,884.1",
+    "sourceLink": "../../gongsi/china500/2025/1723.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 469,
+    "companyName": "湖南黄金股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "3,869",
+    "sourceLink": "../../gongsi/china500/2025/1724.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 470,
+    "companyName": "阜丰集团有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "3,857.8",
+    "sourceLink": "../../gongsi/china500/2025/648.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 471,
+    "companyName": "中创新航科技集团股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "3,856.9",
+    "sourceLink": "../../gongsi/china500/2025/1698.htm",
+    "industryLevel1": "新能源",
+    "industryLevel2": "动力电池"
+  },
+  {
+    "rank": 472,
+    "companyName": "东方证券股份有限公司",
+    "sourceIndustry": "证券",
+    "revenue": "3,847.5",
+    "sourceLink": "../../gongsi/china500/2025/1413.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "证券"
+  },
+  {
+    "rank": 473,
+    "companyName": "上海百联集团股份有限公司",
+    "sourceIndustry": "综合商业",
+    "revenue": "3,846.3",
+    "sourceLink": "../../gongsi/china500/2025/225.htm",
+    "industryLevel1": "批发零售",
+    "industryLevel2": "贸易"
+  },
+  {
+    "rank": 474,
+    "companyName": "惠州市德赛西威汽车电子股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "3,838.4",
+    "sourceLink": "../../gongsi/china500/2025/1725.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "智能零部件"
+  },
+  {
+    "rank": 475,
+    "companyName": "金科地产集团股份有限公司",
+    "sourceIndustry": "房地产",
+    "revenue": "3,829.6",
+    "sourceLink": "../../gongsi/china500/2025/571.htm",
+    "industryLevel1": "房地产",
+    "industryLevel2": "房地产开发"
+  },
+  {
+    "rank": 476,
+    "companyName": "龙佰集团股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "3,827.4",
+    "sourceLink": "../../gongsi/china500/2025/1635.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 477,
+    "companyName": "中国有色矿业有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "3,816.5",
+    "sourceLink": "../../gongsi/china500/2025/635.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 478,
+    "companyName": "百济神州有限公司",
+    "sourceIndustry": "制药",
+    "revenue": "3,810.2",
+    "sourceLink": "../../gongsi/china500/2025/1726.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "生物医药"
+  },
+  {
+    "rank": 479,
+    "companyName": "瑞声科技控股有限公司",
+    "sourceIndustry": "半导体、电子元件",
+    "revenue": "3,798.1",
+    "sourceLink": "../../gongsi/china500/2025/1381.htm",
+    "industryLevel1": "新兴重点产业",
+    "industryLevel2": "芯片设计"
+  },
+  {
+    "rank": 480,
+    "companyName": "重庆建工集团股份有限公司",
+    "sourceIndustry": "工程与建筑",
+    "revenue": "3,791.4",
+    "sourceLink": "../../gongsi/china500/2025/1287.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "建筑业"
+  },
+  {
+    "rank": 481,
+    "companyName": "立中四通轻合金集团股份有限公司",
+    "sourceIndustry": "金属产品",
+    "revenue": "3,786.7",
+    "sourceLink": "../../gongsi/china500/2025/1727.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "金属与装备制造"
+  },
+  {
+    "rank": 482,
+    "companyName": "万向三农集团有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "3,780.6",
+    "sourceLink": "../../gongsi/china500/2025/1728.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 483,
+    "companyName": "明阳智慧能源集团股份公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "3,774.5",
+    "sourceLink": "../../gongsi/china500/2025/1440.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 484,
+    "companyName": "广深铁路股份有限公司",
+    "sourceIndustry": "铁路运输",
+    "revenue": "3,765",
+    "sourceLink": "../../gongsi/china500/2025/191.htm",
+    "industryLevel1": "交通运输",
+    "industryLevel2": "交通基础设施"
+  },
+  {
+    "rank": 485,
+    "companyName": "中国联塑集团控股有限公司",
+    "sourceIndustry": "建材、玻璃",
+    "revenue": "3,756.2",
+    "sourceLink": "../../gongsi/china500/2025/620.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 486,
+    "companyName": "滔搏国际控股有限公司",
+    "sourceIndustry": "专业零售",
+    "revenue": "3,754.3",
+    "sourceLink": "../../gongsi/china500/2025/1694.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "连锁零售"
+  },
+  {
+    "rank": 487,
+    "companyName": "佛山市海天调味食品股份有限公司",
+    "sourceIndustry": "食品生产",
+    "revenue": "3,738.7",
+    "sourceLink": "../../gongsi/china500/2025/678.htm",
+    "industryLevel1": "消费品",
+    "industryLevel2": "食品饮料"
+  },
+  {
+    "rank": 488,
+    "companyName": "哔哩哔哩股份有限公司",
+    "sourceIndustry": "互联网服务和零售",
+    "revenue": "3,729.1",
+    "sourceLink": "../../gongsi/china500/2025/1729.htm",
+    "industryLevel1": "零售",
+    "industryLevel2": "电商/零售"
+  },
+  {
+    "rank": 489,
+    "companyName": "传化智联股份有限公司",
+    "sourceIndustry": "运输及物流",
+    "revenue": "3,713.2",
+    "sourceLink": "../../gongsi/china500/2025/1347.htm",
+    "industryLevel1": "物流",
+    "industryLevel2": "供应链/仓储"
+  },
+  {
+    "rank": 490,
+    "companyName": "合盛硅业股份有限公司",
+    "sourceIndustry": "化学品",
+    "revenue": "3,709.7",
+    "sourceLink": "../../gongsi/china500/2025/1639.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "化工与材料制造"
+  },
+  {
+    "rank": 491,
+    "companyName": "上海实业控股有限公司",
+    "sourceIndustry": "多元化金融",
+    "revenue": "3,706",
+    "sourceLink": "../../gongsi/china500/2025/322.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "基金资管"
+  },
+  {
+    "rank": 492,
+    "companyName": "宁波拓普集团股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "3,697",
+    "sourceLink": "../../gongsi/china500/2025/1730.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "智能零部件"
+  },
+  {
+    "rank": 493,
+    "companyName": "澳门博彩控股有限公司",
+    "sourceIndustry": "酒店、赌场、度假村",
+    "revenue": "3,687",
+    "sourceLink": "../../gongsi/china500/2025/1731.htm",
+    "industryLevel1": "服务业",
+    "industryLevel2": "文旅酒店"
+  },
+  {
+    "rank": 494,
+    "companyName": "大参林医药集团股份有限公司",
+    "sourceIndustry": "批发：保健",
+    "revenue": "3,682.5",
+    "sourceLink": "../../gongsi/china500/2025/1732.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "医疗服务/器械"
+  },
+  {
+    "rank": 495,
+    "companyName": "青岛银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "3,675.6",
+    "sourceLink": "../../gongsi/china500/2025/1733.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  },
+  {
+    "rank": 496,
+    "companyName": "纳思达股份有限公司",
+    "sourceIndustry": "计算机、办公设备",
+    "revenue": "3,671.2",
+    "sourceLink": "../../gongsi/china500/2025/1340.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 497,
+    "companyName": "宁波华翔电子股份有限公司",
+    "sourceIndustry": "车辆与零部件",
+    "revenue": "3,658.6",
+    "sourceLink": "../../gongsi/china500/2025/1218.htm",
+    "industryLevel1": "汽车",
+    "industryLevel2": "智能零部件"
+  },
+  {
+    "rank": 498,
+    "companyName": "远东智慧能源股份有限公司",
+    "sourceIndustry": "电子、电气设备",
+    "revenue": "3,626.5",
+    "sourceLink": "../../gongsi/china500/2025/518.htm",
+    "industryLevel1": "第二产业",
+    "industryLevel2": "电子与高端制造"
+  },
+  {
+    "rank": 499,
+    "companyName": "重庆智飞生物制品股份有限公司",
+    "sourceIndustry": "制药",
+    "revenue": "3,623.2",
+    "sourceLink": "../../gongsi/china500/2025/1454.htm",
+    "industryLevel1": "医疗健康",
+    "industryLevel2": "生物医药"
+  },
+  {
+    "rank": 500,
+    "companyName": "郑州银行股份有限公司",
+    "sourceIndustry": "银行：商业储蓄",
+    "revenue": "3,617.9",
+    "sourceLink": "../../gongsi/china500/2025/1699.htm",
+    "industryLevel1": "金融",
+    "industryLevel2": "银行"
+  }
+]

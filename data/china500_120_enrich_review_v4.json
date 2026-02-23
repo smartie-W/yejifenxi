@@ -1,0 +1,16 @@
+{
+  "summary": {
+    "total": 120,
+    "ok": 120,
+    "failed": 0,
+    "avgSec": 3.855,
+    "p50Sec": 4.503,
+    "p90Sec": 5.73,
+    "unknownIndustry": 0,
+    "noCompetitors": 0,
+    "noTop5": 0
+  },
+  "unknownIndustry": [],
+  "noCompetitors": [],
+  "noTop5": []
+}

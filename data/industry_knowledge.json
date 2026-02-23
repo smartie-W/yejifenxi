@@ -1,0 +1,1247 @@
+{
+  "updatedAt": "2026-02-22T14:56:20.049Z",
+  "industries": {
+    "煤炭开采": {
+      "l1": "工业",
+      "l2": "煤炭开采",
+      "updatedAt": "2026-02-22T13:27:15.259Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "石油和天然气开采": {
+      "l1": "工业",
+      "l2": "石油和天然气开采",
+      "updatedAt": "2026-02-22T13:27:40.694Z",
+      "sampleCompanies": [
+        {
+          "code": "600759",
+          "name": "洲际油气",
+          "secid": "1.600759"
+        },
+        {
+          "code": "000956",
+          "name": "中原油气",
+          "secid": "0.000956"
+        },
+        {
+          "code": "000817",
+          "name": "辽河油田",
+          "secid": "0.000817"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "黑色金属矿采选": {
+      "l1": "工业",
+      "l2": "黑色金属矿采选",
+      "updatedAt": "2026-02-22T13:28:06.096Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "有色金属矿采选": {
+      "l1": "工业",
+      "l2": "有色金属矿采选",
+      "updatedAt": "2026-02-22T13:28:31.391Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "非金属矿采选": {
+      "l1": "工业",
+      "l2": "非金属矿采选",
+      "updatedAt": "2026-02-22T13:28:56.823Z",
+      "sampleCompanies": [
+        {
+          "code": "688475",
+          "name": "萤石网络",
+          "secid": "1.688475"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "其他矿采选": {
+      "l1": "工业",
+      "l2": "其他矿采选",
+      "updatedAt": "2026-02-22T13:29:21.979Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "农副食品加工": {
+      "l1": "工业",
+      "l2": "农副食品加工",
+      "updatedAt": "2026-02-22T13:29:47.077Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "食品制造": {
+      "l1": "工业",
+      "l2": "食品制造",
+      "updatedAt": "2026-02-22T13:30:12.295Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "酒、饮料、茶制造": {
+      "l1": "工业",
+      "l2": "酒、饮料、茶制造",
+      "updatedAt": "2026-02-22T13:30:37.756Z",
+      "sampleCompanies": [
+        {
+          "code": "600132",
+          "name": "重庆啤酒",
+          "secid": "1.600132"
+        },
+        {
+          "code": "600573",
+          "name": "惠泉啤酒",
+          "secid": "1.600573"
+        },
+        {
+          "code": "600600",
+          "name": "青岛啤酒",
+          "secid": "1.600600"
+        },
+        {
+          "code": "000729",
+          "name": "燕京啤酒",
+          "secid": "0.000729"
+        },
+        {
+          "code": "002461",
+          "name": "珠江啤酒",
+          "secid": "0.002461"
+        },
+        {
+          "code": "000752",
+          "name": "ST西发",
+          "secid": "0.000752"
+        },
+        {
+          "code": "605499",
+          "name": "东鹏饮料",
+          "secid": "1.605499"
+        },
+        {
+          "code": "000807",
+          "name": "云铝股份",
+          "secid": "0.000807"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "烟草制品": {
+      "l1": "工业",
+      "l2": "烟草制品",
+      "updatedAt": "2026-02-22T13:31:03.127Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "纺织业": {
+      "l1": "工业",
+      "l2": "纺织业",
+      "updatedAt": "2026-02-22T13:31:28.765Z",
+      "sampleCompanies": [
+        {
+          "code": "600493",
+          "name": "凤竹纺织",
+          "secid": "1.600493"
+        },
+        {
+          "code": "600273",
+          "name": "嘉化能源",
+          "secid": "1.600273"
+        },
+        {
+          "code": "000813",
+          "name": "德展健康",
+          "secid": "0.000813"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "服装服饰": {
+      "l1": "工业",
+      "l2": "服装服饰",
+      "updatedAt": "2026-02-22T13:31:54.136Z",
+      "sampleCompanies": [
+        {
+          "code": "002269",
+          "name": "美邦服饰",
+          "secid": "0.002269"
+        },
+        {
+          "code": "002563",
+          "name": "森马服饰",
+          "secid": "0.002563"
+        },
+        {
+          "code": "301276",
+          "name": "嘉曼服饰",
+          "secid": "0.301276"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "皮革制品": {
+      "l1": "工业",
+      "l2": "皮革制品",
+      "updatedAt": "2026-02-22T13:32:19.326Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "家具制造": {
+      "l1": "工业",
+      "l2": "家具制造",
+      "updatedAt": "2026-02-22T13:25:14.768Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "造纸及纸制品": {
+      "l1": "工业",
+      "l2": "造纸及纸制品",
+      "updatedAt": "2026-02-22T13:25:15.030Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "印刷及记录媒介复制": {
+      "l1": "工业",
+      "l2": "印刷及记录媒介复制",
+      "updatedAt": "2026-02-22T13:25:15.186Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "石油加工": {
+      "l1": "工业",
+      "l2": "石油加工",
+      "updatedAt": "2026-02-22T13:25:15.365Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "化学原料及化学制品": {
+      "l1": "工业",
+      "l2": "化学原料及化学制品",
+      "updatedAt": "2026-02-22T13:25:15.770Z",
+      "sampleCompanies": [
+        {
+          "code": "600328",
+          "name": "中盐化工",
+          "secid": "1.600328"
+        },
+        {
+          "code": "600409",
+          "name": "三友化工",
+          "secid": "1.600409"
+        },
+        {
+          "code": "600470",
+          "name": "六国化工",
+          "secid": "1.600470"
+        },
+        {
+          "code": "600486",
+          "name": "扬农化工",
+          "secid": "1.600486"
+        },
+        {
+          "code": "600618",
+          "name": "氯碱化工",
+          "secid": "1.600618"
+        },
+        {
+          "code": "600722",
+          "name": "金牛化工",
+          "secid": "1.600722"
+        },
+        {
+          "code": "600727",
+          "name": "鲁北化工",
+          "secid": "1.600727"
+        },
+        {
+          "code": "000618",
+          "name": "吉林化工",
+          "secid": "0.000618"
+        },
+        {
+          "code": "000683",
+          "name": "博源化工",
+          "secid": "0.000683"
+        },
+        {
+          "code": "000830",
+          "name": "鲁西化工",
+          "secid": "0.000830"
+        },
+        {
+          "code": "002054",
+          "name": "德美化工",
+          "secid": "0.002054"
+        },
+        {
+          "code": "002226",
+          "name": "江南化工",
+          "secid": "0.002226"
+        },
+        {
+          "code": "002274",
+          "name": "华昌化工",
+          "secid": "0.002274"
+        },
+        {
+          "code": "002360",
+          "name": "同德化工",
+          "secid": "0.002360"
+        },
+        {
+          "code": "000059",
+          "name": "华锦股份",
+          "secid": "0.000059"
+        },
+        {
+          "code": "000635",
+          "name": "英 力 特",
+          "secid": "0.000635"
+        },
+        {
+          "code": "000698",
+          "name": "ST沈化",
+          "secid": "0.000698"
+        },
+        {
+          "code": "000818",
+          "name": "航锦科技",
+          "secid": "0.000818"
+        },
+        {
+          "code": "000953",
+          "name": "河化股份",
+          "secid": "0.000953"
+        },
+        {
+          "code": "002442",
+          "name": "龙星科技",
+          "secid": "0.002442"
+        },
+        {
+          "code": "000813",
+          "name": "德展健康",
+          "secid": "0.000813"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "医药制造": {
+      "l1": "工业",
+      "l2": "医药制造",
+      "updatedAt": "2026-02-22T13:25:16.142Z",
+      "sampleCompanies": [
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "secid": "1.600285"
+        },
+        {
+          "code": "600594",
+          "name": "益佰制药",
+          "secid": "1.600594"
+        },
+        {
+          "code": "600613",
+          "name": "神奇制药",
+          "secid": "1.600613"
+        },
+        {
+          "code": "600812",
+          "name": "华北制药",
+          "secid": "1.600812"
+        },
+        {
+          "code": "603207",
+          "name": "小方制药",
+          "secid": "1.603207"
+        },
+        {
+          "code": "603439",
+          "name": "三力制药",
+          "secid": "1.603439"
+        },
+        {
+          "code": "603858",
+          "name": "步长制药",
+          "secid": "1.603858"
+        },
+        {
+          "code": "603998",
+          "name": "方盛制药",
+          "secid": "1.603998"
+        },
+        {
+          "code": "000597",
+          "name": "东北制药",
+          "secid": "0.000597"
+        },
+        {
+          "code": "000756",
+          "name": "新华制药",
+          "secid": "0.000756"
+        },
+        {
+          "code": "002198",
+          "name": "嘉应制药",
+          "secid": "0.002198"
+        },
+        {
+          "code": "002332",
+          "name": "仙琚制药",
+          "secid": "0.002332"
+        },
+        {
+          "code": "002349",
+          "name": "精华制药",
+          "secid": "0.002349"
+        },
+        {
+          "code": "002390",
+          "name": "信邦制药",
+          "secid": "0.002390"
+        },
+        {
+          "code": "002393",
+          "name": "力生制药",
+          "secid": "0.002393"
+        },
+        {
+          "code": "002412",
+          "name": "汉森制药",
+          "secid": "0.002412"
+        },
+        {
+          "code": "002550",
+          "name": "千红制药",
+          "secid": "0.002550"
+        },
+        {
+          "code": "002644",
+          "name": "佛慈制药",
+          "secid": "0.002644"
+        },
+        {
+          "code": "002907",
+          "name": "华森制药",
+          "secid": "0.002907"
+        },
+        {
+          "code": "003020",
+          "name": "立方制药",
+          "secid": "0.003020"
+        },
+        {
+          "code": "300158",
+          "name": "振东制药",
+          "secid": "0.300158"
+        },
+        {
+          "code": "300267",
+          "name": "尔康制药",
+          "secid": "0.300267"
+        },
+        {
+          "code": "300705",
+          "name": "九典制药",
+          "secid": "0.300705"
+        },
+        {
+          "code": "301281",
+          "name": "科源制药",
+          "secid": "0.301281"
+        },
+        {
+          "code": "600420",
+          "name": "国药现代",
+          "secid": "1.600420"
+        },
+        {
+          "code": "600779",
+          "name": "水井坊",
+          "secid": "1.600779"
+        },
+        {
+          "code": "000545",
+          "name": "金浦钛业",
+          "secid": "0.000545"
+        },
+        {
+          "code": "000788",
+          "name": "北大医药",
+          "secid": "0.000788"
+        },
+        {
+          "code": "002004",
+          "name": "华邦健康",
+          "secid": "0.002004"
+        },
+        {
+          "code": "002872",
+          "name": "ST天圣",
+          "secid": "0.002872"
+        },
+        {
+          "code": "300254",
+          "name": "仟源医药",
+          "secid": "0.300254"
+        },
+        {
+          "code": "688136",
+          "name": "科兴制药",
+          "secid": "1.688136"
+        },
+        {
+          "code": "688189",
+          "name": "南新制药",
+          "secid": "1.688189"
+        },
+        {
+          "code": "688266",
+          "name": "泽璟制药-U",
+          "secid": "1.688266"
+        },
+        {
+          "code": "688553",
+          "name": "汇宇制药-W",
+          "secid": "1.688553"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "化学纤维制造": {
+      "l1": "工业",
+      "l2": "化学纤维制造",
+      "updatedAt": "2026-02-22T13:25:16.353Z",
+      "sampleCompanies": [
+        {
+          "code": "002064",
+          "name": "华峰化学",
+          "secid": "0.002064"
+        },
+        {
+          "code": "002254",
+          "name": "泰和新材",
+          "secid": "0.002254"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "橡胶和塑料制品": {
+      "l1": "工业",
+      "l2": "橡胶和塑料制品",
+      "updatedAt": "2026-02-22T13:25:16.518Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "非金属矿物制品": {
+      "l1": "工业",
+      "l2": "非金属矿物制品",
+      "updatedAt": "2026-02-22T13:25:16.641Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "黑色金属冶炼及压延": {
+      "l1": "工业",
+      "l2": "黑色金属冶炼及压延",
+      "updatedAt": "2026-02-22T13:25:16.739Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "有色金属冶炼": {
+      "l1": "工业",
+      "l2": "有色金属冶炼",
+      "updatedAt": "2026-02-22T13:25:16.821Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "金属制品": {
+      "l1": "工业",
+      "l2": "金属制品",
+      "updatedAt": "2026-02-22T13:25:16.900Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "通用设备制造": {
+      "l1": "工业",
+      "l2": "通用设备制造",
+      "updatedAt": "2026-02-22T13:25:17.075Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "专用设备制造": {
+      "l1": "工业",
+      "l2": "专用设备制造",
+      "updatedAt": "2026-02-22T13:25:17.168Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "汽车制造": {
+      "l1": "工业",
+      "l2": "汽车制造",
+      "updatedAt": "2026-02-22T13:25:17.278Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "铁路、船舶、航空航天设备": {
+      "l1": "工业",
+      "l2": "铁路、船舶、航空航天设备",
+      "updatedAt": "2026-02-22T13:25:17.385Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "电气机械及器材": {
+      "l1": "工业",
+      "l2": "电气机械及器材",
+      "updatedAt": "2026-02-22T13:25:17.577Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "仪器仪表": {
+      "l1": "工业",
+      "l2": "仪器仪表",
+      "updatedAt": "2026-02-22T13:25:17.651Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "计算机制造": {
+      "l1": "工业",
+      "l2": "计算机制造",
+      "updatedAt": "2026-02-22T13:25:17.729Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "通信设备制造": {
+      "l1": "工业",
+      "l2": "通信设备制造",
+      "updatedAt": "2026-02-22T13:25:17.835Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "电子元件制造": {
+      "l1": "工业",
+      "l2": "电子元件制造",
+      "updatedAt": "2026-02-22T13:25:17.958Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "半导体制造": {
+      "l1": "工业",
+      "l2": "半导体制造",
+      "updatedAt": "2026-02-22T13:25:18.192Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "智能制造设备": {
+      "l1": "工业",
+      "l2": "智能制造设备",
+      "updatedAt": "2026-02-22T13:25:18.315Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "工艺品制造": {
+      "l1": "工业",
+      "l2": "工艺品制造",
+      "updatedAt": "2026-02-22T13:25:18.415Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "废弃资源综合利用": {
+      "l1": "工业",
+      "l2": "废弃资源综合利用",
+      "updatedAt": "2026-02-22T13:25:18.511Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "电力生产与供应": {
+      "l1": "工业",
+      "l2": "电力生产与供应",
+      "updatedAt": "2026-02-22T13:25:18.697Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "热力生产与供应": {
+      "l1": "工业",
+      "l2": "热力生产与供应",
+      "updatedAt": "2026-02-22T13:25:18.802Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "燃气生产与供应": {
+      "l1": "工业",
+      "l2": "燃气生产与供应",
+      "updatedAt": "2026-02-22T13:25:18.904Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "自来水生产与供应": {
+      "l1": "工业",
+      "l2": "自来水生产与供应",
+      "updatedAt": "2026-02-22T13:25:19.007Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "污水处理": {
+      "l1": "工业",
+      "l2": "污水处理",
+      "updatedAt": "2026-02-22T13:25:19.167Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "房屋建筑业": {
+      "l1": "建筑业",
+      "l2": "房屋建筑业",
+      "updatedAt": "2026-02-22T13:25:19.272Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "土木工程建筑": {
+      "l1": "建筑业",
+      "l2": "土木工程建筑",
+      "updatedAt": "2026-02-22T13:25:19.371Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "建筑安装": {
+      "l1": "建筑业",
+      "l2": "建筑安装",
+      "updatedAt": "2026-02-22T13:25:19.450Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "建筑装饰装修": {
+      "l1": "建筑业",
+      "l2": "建筑装饰装修",
+      "updatedAt": "2026-02-22T13:25:19.553Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "市政工程": {
+      "l1": "建筑业",
+      "l2": "市政工程",
+      "updatedAt": "2026-02-22T13:25:19.735Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "基础设施建设": {
+      "l1": "建筑业",
+      "l2": "基础设施建设",
+      "updatedAt": "2026-02-22T13:25:19.844Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "综合零售": {
+      "l1": "服务业",
+      "l2": "综合零售",
+      "updatedAt": "2026-02-22T13:25:19.956Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "食品零售": {
+      "l1": "服务业",
+      "l2": "食品零售",
+      "updatedAt": "2026-02-22T13:25:20.052Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "汽车销售": {
+      "l1": "服务业",
+      "l2": "汽车销售",
+      "updatedAt": "2026-02-22T13:25:20.208Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "电商平台": {
+      "l1": "服务业",
+      "l2": "电商平台",
+      "updatedAt": "2026-02-22T13:25:20.305Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "进出口贸易": {
+      "l1": "服务业",
+      "l2": "进出口贸易",
+      "updatedAt": "2026-02-22T13:25:20.403Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "铁路运输": {
+      "l1": "服务业",
+      "l2": "铁路运输",
+      "updatedAt": "2026-02-22T13:25:20.487Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "公路运输": {
+      "l1": "服务业",
+      "l2": "公路运输",
+      "updatedAt": "2026-02-22T13:25:20.571Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "水路运输": {
+      "l1": "服务业",
+      "l2": "水路运输",
+      "updatedAt": "2026-02-22T13:25:20.735Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "航空运输": {
+      "l1": "服务业",
+      "l2": "航空运输",
+      "updatedAt": "2026-02-22T13:25:20.814Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "城市公共交通": {
+      "l1": "服务业",
+      "l2": "城市公共交通",
+      "updatedAt": "2026-02-22T13:25:20.917Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "物流仓储": {
+      "l1": "服务业",
+      "l2": "物流仓储",
+      "updatedAt": "2026-02-22T13:25:21.013Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "快递服务": {
+      "l1": "服务业",
+      "l2": "快递服务",
+      "updatedAt": "2026-02-22T13:25:21.100Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "酒店": {
+      "l1": "服务业",
+      "l2": "酒店",
+      "updatedAt": "2026-02-22T13:25:21.246Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "民宿": {
+      "l1": "服务业",
+      "l2": "民宿",
+      "updatedAt": "2026-02-22T13:25:21.315Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "餐饮连锁": {
+      "l1": "服务业",
+      "l2": "餐饮连锁",
+      "updatedAt": "2026-02-22T13:25:21.402Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "外卖平台": {
+      "l1": "服务业",
+      "l2": "外卖平台",
+      "updatedAt": "2026-02-22T13:25:21.497Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "电信运营": {
+      "l1": "服务业",
+      "l2": "电信运营",
+      "updatedAt": "2026-02-22T13:25:21.777Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "互联网服务": {
+      "l1": "服务业",
+      "l2": "互联网服务",
+      "updatedAt": "2026-02-22T13:25:21.866Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "软件开发": {
+      "l1": "服务业",
+      "l2": "软件开发",
+      "updatedAt": "2026-02-22T13:25:21.959Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "云计算": {
+      "l1": "服务业",
+      "l2": "云计算",
+      "updatedAt": "2026-02-22T13:25:22.034Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "大数据": {
+      "l1": "服务业",
+      "l2": "大数据",
+      "updatedAt": "2026-02-22T13:25:22.136Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "人工智能": {
+      "l1": "服务业",
+      "l2": "人工智能",
+      "updatedAt": "2026-02-22T13:25:22.309Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "网络安全": {
+      "l1": "服务业",
+      "l2": "网络安全",
+      "updatedAt": "2026-02-22T13:25:22.410Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "银行业": {
+      "l1": "服务业",
+      "l2": "银行业",
+      "updatedAt": "2026-02-22T13:25:22.528Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "证券业": {
+      "l1": "服务业",
+      "l2": "证券业",
+      "updatedAt": "2026-02-22T13:25:22.621Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "保险业": {
+      "l1": "服务业",
+      "l2": "保险业",
+      "updatedAt": "2026-02-22T13:25:22.693Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "基金管理": {
+      "l1": "服务业",
+      "l2": "基金管理",
+      "updatedAt": "2026-02-22T13:25:22.851Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "信托": {
+      "l1": "服务业",
+      "l2": "信托",
+      "updatedAt": "2026-02-22T13:25:22.898Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "金融科技": {
+      "l1": "服务业",
+      "l2": "金融科技",
+      "updatedAt": "2026-02-22T13:25:22.953Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "房地产开发": {
+      "l1": "服务业",
+      "l2": "房地产开发",
+      "updatedAt": "2026-02-22T13:25:23.017Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "物业管理": {
+      "l1": "服务业",
+      "l2": "物业管理",
+      "updatedAt": "2026-02-22T13:25:23.075Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "商业地产运营": {
+      "l1": "服务业",
+      "l2": "商业地产运营",
+      "updatedAt": "2026-02-22T13:25:23.160Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "人力资源服务": {
+      "l1": "服务业",
+      "l2": "人力资源服务",
+      "updatedAt": "2026-02-22T13:25:23.336Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "企业管理咨询": {
+      "l1": "服务业",
+      "l2": "企业管理咨询",
+      "updatedAt": "2026-02-22T13:25:23.415Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "广告与公关": {
+      "l1": "服务业",
+      "l2": "广告与公关",
+      "updatedAt": "2026-02-22T13:25:23.497Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "会展服务": {
+      "l1": "服务业",
+      "l2": "会展服务",
+      "updatedAt": "2026-02-22T13:25:23.574Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "法律服务": {
+      "l1": "服务业",
+      "l2": "法律服务",
+      "updatedAt": "2026-02-22T13:25:23.646Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "研发机构": {
+      "l1": "服务业",
+      "l2": "研发机构",
+      "updatedAt": "2026-02-22T13:25:23.708Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "工程设计": {
+      "l1": "服务业",
+      "l2": "工程设计",
+      "updatedAt": "2026-02-22T13:25:23.866Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "检验检测": {
+      "l1": "服务业",
+      "l2": "检验检测",
+      "updatedAt": "2026-02-22T13:25:23.933Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "技术推广": {
+      "l1": "服务业",
+      "l2": "技术推广",
+      "updatedAt": "2026-02-22T13:25:24.003Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "学前教育": {
+      "l1": "服务业",
+      "l2": "学前教育",
+      "updatedAt": "2026-02-22T13:25:24.070Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "义务教育": {
+      "l1": "服务业",
+      "l2": "义务教育",
+      "updatedAt": "2026-02-22T13:25:24.141Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "高等教育": {
+      "l1": "服务业",
+      "l2": "高等教育",
+      "updatedAt": "2026-02-22T13:25:24.219Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "职业教育": {
+      "l1": "服务业",
+      "l2": "职业教育",
+      "updatedAt": "2026-02-22T13:25:24.286Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "在线教育": {
+      "l1": "服务业",
+      "l2": "在线教育",
+      "updatedAt": "2026-02-22T13:25:24.445Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "医院": {
+      "l1": "服务业",
+      "l2": "医院",
+      "updatedAt": "2026-02-22T13:25:24.515Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "基层医疗": {
+      "l1": "服务业",
+      "l2": "基层医疗",
+      "updatedAt": "2026-02-22T13:25:24.588Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "养老服务": {
+      "l1": "服务业",
+      "l2": "养老服务",
+      "updatedAt": "2026-02-22T13:25:24.660Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "康复机构": {
+      "l1": "服务业",
+      "l2": "康复机构",
+      "updatedAt": "2026-02-22T13:25:24.724Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "广播电视": {
+      "l1": "服务业",
+      "l2": "广播电视",
+      "updatedAt": "2026-02-22T13:25:24.791Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "影视制作": {
+      "l1": "服务业",
+      "l2": "影视制作",
+      "updatedAt": "2026-02-22T13:25:24.944Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "游戏产业": {
+      "l1": "服务业",
+      "l2": "游戏产业",
+      "updatedAt": "2026-02-22T13:25:25.019Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "体育赛事": {
+      "l1": "服务业",
+      "l2": "体育赛事",
+      "updatedAt": "2026-02-22T13:25:25.095Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "演艺娱乐": {
+      "l1": "服务业",
+      "l2": "演艺娱乐",
+      "updatedAt": "2026-02-22T13:25:25.174Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "政府机构": {
+      "l1": "服务业",
+      "l2": "政府机构",
+      "updatedAt": "2026-02-22T13:25:25.238Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "行业协会": {
+      "l1": "服务业",
+      "l2": "行业协会",
+      "updatedAt": "2026-02-22T13:25:25.309Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "社会团体": {
+      "l1": "服务业",
+      "l2": "社会团体",
+      "updatedAt": "2026-02-22T13:25:25.462Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "新一代信息技术": {
+      "l1": "战略性新兴产业",
+      "l2": "新一代信息技术",
+      "updatedAt": "2026-02-22T13:25:25.529Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "高端装备制造": {
+      "l1": "战略性新兴产业",
+      "l2": "高端装备制造",
+      "updatedAt": "2026-02-22T13:25:25.596Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "新能源": {
+      "l1": "战略性新兴产业",
+      "l2": "新能源",
+      "updatedAt": "2026-02-22T13:25:25.686Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "新材料": {
+      "l1": "战略性新兴产业",
+      "l2": "新材料",
+      "updatedAt": "2026-02-22T13:25:25.753Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "节能环保": {
+      "l1": "战略性新兴产业",
+      "l2": "节能环保",
+      "updatedAt": "2026-02-22T13:25:25.811Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "生物医药": {
+      "l1": "战略性新兴产业",
+      "l2": "生物医药",
+      "updatedAt": "2026-02-22T13:25:25.963Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "数字经济": {
+      "l1": "战略性新兴产业",
+      "l2": "数字经济",
+      "updatedAt": "2026-02-22T13:25:26.024Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "低空经济": {
+      "l1": "战略性新兴产业",
+      "l2": "低空经济",
+      "updatedAt": "2026-02-22T13:25:26.099Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "新能源汽车": {
+      "l1": "战略性新兴产业",
+      "l2": "新能源汽车",
+      "updatedAt": "2026-02-22T13:25:26.172Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "半导体与芯片": {
+      "l1": "战略性新兴产业",
+      "l2": "半导体与芯片",
+      "updatedAt": "2026-02-22T13:25:26.274Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    },
+    "期货业": {
+      "l1": "服务业",
+      "l2": "期货业",
+      "updatedAt": "2026-02-22T14:55:54.675Z",
+      "sampleCompanies": [
+        {
+          "code": "600927",
+          "name": "永安期货",
+          "secid": "1.600927"
+        },
+        {
+          "code": "603093",
+          "name": "南华期货",
+          "secid": "1.603093"
+        },
+        {
+          "code": "001236",
+          "name": "弘业期货",
+          "secid": "0.001236"
+        },
+        {
+          "code": "002961",
+          "name": "瑞达期货",
+          "secid": "0.002961"
+        }
+      ],
+      "source": "eastmoney_searchapi"
+    },
+    "交易所与清算基础设施": {
+      "l1": "服务业",
+      "l2": "交易所与清算基础设施",
+      "updatedAt": "2026-02-22T14:56:20.049Z",
+      "sampleCompanies": [],
+      "source": "eastmoney_searchapi"
+    }
+  }
+}
