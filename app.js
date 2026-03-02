@@ -40,7 +40,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '张柳云', '李彤'];
+const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '张柳云', '李彤', '王麒铭'];
 const contractTypes = ['SAAS', '私有部署订阅', '私有部署买断'];
 const quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
 const periods = [...quarters, '年度'];
@@ -52,6 +52,8 @@ const paymentChartsNewEl = document.getElementById('payment-charts-new');
 const paymentChartsOldEl = document.getElementById('payment-charts-old');
 const paymentChartsTotalEl = document.getElementById('payment-charts-total');
 const paymentTypeChartsEl = document.getElementById('payment-type-charts');
+const paymentTypeNewRateChartsEl = document.getElementById('payment-type-new-rate-charts');
+const paymentTypeOldRateChartsEl = document.getElementById('payment-type-old-rate-charts');
 const paymentTypeSalesEl = document.getElementById('payment-type-sales');
 let paymentProgressEl = document.getElementById('payment-progress-chart');
 
@@ -83,6 +85,59 @@ const tabButtons = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.panel');
 let subTabButtons = document.querySelectorAll('.sub-tab');
 let subPanels = document.querySelectorAll('.sub-panel');
+const viewStateKeys = {
+  mainTab: 'yejifenxi_active_main_tab',
+  subTab: 'yejifenxi_active_sub_tab',
+};
+const MAIN_TAB_CONTRACTS = 'contracts';
+const MAIN_TAB_PAYMENTS = 'payments';
+
+const safeGetStorage = (key) => {
+  try {
+    return localStorage.getItem(key);
+  } catch (err) {
+    return null;
+  }
+};
+
+const safeSetStorage = (key, value) => {
+  try {
+    localStorage.setItem(key, value);
+  } catch (err) {
+    // Ignore storage write failures.
+  }
+};
+
+const readViewStateFromUrl = () => {
+  try {
+    const url = new URL(window.location.href);
+    const main = url.searchParams.get('tab') || '';
+    const sub = url.searchParams.get('sub') || '';
+    return { main, sub };
+  } catch (err) {
+    return { main: '', sub: '' };
+  }
+};
+
+const writeViewStateToUrl = (mainTabId, subTabId) => {
+  try {
+    const url = new URL(window.location.href);
+    if (mainTabId) {
+      url.searchParams.set('tab', mainTabId);
+    } else {
+      url.searchParams.delete('tab');
+    }
+    if (mainTabId === MAIN_TAB_PAYMENTS && subTabId) {
+      url.searchParams.set('sub', subTabId);
+    } else {
+      url.searchParams.delete('sub');
+    }
+    const next = `${url.pathname}${url.search}${url.hash}`;
+    history.replaceState(null, '', next);
+  } catch (err) {
+    // Ignore URL sync failures.
+  }
+};
 
 const ensureProgressTab = () => {
   const tabsContainer = document.querySelector('.sub-tabs');
@@ -117,12 +172,54 @@ const ensureProgressTab = () => {
   paymentProgressEl = document.getElementById('payment-progress-chart');
 };
 
+const setActiveMainTab = (tabId, persist = false) => {
+  const targetBtn = Array.from(tabButtons).find((btn) => btn.dataset.tab === tabId);
+  const targetPanel = document.getElementById(tabId);
+  if (!targetBtn || !targetPanel) return false;
+  tabButtons.forEach((b) => b.classList.remove('active'));
+  panels.forEach((p) => p.classList.remove('active'));
+  targetBtn.classList.add('active');
+  targetPanel.classList.add('active');
+  if (persist) safeSetStorage(viewStateKeys.mainTab, tabId);
+  return true;
+};
+
+const setActiveSubTab = (subTabId, persist = false) => {
+  const targetBtn = Array.from(subTabButtons).find((btn) => btn.dataset.subtab === subTabId);
+  const targetPanel = document.getElementById(subTabId);
+  if (!targetBtn || !targetPanel) return false;
+  subTabButtons.forEach((b) => b.classList.remove('active'));
+  subPanels.forEach((p) => p.classList.remove('active'));
+  targetBtn.classList.add('active');
+  targetPanel.classList.add('active');
+  if (persist) safeSetStorage(viewStateKeys.subTab, subTabId);
+  return true;
+};
+
+const getActiveMainTabId = () =>
+  document.querySelector('.tab.active')?.dataset?.tab || '';
+
+const getActiveSubTabId = () =>
+  document.querySelector('.sub-tab.active')?.dataset?.subtab || '';
+
+const persistCurrentViewState = () => {
+  const main = getActiveMainTabId();
+  if (main) safeSetStorage(viewStateKeys.mainTab, main);
+  if (main === MAIN_TAB_PAYMENTS) {
+    const sub = getActiveSubTabId();
+    if (sub) safeSetStorage(viewStateKeys.subTab, sub);
+    writeViewStateToUrl(main, sub);
+    return;
+  }
+  writeViewStateToUrl(main, '');
+};
+
 tabButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
-    tabButtons.forEach((b) => b.classList.remove('active'));
-    panels.forEach((p) => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.tab).classList.add('active');
+    if (setActiveMainTab(btn.dataset.tab, true) && btn.dataset.tab !== MAIN_TAB_PAYMENTS) {
+      safeSetStorage(viewStateKeys.subTab, '');
+    }
+    persistCurrentViewState();
   });
 });
 
@@ -131,13 +228,31 @@ const bindSubTabs = () => {
   subPanels = document.querySelectorAll('.sub-panel');
   subTabButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      subTabButtons.forEach((b) => b.classList.remove('active'));
-      subPanels.forEach((p) => p.classList.remove('active'));
-      btn.classList.add('active');
-      const target = document.getElementById(btn.dataset.subtab);
-      if (target) target.classList.add('active');
+      setActiveSubTab(btn.dataset.subtab, true);
+      persistCurrentViewState();
     });
   });
+};
+
+const restoreActiveTabs = () => {
+  const urlState = readViewStateFromUrl();
+  const rawMain = urlState.main || safeGetStorage(viewStateKeys.mainTab);
+  const savedMain =
+    rawMain === 'payment'
+      ? MAIN_TAB_PAYMENTS
+      : rawMain === 'contract'
+      ? MAIN_TAB_CONTRACTS
+      : rawMain;
+  const savedSub = urlState.sub || safeGetStorage(viewStateKeys.subTab);
+  if (!setActiveMainTab(savedMain || MAIN_TAB_CONTRACTS)) {
+    setActiveMainTab(MAIN_TAB_CONTRACTS);
+  }
+  if (getActiveMainTabId() === MAIN_TAB_PAYMENTS) {
+    if (!setActiveSubTab(savedSub || 'payment-progress')) {
+      setActiveSubTab('payment-progress');
+    }
+  }
+  persistCurrentViewState();
 };
 
 
@@ -353,6 +468,16 @@ const buildSelectOptions = () => {
       ...salesPeople.map((name) => `<option value="${name}">${name}</option>`),
     ].join('');
   });
+};
+
+const buildPaymentTypeSalesOptions = () => {
+  if (!paymentTypeSalesEl) return;
+  const current = paymentTypeSalesEl.value || 'all';
+  paymentTypeSalesEl.innerHTML = [
+    '<option value="all">所有人</option>',
+    ...salesPeople.map((name) => `<option value="${name}">${name}</option>`),
+  ].join('');
+  paymentTypeSalesEl.value = [...salesPeople, 'all'].includes(current) ? current : 'all';
 };
 
 const todayString = () => {
@@ -1188,6 +1313,81 @@ const renderTypeCharts = (container, totalsByPeriod) => {
   });
 };
 
+const sumBySalesFilter = (values = {}, salesFilter = 'all') => {
+  if (salesFilter === 'all') {
+    return Object.values(values).reduce((sum, val) => sum + parseNumber(val), 0);
+  }
+  return parseNumber(values[salesFilter]);
+};
+
+const renderTypeCompletionCharts = (
+  container,
+  label,
+  actualTotalsByPeriod,
+  targetTotalsByPeriod,
+  salesFilter = 'all'
+) => {
+  if (!container) return;
+  container.innerHTML = '';
+  const owner = salesFilter === 'all' ? '所有销售' : salesFilter;
+  periods.forEach((period) => {
+    const actual = sumBySalesFilter(actualTotalsByPeriod[period], salesFilter);
+    const target = sumBySalesFilter(targetTotalsByPeriod[period], salesFilter);
+    const percent = target > 0 ? (actual / target) * 100 : 0;
+    const width = Math.max(0, Math.min(percent, 100));
+
+    const chart = document.createElement('div');
+    chart.className = 'chart';
+    chart.innerHTML = `<h4>${label} · ${period}（完成率 ${percent.toFixed(1)}%）</h4>`;
+
+    const list = document.createElement('div');
+    list.className = 'bar-list';
+
+    const row = document.createElement('div');
+    row.className = 'bar-row';
+    row.style.cursor = 'pointer';
+
+    const rowLabel = document.createElement('div');
+    rowLabel.textContent = '完成率';
+
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+
+    const fill = document.createElement('span');
+    fill.style.width = `${width}%`;
+    bar.appendChild(fill);
+
+    const percentEl = document.createElement('div');
+    percentEl.className = 'percent';
+    percentEl.textContent = `${percent.toFixed(1)}%`;
+    bar.appendChild(percentEl);
+
+    const valueEl = document.createElement('div');
+    valueEl.textContent = `${formatMoney(actual)} / ${formatMoney(target)}`;
+
+    row.appendChild(rowLabel);
+    row.appendChild(bar);
+    row.appendChild(valueEl);
+    row.addEventListener('click', () => {
+      const items = sortByDateDesc(
+        entriesByPeriod(paymentData, period).filter((item) => {
+          if (salesFilter !== 'all' && item.sales !== salesFilter) return false;
+          return item.indicator === label;
+        })
+      );
+      if (!items.length) {
+        alert('该条形暂无明细数据');
+        return;
+      }
+      openModal(items, 0, 'payments', 'drilldown', `${label}完成率 · ${period}（${owner}）`);
+    });
+
+    list.appendChild(row);
+    chart.appendChild(list);
+    container.appendChild(chart);
+  });
+};
+
 const formatEntryDate = (item) => {
   if (item.date && String(item.date).includes('-')) return item.date;
   const year = item.year || '';
@@ -1395,10 +1595,8 @@ const refresh = () => {
   const paymentRatesNew = computeCompletionRates(paymentTotalsNew, paymentTargetsNew);
   const paymentRatesOld = computeCompletionRates(paymentTotalsOld, paymentTargetsOld);
   const paymentRatesTotal = computeCompletionRates(paymentTotalsTotal, paymentTargetsTotal);
-  const paymentTypeTotals = computePaymentTypeTotals(
-    paymentData,
-    paymentTypeSalesEl?.value || 'all'
-  );
+  const paymentTypeSalesFilter = paymentTypeSalesEl?.value || 'all';
+  const paymentTypeTotals = computePaymentTypeTotals(paymentData, paymentTypeSalesFilter);
 
   renderCharts(
     paymentChartsNewEl,
@@ -1444,6 +1642,20 @@ const refresh = () => {
     })
   );
   renderTypeCharts(paymentTypeChartsEl, paymentTypeTotals);
+  renderTypeCompletionCharts(
+    paymentTypeNewRateChartsEl,
+    '新客户指标',
+    paymentTotalsNew,
+    paymentTargetsNew,
+    paymentTypeSalesFilter
+  );
+  renderTypeCompletionCharts(
+    paymentTypeOldRateChartsEl,
+    '老客户指标',
+    paymentTotalsOld,
+    paymentTargetsOld,
+    paymentTypeSalesFilter
+  );
 
   const progressTotals = paymentData.reduce(
     (acc, item) => {
@@ -1686,7 +1898,9 @@ authForm.addEventListener('submit', async (event) => {
 const init = async () => {
   ensureProgressTab();
   bindSubTabs();
+  restoreActiveTabs();
   buildSelectOptions();
+  buildPaymentTypeSalesOptions();
   resetForms();
   setDefaultDates();
   bindAmountFormatting();
@@ -1694,6 +1908,11 @@ const init = async () => {
   bindCustomerAutoComplete();
   window.addEventListener('online', refreshSyncStatus);
   window.addEventListener('offline', refreshSyncStatus);
+  window.addEventListener('beforeunload', persistCurrentViewState);
+  window.addEventListener('pagehide', persistCurrentViewState);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') persistCurrentViewState();
+  });
   refreshSyncStatus();
   if (paymentTypeSalesEl) {
     paymentTypeSalesEl.addEventListener('change', refresh);
