@@ -940,7 +940,7 @@ const renderCharts = (
   });
 };
 
-const renderProgressChart = (container, totals, drilldownResolver = null) => {
+const renderProgressChart = (container, totals, annualKpiTotal = 0, drilldownResolver = null) => {
   if (!container) return;
   const values = [
     { label: '到款金额', value: parseNumber(totals.amount) },
@@ -978,6 +978,31 @@ const renderProgressChart = (container, totals, drilldownResolver = null) => {
     }
     container.appendChild(wrapper);
   });
+
+  const kpiTotal = parseNumber(annualKpiTotal);
+  const progressWrap = document.createElement('div');
+  progressWrap.className = 'progress-kpi';
+  const title = document.createElement('h4');
+  title.textContent = `全年 KPI 进度（KPI 合计 ${formatMoney(kpiTotal)}）`;
+  progressWrap.appendChild(title);
+  const list = document.createElement('div');
+  list.className = 'progress-kpi-grid';
+  values.forEach((item) => {
+    const percent = kpiTotal > 0 ? (item.value / kpiTotal) * 100 : 0;
+    const height = Math.max(4, Math.round(Math.max(0, Math.min(percent, 100))));
+    const wrapper = document.createElement('div');
+    wrapper.className = 'vbar';
+    wrapper.innerHTML = `
+      <div class="value">${percent.toFixed(1)}%</div>
+      <div class="track"><div class="fill" style="height:${height}%;"></div></div>
+      <div class="label">${item.label} / 年度KPI</div>
+      <div class="vbar-sub">${formatMoney(item.value)} / ${formatMoney(kpiTotal)}</div>
+    `;
+    list.appendChild(wrapper);
+  });
+
+  progressWrap.appendChild(list);
+  container.appendChild(progressWrap);
 };
 
 const computeContractTotals = (entries) => {
@@ -1666,7 +1691,11 @@ const refresh = () => {
     },
     { amount: 0, totalCost: 0, actualAccrual: 0 }
   );
-  renderProgressChart(paymentProgressEl, progressTotals, (label) => {
+  const annualKpiTotal = Object.values(paymentTargetsTotal['年度'] || {}).reduce(
+    (sum, val) => sum + parseNumber(val),
+    0
+  );
+  renderProgressChart(paymentProgressEl, progressTotals, annualKpiTotal, (label) => {
     if (label === '到款金额') {
       return {
         type: 'payments',
