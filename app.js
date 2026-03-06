@@ -1240,7 +1240,7 @@ const computeCompletionRates = (totalsByPeriod, targetsByPeriod) => {
   return rates;
 };
 
-const paymentTypes = ['新签', '增购', '续约', '维保'];
+const paymentTypes = ['新签', '增购', '续约', '维保', '升级费'];
 
 const computePaymentTypeTotals = (entries, salesFilter = 'all') => {
   const totals = {};
