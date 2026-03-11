@@ -454,7 +454,6 @@ button.danger {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   align-items: end;
-  justify-items: center;
   padding: 10px 4px 4px;
 }
 
@@ -509,6 +508,8 @@ button.danger {
 }
 
 .progress-quarter {
+  display: grid;
+  gap: 10px;
   grid-column: 1 / -1;
   justify-self: stretch;
   width: 100%;
@@ -524,7 +525,9 @@ button.danger {
 }
 
 .progress-quarter .charts {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
 }
 
 .quarter-kpi-sub {
