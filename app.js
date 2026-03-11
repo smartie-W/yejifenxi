@@ -40,7 +40,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '张柳云', '李彤', '王麒铭'];
+const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '李彤', '王麒铭'];
 const contractTypes = ['SAAS', '私有部署订阅', '私有部署买断'];
 const quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
 const periods = [...quarters, '年度'];
