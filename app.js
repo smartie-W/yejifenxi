@@ -487,11 +487,8 @@ const todayString = () => {
 };
 
 const resetForms = () => {
-  contractForm.reset();
-  paymentForm.reset();
-  document
-    .querySelectorAll('select[name="sales"]')
-    .forEach((select) => (select.value = ''));
+  clearContractForm();
+  clearPaymentForm();
 };
 
 const setDefaultDates = () => {
@@ -499,6 +496,49 @@ const setDefaultDates = () => {
   document.querySelectorAll('input[type="date"]').forEach((input) => {
     input.value = today;
   });
+};
+
+const clearSuggestLists = () => {
+  customerSuggestLists.forEach((list) => {
+    list.classList.remove('show');
+    list.innerHTML = '';
+  });
+};
+
+const clearContractForm = () => {
+  if (!contractForm) return;
+  contractForm.querySelector('input[name="date"]').value = todayString();
+  contractForm.querySelector('input[name="customer"]').value = '';
+  contractForm.querySelector('select[name="sales"]').value = '';
+  contractForm.querySelector('input[name="amount"]').value = '';
+  contractForm.querySelector('select[name="type"]').value = '';
+  clearSuggestLists();
+};
+
+const clearPaymentForm = () => {
+  if (!paymentForm) return;
+  paymentForm.querySelector('input[name="date"]').value = todayString();
+  paymentForm.querySelector('input[name="customer"]').value = '';
+  paymentForm.querySelector('select[name="sales"]').value = '';
+  paymentForm.querySelector('select[name="customerType"]').value = '';
+  paymentForm.querySelector('select[name="indicatorType"]').value = '';
+  paymentForm.querySelector('select[name="contractType"]').value = '';
+  [
+    'amount',
+    'secondDevProfit',
+    'implementationFee',
+    'secondDevCost',
+    'outsourcingCost',
+    'unplannedCost',
+  ].forEach((name) => {
+    const input = paymentForm.querySelector(`input[name="${name}"]`);
+    if (input) input.value = '';
+  });
+  const totalCostInput = paymentForm.querySelector('input[name="totalCost"]');
+  const actualAccrualInput = paymentForm.querySelector('input[name="actualAccrual"]');
+  if (totalCostInput) totalCostInput.value = '0';
+  if (actualAccrualInput) actualAccrualInput.value = '0';
+  clearSuggestLists();
 };
 
 const loadJson = async (path) => {
@@ -539,6 +579,8 @@ let contractSnapshotReady = false;
 let paymentSnapshotReady = false;
 let contractHasPendingWrites = false;
 let paymentHasPendingWrites = false;
+let lastContractSnapshotSignature = '';
+let lastPaymentSnapshotSignature = '';
 let lastSyncedAt = null;
 let syncErrorMessage = '';
 
@@ -565,6 +607,11 @@ const writeCache = (key, data) => {
     // Ignore cache write failures (e.g., quota).
   }
 };
+
+const buildSnapshotSignature = (rows) =>
+  rows
+    .map((row) => JSON.stringify(row))
+    .join('\n');
 
 const formatTime = (date) => {
   if (!date) return '';
@@ -701,12 +748,18 @@ const startRealtime = () => {
       lastSyncedAt = new Date();
       syncErrorMessage = '';
     }
-    contractData = snap.docs
+    const nextContractData = snap.docs
       .map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }))
       .filter((row) => !row.deletedAt);
-    writeCache(cacheKeys.contracts, contractData);
+    const nextContractSignature = buildSnapshotSignature(nextContractData);
+    const contractDataChanged = nextContractSignature !== lastContractSnapshotSignature;
+    if (contractDataChanged) {
+      lastContractSnapshotSignature = nextContractSignature;
+      contractData = nextContractData;
+      writeCache(cacheKeys.contracts, contractData);
+    }
     refreshSyncStatus();
-    refresh();
+    if (contractDataChanged) refresh();
   });
 
   unsubscribePayments = onSnapshot(paymentQuery, { includeMetadataChanges: true }, (snap) => {
@@ -716,12 +769,18 @@ const startRealtime = () => {
       lastSyncedAt = new Date();
       syncErrorMessage = '';
     }
-    paymentData = snap.docs
+    const nextPaymentData = snap.docs
       .map((docSnap) => normalizePaymentEntry({ id: docSnap.id, ...docSnap.data() }))
       .filter((row) => !row.deletedAt);
-    writeCache(cacheKeys.payments, paymentData);
+    const nextPaymentSignature = buildSnapshotSignature(nextPaymentData);
+    const paymentDataChanged = nextPaymentSignature !== lastPaymentSnapshotSignature;
+    if (paymentDataChanged) {
+      lastPaymentSnapshotSignature = nextPaymentSignature;
+      paymentData = nextPaymentData;
+      writeCache(cacheKeys.payments, paymentData);
+    }
     refreshSyncStatus();
-    refresh();
+    if (paymentDataChanged) refresh();
   });
 };
 
@@ -1802,8 +1861,7 @@ contractForm.addEventListener('submit', (event) => {
 
   addDoc(collection(db, collections.contracts), entry)
     .then(() => {
-      contractForm.reset();
-      setDefaultDates();
+      clearContractForm();
     })
     .catch((err) => {
       console.error(err);
@@ -1844,10 +1902,7 @@ paymentForm.addEventListener('submit', (event) => {
 
   addDoc(collection(db, collections.payments), entry)
     .then(() => {
-      paymentForm.reset();
-      setDefaultDates();
-      updateTotalCost();
-      updateActualAccrual();
+      clearPaymentForm();
     })
     .catch((err) => {
       console.error(err);
