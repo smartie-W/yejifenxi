@@ -999,7 +999,13 @@ const renderCharts = (
   });
 };
 
-const renderProgressChart = (container, totals, annualKpiTotal = 0, drilldownResolver = null) => {
+const renderProgressChart = (
+  container,
+  totals,
+  annualKpiTotal = 0,
+  quarterProgress = {},
+  drilldownResolver = null
+) => {
   if (!container) return;
   const values = [
     { label: '到款金额', value: parseNumber(totals.amount) },
@@ -1062,6 +1068,80 @@ const renderProgressChart = (container, totals, annualKpiTotal = 0, drilldownRes
 
   progressWrap.appendChild(list);
   container.appendChild(progressWrap);
+
+  const quarterWrap = document.createElement('div');
+  quarterWrap.className = 'progress-quarter';
+  const quarterTitle = document.createElement('h4');
+  quarterTitle.textContent = '季度 KPI 完成率（实际计提金额 / 季度KPI）';
+  quarterWrap.appendChild(quarterTitle);
+
+  const quarterCharts = document.createElement('div');
+  quarterCharts.className = 'charts';
+  quarters.forEach((quarter) => {
+    const actual = parseNumber(quarterProgress[quarter]?.actual);
+    const target = parseNumber(quarterProgress[quarter]?.target);
+    const percent = target > 0 ? (actual / target) * 100 : 0;
+    const width = Math.max(0, Math.min(percent, 100));
+
+    const chart = document.createElement('div');
+    chart.className = 'chart';
+    chart.innerHTML = `<h4>${quarter}（完成率 ${percent.toFixed(1)}%）</h4>`;
+
+    const row = document.createElement('div');
+    row.className = 'bar-row';
+    if (drilldownResolver) {
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', () => {
+        const detail = drilldownResolver(`季度_${quarter}`) || {};
+        const list = sortByDateDesc(detail.items || []);
+        if (!list.length) {
+          alert('该条形暂无明细数据');
+          return;
+        }
+        openModal(
+          list,
+          0,
+          detail.type || 'payments',
+          'drilldown',
+          detail.title || `季度 KPI 完成率 · ${quarter}`
+        );
+      });
+    }
+
+    const label = document.createElement('div');
+    label.textContent = '实际计提';
+
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    const fill = document.createElement('span');
+    fill.style.width = `${width}%`;
+    bar.appendChild(fill);
+    const percentEl = document.createElement('div');
+    percentEl.className = 'percent';
+    percentEl.textContent = `${percent.toFixed(1)}%`;
+    bar.appendChild(percentEl);
+
+    const valueEl = document.createElement('div');
+    valueEl.textContent = formatMoney(actual);
+    valueEl.title = `季度KPI：${formatMoney(target)}`;
+
+    row.appendChild(label);
+    row.appendChild(bar);
+    row.appendChild(valueEl);
+
+    const list = document.createElement('div');
+    list.className = 'bar-list';
+    list.appendChild(row);
+    const sub = document.createElement('div');
+    sub.className = 'quarter-kpi-sub';
+    sub.textContent = `${formatMoney(actual)} / ${formatMoney(target)}`;
+    chart.appendChild(list);
+    chart.appendChild(sub);
+    quarterCharts.appendChild(chart);
+  });
+
+  quarterWrap.appendChild(quarterCharts);
+  container.appendChild(quarterWrap);
 };
 
 const computeContractTotals = (entries) => {
@@ -1754,7 +1834,20 @@ const refresh = () => {
     (sum, val) => sum + parseNumber(val),
     0
   );
-  renderProgressChart(paymentProgressEl, progressTotals, annualKpiTotal, (label) => {
+  const quarterProgress = quarters.reduce((acc, quarter) => {
+    acc[quarter] = {
+      actual: Object.values(paymentTotalsTotal[quarter] || {}).reduce(
+        (sum, val) => sum + parseNumber(val),
+        0
+      ),
+      target: Object.values(paymentTargetsTotal[quarter] || {}).reduce(
+        (sum, val) => sum + parseNumber(val),
+        0
+      ),
+    };
+    return acc;
+  }, {});
+  renderProgressChart(paymentProgressEl, progressTotals, annualKpiTotal, quarterProgress, (label) => {
     if (label === '到款金额') {
       return {
         type: 'payments',
@@ -1767,6 +1860,14 @@ const refresh = () => {
         type: 'payments',
         title: '到款进度分析 · 合计成本',
         items: paymentData.filter((item) => parseNumber(item.totalCost) > 0),
+      };
+    }
+    if (String(label).startsWith('季度_')) {
+      const quarter = String(label).replace('季度_', '');
+      return {
+        type: 'payments',
+        title: `季度 KPI 完成率 · ${quarter}`,
+        items: paymentData.filter((item) => item.quarter === quarter),
       };
     }
     return {
