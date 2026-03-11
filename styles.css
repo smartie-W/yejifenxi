@@ -523,6 +523,10 @@ button.danger {
   color: var(--ink);
 }
 
+.progress-quarter .charts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .quarter-kpi-sub {
   margin-top: 8px;
   font-size: 12px;
@@ -546,6 +550,10 @@ button.danger {
 @media (max-width: 900px) {
   .progress-chart,
   .progress-kpi-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .progress-quarter .charts {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
