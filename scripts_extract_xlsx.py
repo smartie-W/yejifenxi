@@ -89,7 +89,7 @@ if __name__ == '__main__':
     )
 
     extract(
-        Path('/Users/wang/Nutstore Files/.symlinks/坚果云/华东区管理工作/2026 年指标/2026 年东区一组王麒铭指标V2.xlsx'),
+        Path('/Users/wang/Nutstore Files/.symlinks/坚果云/华东区管理工作/2026 年指标/2026 年东区一组王麒铭指标V3.xlsx'),
         base,
         wanted={'目标数据'},
     )
