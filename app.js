@@ -39,6 +39,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const DATA_VERSION = '20260312-1';
 
 const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '李彤', '王麒铭'];
 const contractTypes = ['SAAS', '私有部署订阅', '私有部署买断'];
@@ -542,7 +543,8 @@ const clearPaymentForm = () => {
 };
 
 const loadJson = async (path) => {
-  const res = await fetch(path);
+  const sep = path.includes('?') ? '&' : '?';
+  const res = await fetch(`${path}${sep}v=${DATA_VERSION}`);
   return res.json();
 };
 
