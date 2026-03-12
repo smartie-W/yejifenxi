@@ -911,7 +911,8 @@ const renderCharts = (
   targetsByPeriod = null,
   showPercent = false,
   headerRate = null,
-  drilldownResolver = null
+  drilldownResolver = null,
+  headerDetail = null
 ) => {
   container.innerHTML = '';
   periods.forEach((period) => {
@@ -921,10 +922,13 @@ const renderCharts = (
       (sum, val) => sum + parseNumber(val),
       0
     );
-    const rateText = headerRate ? `完成率 ${headerRate(period)} · ` : '';
-    chart.innerHTML = `<h4>${titlePrefix} · ${period}（${rateText}合计 ${formatMoney(
-      periodTotal
-    )}）</h4>`;
+    const rateText = headerRate ? `完成率 ${headerRate(period)}` : '';
+    const detailText = headerDetail ? headerDetail(period, periodTotal) : '';
+    const headerParts = [];
+    if (rateText) headerParts.push(rateText);
+    if (detailText) headerParts.push(detailText);
+    headerParts.push(`合计 ${formatMoney(periodTotal)}`);
+    chart.innerHTML = `<h4>${titlePrefix} · ${period}（${headerParts.join(' · ')}）</h4>`;
 
     const list = document.createElement('div');
     list.className = 'bar-list';
@@ -1777,7 +1781,16 @@ const refresh = () => {
       items: entriesByPeriod(paymentData, period).filter(
         (item) => item.sales === sales && item.indicator === '新客户指标'
       ),
-    })
+    }),
+    (period, periodTotal) => {
+      const periodTarget = Object.values(paymentTargetsNew[period] || {}).reduce(
+        (sum, val) => sum + parseNumber(val),
+        0
+      );
+      return period === '年度' && periodTarget
+        ? `${formatMoney(periodTotal)} / ${formatMoney(periodTarget)}`
+        : '';
+    }
   );
   renderCharts(
     paymentChartsOldEl,
@@ -1792,7 +1805,16 @@ const refresh = () => {
       items: entriesByPeriod(paymentData, period).filter(
         (item) => item.sales === sales && item.indicator === '老客户指标'
       ),
-    })
+    }),
+    (period, periodTotal) => {
+      const periodTarget = Object.values(paymentTargetsOld[period] || {}).reduce(
+        (sum, val) => sum + parseNumber(val),
+        0
+      );
+      return period === '年度' && periodTarget
+        ? `${formatMoney(periodTotal)} / ${formatMoney(periodTarget)}`
+        : '';
+    }
   );
   renderCharts(
     paymentChartsTotalEl,
@@ -1805,7 +1827,16 @@ const refresh = () => {
       type: 'payments',
       title: `新老客户指标合计 · ${period} · ${sales}`,
       items: entriesByPeriod(paymentData, period).filter((item) => item.sales === sales),
-    })
+    }),
+    (period, periodTotal) => {
+      const periodTarget = Object.values(paymentTargetsTotal[period] || {}).reduce(
+        (sum, val) => sum + parseNumber(val),
+        0
+      );
+      return period === '年度' && periodTarget
+        ? `${formatMoney(periodTotal)} / ${formatMoney(periodTarget)}`
+        : '';
+    }
   );
   renderTypeCharts(paymentTypeChartsEl, paymentTypeTotals);
   renderTypeCompletionCharts(
