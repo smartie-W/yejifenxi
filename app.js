@@ -1180,7 +1180,8 @@ const renderProgressChart = (
       const target = parseNumber(quarterProgress[quarter]?.target);
       const thresholdTarget = target * ratio;
       const delta = Math.abs(actual - thresholdTarget);
-      const width = Math.max(0, Math.min((delta / maxDelta) * 100, 100));
+      const achieved = thresholdTarget > 0 && actual >= thresholdTarget;
+      const width = achieved ? 100 : Math.max(0, Math.min((delta / maxDelta) * 100, 100));
 
       const chart = document.createElement('div');
       chart.className = 'chart';
@@ -1188,6 +1189,9 @@ const renderProgressChart = (
 
       const row = document.createElement('div');
       row.className = 'bar-row';
+      if (achieved) {
+        row.classList.add('is-achieved');
+      }
 
       const labelEl = document.createElement('div');
       labelEl.textContent = '差额';
@@ -1196,10 +1200,16 @@ const renderProgressChart = (
       bar.className = 'bar';
       const fill = document.createElement('span');
       fill.style.width = `${width}%`;
+      if (achieved) {
+        fill.classList.add('achieved');
+      }
       bar.appendChild(fill);
 
       const valueEl = document.createElement('div');
-      valueEl.textContent = formatMoney(delta);
+      valueEl.textContent = achieved ? '已达成' : formatMoney(delta);
+      if (achieved) {
+        valueEl.classList.add('achieved-text');
+      }
       valueEl.title = `实际计提：${formatMoney(actual)}；${label}目标：${formatMoney(
         thresholdTarget
       )}`;

@@ -536,6 +536,19 @@ button.danger {
   color: var(--muted);
 }
 
+.bar .achieved {
+  background: linear-gradient(180deg, #e15c5c, #c93c3c);
+}
+
+.bar-row.is-achieved .bar {
+  background: #f8e6e6;
+}
+
+.achieved-text {
+  color: #c93c3c;
+  font-weight: 700;
+}
+
 .progress-kpi-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
