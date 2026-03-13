@@ -1148,6 +1148,82 @@ const renderProgressChart = (
 
   quarterWrap.appendChild(quarterCharts);
   container.appendChild(quarterWrap);
+
+  const thresholdConfigs = [
+    { ratio: 0.6, label: '60%' },
+    { ratio: 0.8, label: '80%' },
+    { ratio: 1, label: '100%' },
+  ];
+
+  thresholdConfigs.forEach(({ ratio, label }) => {
+    const deltaWrap = document.createElement('div');
+    deltaWrap.className = 'progress-quarter';
+
+    const deltaTitle = document.createElement('h4');
+    deltaTitle.textContent = `季度 KPI ${label} 差额（|实际计提金额 - 季度KPI×${label}|）`;
+    deltaWrap.appendChild(deltaTitle);
+
+    const deltaCharts = document.createElement('div');
+    deltaCharts.className = 'charts';
+
+    const maxDelta = Math.max(
+      ...quarters.map((quarter) => {
+        const actual = parseNumber(quarterProgress[quarter]?.actual);
+        const target = parseNumber(quarterProgress[quarter]?.target) * ratio;
+        return Math.abs(actual - target);
+      }),
+      1
+    );
+
+    quarters.forEach((quarter) => {
+      const actual = parseNumber(quarterProgress[quarter]?.actual);
+      const target = parseNumber(quarterProgress[quarter]?.target);
+      const thresholdTarget = target * ratio;
+      const delta = Math.abs(actual - thresholdTarget);
+      const width = Math.max(0, Math.min((delta / maxDelta) * 100, 100));
+
+      const chart = document.createElement('div');
+      chart.className = 'chart';
+      chart.innerHTML = `<h4>${quarter}</h4>`;
+
+      const row = document.createElement('div');
+      row.className = 'bar-row';
+
+      const labelEl = document.createElement('div');
+      labelEl.textContent = '差额';
+
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      const fill = document.createElement('span');
+      fill.style.width = `${width}%`;
+      bar.appendChild(fill);
+
+      const valueEl = document.createElement('div');
+      valueEl.textContent = formatMoney(delta);
+      valueEl.title = `实际计提：${formatMoney(actual)}；${label}目标：${formatMoney(
+        thresholdTarget
+      )}`;
+
+      row.appendChild(labelEl);
+      row.appendChild(bar);
+      row.appendChild(valueEl);
+
+      const list = document.createElement('div');
+      list.className = 'bar-list';
+      list.appendChild(row);
+
+      const sub = document.createElement('div');
+      sub.className = 'quarter-kpi-sub';
+      sub.textContent = `${formatMoney(actual)} vs ${formatMoney(thresholdTarget)}`;
+
+      chart.appendChild(list);
+      chart.appendChild(sub);
+      deltaCharts.appendChild(chart);
+    });
+
+    deltaWrap.appendChild(deltaCharts);
+    container.appendChild(deltaWrap);
+  });
 };
 
 const computeContractTotals = (entries) => {
