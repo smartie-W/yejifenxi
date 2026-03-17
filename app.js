@@ -1166,18 +1166,31 @@ const renderProgressChart = (
     const deltaCharts = document.createElement('div');
     deltaCharts.className = 'charts';
 
+    const stageKeys = ['Q1', 'Q2', 'Q3', '年度'];
+    const stageMetrics = stageKeys.map((stageKey) => {
+      if (stageKey === '年度') {
+        return {
+          stageKey,
+          actual: parseNumber(totals.actualAccrual),
+          target: parseNumber(kpiTotal),
+        };
+      }
+      return {
+        stageKey,
+        actual: parseNumber(quarterProgress[stageKey]?.actual),
+        target: parseNumber(quarterProgress[stageKey]?.target),
+      };
+    });
+
     const maxDelta = Math.max(
-      ...quarters.map((quarter) => {
-        const actual = parseNumber(quarterProgress[quarter]?.actual);
-        const target = parseNumber(quarterProgress[quarter]?.target) * ratio;
-        return Math.abs(actual - target);
+      ...stageMetrics.map(({ actual, target }) => {
+        const thresholdTarget = target * ratio;
+        return Math.abs(actual - thresholdTarget);
       }),
       1
     );
 
-    quarters.forEach((quarter) => {
-      const actual = parseNumber(quarterProgress[quarter]?.actual);
-      const target = parseNumber(quarterProgress[quarter]?.target);
+    stageMetrics.forEach(({ stageKey, actual, target }) => {
       const thresholdTarget = target * ratio;
       const delta = Math.abs(actual - thresholdTarget);
       const achieved = thresholdTarget > 0 && actual >= thresholdTarget;
@@ -1185,7 +1198,7 @@ const renderProgressChart = (
 
       const chart = document.createElement('div');
       chart.className = 'chart';
-      chart.innerHTML = `<h4>${quarter}</h4>`;
+      chart.innerHTML = `<h4>${stageKey}</h4>`;
 
       const row = document.createElement('div');
       row.className = 'bar-row';
