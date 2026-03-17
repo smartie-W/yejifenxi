@@ -39,10 +39,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const DATA_VERSION = '20260312-1';
+const DATA_VERSION = '20260317-3';
 
 const salesPeople = ['郭淼', '周思', '唐龙军', '王雪靖', '李彤', '王麒铭'];
 const contractTypes = ['SAAS', '私有部署订阅', '私有部署买断'];
+const paymentTypes = ['新签', '增购', '续约', '维保', '升级费'];
+const customerTypes = ['新客户', '老客户'];
+const indicatorTypes = ['新客户指标', '老客户指标'];
 const quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
 const periods = [...quarters, '年度'];
 
@@ -356,6 +359,45 @@ const parseNumber = (value) => {
   if (value === null || value === undefined) return 0;
   const num = Number(String(value).replace(/,/g, ''));
   return Number.isFinite(num) ? num : 0;
+};
+
+const hasText = (value) => String(value ?? '').trim() !== '';
+
+const isValidContractSeedRow = (row) =>
+  hasText(row['销售人员']) &&
+  hasText(row['客户名称']) &&
+  contractTypes.includes(String(row['合同类型'] || '').trim()) &&
+  quarters.includes(String(row['签约季度'] || '').trim()) &&
+  parseNumber(row['合同金额']) > 0;
+
+const isValidPaymentSeedRow = (row) => {
+  const amount = parseNumber(row['本次到款金额']);
+  const totalCost = parseNumber(row['本次到款-合计成本']);
+  const actualAccrual = parseNumber(row['实际计提金额']);
+  return (
+    hasText(row['销售人员']) &&
+    hasText(row['客户名称']) &&
+    customerTypes.includes(String(row['客户类型'] || '').trim()) &&
+    paymentTypes.includes(String(row['合同类型'] || '').trim()) &&
+    indicatorTypes.includes(String(row['款项归属指标类型'] || '').trim()) &&
+    quarters.includes(String(row['回款季度'] || '').trim()) &&
+    [amount, totalCost, actualAccrual].some((value) => Math.abs(value) > 0)
+  );
+};
+
+const isValidKpiRow = (row) => {
+  const year = parseNumber(row['全年净回款金额']);
+  const q1 = parseNumber(row['第1季度净回款金额']);
+  const q2 = parseNumber(row['第2季度净回款金额']);
+  const q3 = parseNumber(row['第3季度净回款金额']);
+  const q4 = parseNumber(row['第4季度净回款金额']);
+  return (
+    String(row['部门名称'] || '').trim() === '东区一组' &&
+    hasText(row['员工姓名']) &&
+    customerTypes.includes(String(row['新老客户'] || '').trim()) &&
+    year > 0 &&
+    Math.abs(q1 + q2 + q3 + q4 - year) <= 0.01
+  );
 };
 
 const formatInputNumber = (value) => {
@@ -804,7 +846,7 @@ const groupTotals = (items, periodKey) => {
 };
 
 const buildContractEntries = (rows) => {
-  return rows.map((row) => ({
+  return rows.filter(isValidContractSeedRow).map((row) => ({
     year: row['签约年度'],
     quarter: row['签约季度'],
     sales: row['销售人员'],
@@ -818,7 +860,7 @@ const buildContractEntries = (rows) => {
 };
 
 const buildPaymentEntries = (rows) => {
-  return rows.map((row) => ({
+  return rows.filter(isValidPaymentSeedRow).map((row) => ({
     year: row['回款年'] || row['回款年限'],
     quarter: row['回款季度'],
     sales: row['销售人员'],
@@ -889,7 +931,7 @@ const ensureSeeded = async () => {
 
 const buildKpiMap = (rows) => {
   const map = {};
-  rows.forEach((row) => {
+  rows.filter(isValidKpiRow).forEach((row) => {
     const person = row['员工姓名'];
     const type = row['新老客户'];
     if (!person || !type) return;
@@ -1483,8 +1525,6 @@ const computeCompletionRates = (totalsByPeriod, targetsByPeriod) => {
   });
   return rates;
 };
-
-const paymentTypes = ['新签', '增购', '续约', '维保', '升级费'];
 
 const computePaymentTypeTotals = (entries, salesFilter = 'all') => {
   const totals = {};
