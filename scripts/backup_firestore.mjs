@@ -25,6 +25,7 @@ const backupRoot = process.env.BACKUP_ROOT || path.join(repoRoot, 'backups', 'fi
 const nutstoreParent = '/Users/wang/Nutstore Files/.symlinks/坚果云';
 const nutstoreBackupRoot =
   process.env.BACKUP_NUTSTORE_ROOT || path.join(nutstoreParent, 'yejifenxi-backups', 'firestore');
+const requiredNonEmptyCollections = ['contracts', 'payments'];
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -75,11 +76,45 @@ const pruneOldDailyDirs = async (rootDir, keepDays) => {
   }
 };
 
+const readLatestManifest = async (rootDir) => {
+  try {
+    const raw = await fs.readFile(path.join(rootDir, 'latest.json'), 'utf8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+};
+
+const assertHealthySnapshot = (manifest, previousManifest) => {
+  const counts = manifest.collections || {};
+  const emptyRequired = requiredNonEmptyCollections.filter((name) => (counts[name] || 0) === 0);
+  if (emptyRequired.length) {
+    throw new Error(`backup sanity check failed: empty required collections -> ${emptyRequired.join(', ')}`);
+  }
+
+  if (Object.values(counts).every((count) => count === 0)) {
+    throw new Error('backup sanity check failed: all collections are empty');
+  }
+
+  if (!previousManifest?.collections) return;
+
+  for (const name of requiredNonEmptyCollections) {
+    const prev = Number(previousManifest.collections[name] || 0);
+    const next = Number(counts[name] || 0);
+    if (prev > 0 && next === 0) {
+      throw new Error(`backup sanity check failed: ${name} dropped from ${prev} to 0`);
+    }
+  }
+};
+
+let lastTargetDir = '';
+
 const run = async () => {
   const now = new Date();
   const dayDir = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
   const timeDir = `${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
   const targetDir = path.join(backupRoot, dayDir, timeDir);
+  lastTargetDir = targetDir;
   await fs.mkdir(targetDir, { recursive: true });
 
   const app = initializeApp(firebaseConfig);
@@ -92,6 +127,7 @@ const run = async () => {
     projectId: firebaseConfig.projectId,
     collections: {},
   };
+  const snapshotData = {};
 
   for (const name of collections) {
     const snap = await getDocs(collection(db, name));
@@ -101,12 +137,19 @@ const run = async () => {
         ...serialize(docSnap.data()),
       }))
     );
+    snapshotData[name] = rows;
+    manifest.collections[name] = rows.length;
+  }
+
+  const previousManifest = await readLatestManifest(backupRoot);
+  assertHealthySnapshot(manifest, previousManifest);
+
+  for (const name of collections) {
     await fs.writeFile(
       path.join(targetDir, `${name}.json`),
-      `${JSON.stringify(rows, null, 2)}\n`,
+      `${JSON.stringify(snapshotData[name], null, 2)}\n`,
       'utf8'
     );
-    manifest.collections[name] = rows.length;
   }
 
   await fs.writeFile(path.join(targetDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
@@ -142,7 +185,14 @@ run()
   .then(() => {
     process.exit(0);
   })
-  .catch((err) => {
+  .catch(async (err) => {
+    try {
+      if (lastTargetDir) {
+        await fs.rm(lastTargetDir, { recursive: true, force: true });
+      }
+    } catch {
+      // Ignore cleanup failure after backup failure.
+    }
     process.stderr.write(`backup failed: ${err?.stack || err}\n`);
     process.exit(1);
   });
