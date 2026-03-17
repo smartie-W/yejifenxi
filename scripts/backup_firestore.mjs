@@ -26,6 +26,7 @@ const nutstoreParent = '/Users/wang/Nutstore Files/.symlinks/坚果云';
 const nutstoreBackupRoot =
   process.env.BACKUP_NUTSTORE_ROOT || path.join(nutstoreParent, 'yejifenxi-backups', 'firestore');
 const requiredNonEmptyCollections = ['contracts', 'payments'];
+const maxDropRatio = 0.5;
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -103,6 +104,14 @@ const assertHealthySnapshot = (manifest, previousManifest) => {
     const next = Number(counts[name] || 0);
     if (prev > 0 && next === 0) {
       throw new Error(`backup sanity check failed: ${name} dropped from ${prev} to 0`);
+    }
+    if (prev > 0 && next < prev) {
+      const dropRatio = (prev - next) / prev;
+      if (dropRatio > maxDropRatio) {
+        throw new Error(
+          `backup sanity check failed: ${name} dropped ${Math.round(dropRatio * 100)}% (prev=${prev}, next=${next})`
+        );
+      }
     }
   }
 };
