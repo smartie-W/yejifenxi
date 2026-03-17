@@ -511,7 +511,7 @@ const clearContractForm = () => {
   contractForm.querySelector('input[name="date"]').value = todayString();
   contractForm.querySelector('input[name="customer"]').value = '';
   contractForm.querySelector('select[name="sales"]').value = '';
-  contractForm.querySelector('input[name="amount"]').value = '';
+  contractForm.querySelector('input[name="amount"]').value = '0';
   contractForm.querySelector('select[name="type"]').value = '';
   clearSuggestLists();
 };
@@ -533,7 +533,7 @@ const clearPaymentForm = () => {
     'unplannedCost',
   ].forEach((name) => {
     const input = paymentForm.querySelector(`input[name="${name}"]`);
-    if (input) input.value = '';
+    if (input) input.value = '0';
   });
   const totalCostInput = paymentForm.querySelector('input[name="totalCost"]');
   const actualAccrualInput = paymentForm.querySelector('input[name="actualAccrual"]');
