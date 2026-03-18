@@ -550,6 +550,7 @@ const clearSuggestLists = () => {
 
 const clearContractForm = () => {
   if (!contractForm) return;
+  contractForm.reset();
   contractForm.querySelector('input[name="date"]').value = todayString();
   contractForm.querySelector('input[name="customer"]').value = '';
   contractForm.querySelector('select[name="sales"]').value = '';
@@ -560,6 +561,7 @@ const clearContractForm = () => {
 
 const clearPaymentForm = () => {
   if (!paymentForm) return;
+  paymentForm.reset();
   paymentForm.querySelector('input[name="date"]').value = todayString();
   paymentForm.querySelector('input[name="customer"]').value = '';
   paymentForm.querySelector('select[name="sales"]').value = '';
