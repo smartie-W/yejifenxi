@@ -562,12 +562,16 @@ const clearContractForm = () => {
 const clearPaymentForm = () => {
   if (!paymentForm) return;
   paymentForm.reset();
-  paymentForm.querySelector('input[name="date"]').value = todayString();
-  paymentForm.querySelector('input[name="customer"]').value = '';
-  paymentForm.querySelector('select[name="sales"]').value = '';
-  paymentForm.querySelector('select[name="customerType"]').value = '';
-  paymentForm.querySelector('select[name="indicatorType"]').value = '';
-  paymentForm.querySelector('select[name="contractType"]').value = '';
+  const setValue = (selector, value) => {
+    const el = paymentForm.querySelector(selector);
+    if (el) el.value = value;
+  };
+  setValue('input[name="date"]', todayString());
+  setValue('input[name="customer"]', '');
+  setValue('select[name="sales"]', '');
+  setValue('select[name="customerType"]', '');
+  setValue('select[name="indicatorType"]', '');
+  setValue('select[name="contractType"]', '');
   [
     'amount',
     'secondDevProfit',
@@ -576,13 +580,11 @@ const clearPaymentForm = () => {
     'outsourcingCost',
     'unplannedCost',
   ].forEach((name) => {
-    const input = paymentForm.querySelector(`input[name="${name}"]`);
-    if (input) input.value = '0';
+    setValue(`input[name="${name}"]`, '0');
   });
-  const totalCostInput = paymentForm.querySelector('input[name="totalCost"]');
-  const actualAccrualInput = paymentForm.querySelector('input[name="actualAccrual"]');
-  if (totalCostInput) totalCostInput.value = '0';
-  if (actualAccrualInput) actualAccrualInput.value = '0';
+  setValue('input[name="totalCost"]', '0');
+  setValue('input[name="actualAccrual"]', '0');
+  updateActualAccrual();
   clearSuggestLists();
 };
 

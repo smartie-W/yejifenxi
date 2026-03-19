@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>销售业绩进程管理</title>
-    <link rel="stylesheet" href="styles.css?v=20260318-1" />
+    <link rel="stylesheet" href="styles.css?v=20260319-1" />
   </head>
   <body class="is-loading">
     <header class="site-header">
@@ -27,7 +27,7 @@
       <section id="contracts" class="panel active">
         <div class="card form-card">
           <h2>登记新签合同金额</h2>
-          <form id="contract-form" class="grid-form">
+          <form id="contract-form" class="grid-form" autocomplete="off">
             <label>
               日期
               <input type="date" name="date" required />
@@ -124,7 +124,7 @@
       <section id="payments" class="panel">
         <div class="card form-card">
           <h2>登记销售回款</h2>
-          <form id="payment-form" class="grid-form">
+          <form id="payment-form" class="grid-form" autocomplete="off">
             <label>
               日期
               <input type="date" name="date" required />
@@ -421,7 +421,7 @@
           </main>
         `;
       } else {
-        import('./app.js?v=20260318-1');
+        import('./app.js?v=20260319-1');
       }
     </script>
   </body>
