@@ -559,19 +559,28 @@ const clearContractForm = () => {
   clearSuggestLists();
 };
 
-const clearPaymentForm = () => {
+const applyPaymentFormDefaults = () => {
   if (!paymentForm) return;
-  paymentForm.reset();
-  const setValue = (selector, value) => {
-    const el = paymentForm.querySelector(selector);
-    if (el) el.value = value;
+  const setInputValue = (name, value) => {
+    const el = paymentForm.querySelector(`input[name="${name}"]`);
+    if (!el) return;
+    el.value = value;
+    el.defaultValue = value;
+    el.setAttribute('value', value);
   };
-  setValue('input[name="date"]', todayString());
-  setValue('input[name="customer"]', '');
-  setValue('select[name="sales"]', '');
-  setValue('select[name="customerType"]', '');
-  setValue('select[name="indicatorType"]', '');
-  setValue('select[name="contractType"]', '');
+  const resetSelect = (name) => {
+    const el = paymentForm.querySelector(`select[name="${name}"]`);
+    if (!el) return;
+    el.value = '';
+    el.selectedIndex = 0;
+  };
+
+  setInputValue('date', todayString());
+  setInputValue('customer', '');
+  resetSelect('sales');
+  resetSelect('customerType');
+  resetSelect('indicatorType');
+  resetSelect('contractType');
   [
     'amount',
     'secondDevProfit',
@@ -579,13 +588,29 @@ const clearPaymentForm = () => {
     'secondDevCost',
     'outsourcingCost',
     'unplannedCost',
+    'totalCost',
+    'actualAccrual',
   ].forEach((name) => {
-    setValue(`input[name="${name}"]`, '0');
+    setInputValue(name, '0');
   });
-  setValue('input[name="totalCost"]', '0');
-  setValue('input[name="actualAccrual"]', '0');
+
+  if (paymentForm.contains(document.activeElement)) {
+    document.activeElement.blur();
+  }
   updateActualAccrual();
   clearSuggestLists();
+};
+
+const clearPaymentForm = () => {
+  if (!paymentForm) return;
+  paymentForm.reset();
+  applyPaymentFormDefaults();
+  requestAnimationFrame(() => {
+    applyPaymentFormDefaults();
+  });
+  setTimeout(() => {
+    applyPaymentFormDefaults();
+  }, 0);
 };
 
 const loadJson = async (path) => {
