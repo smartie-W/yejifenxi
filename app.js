@@ -548,15 +548,44 @@ const clearSuggestLists = () => {
   });
 };
 
+const applyContractFormDefaults = () => {
+  if (!contractForm) return;
+  const setInputValue = (name, value) => {
+    const el = contractForm.querySelector(`input[name="${name}"]`);
+    if (!el) return;
+    el.value = value;
+    el.defaultValue = value;
+    el.setAttribute('value', value);
+  };
+  const resetSelect = (name) => {
+    const el = contractForm.querySelector(`select[name="${name}"]`);
+    if (!el) return;
+    el.value = '';
+    el.selectedIndex = 0;
+  };
+
+  setInputValue('date', todayString());
+  setInputValue('customer', '');
+  setInputValue('amount', '0');
+  resetSelect('sales');
+  resetSelect('type');
+
+  if (contractForm.contains(document.activeElement)) {
+    document.activeElement.blur();
+  }
+  clearSuggestLists();
+};
+
 const clearContractForm = () => {
   if (!contractForm) return;
   contractForm.reset();
-  contractForm.querySelector('input[name="date"]').value = todayString();
-  contractForm.querySelector('input[name="customer"]').value = '';
-  contractForm.querySelector('select[name="sales"]').value = '';
-  contractForm.querySelector('input[name="amount"]').value = '0';
-  contractForm.querySelector('select[name="type"]').value = '';
-  clearSuggestLists();
+  applyContractFormDefaults();
+  requestAnimationFrame(() => {
+    applyContractFormDefaults();
+  });
+  setTimeout(() => {
+    applyContractFormDefaults();
+  }, 0);
 };
 
 const applyPaymentFormDefaults = () => {
